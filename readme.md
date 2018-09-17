@@ -1,4 +1,4 @@
-# odsoft-edom-2017
+# ODSOFT 2018-2019 ed.
 
 The goal of this repository is to serve as a template for the exercises and projects developed during the ODSOFT course of the MEI Master Program, edition 2018/19.
 
