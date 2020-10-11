@@ -1,4 +1,4 @@
-# ODSOFT 2018-2019 ed.
+# ODSOFT 2020-2021 ed.
 
 The goal of this repository is to serve as a template for the exercises and projects developed during the ODSOFT course of the MEI Master Program, edition 2018/19.
 
@@ -48,7 +48,7 @@ You can (and should) create the projects inside the repository so that that are 
 
 Take into account that Eclipse has the concept of Workspace. An workspace is where you have "links" to projects. A workspace is also a folder in the file system. **Workspaces should not be created inside the folder that contains your clone of the repository!** Workspaces should be local to your development pc (outside of the repository).
 
-Suppose you have created the clone of the repository in "c:\isep\odsoft-edom-2017-g999". You could, for instance, create the workspace in "c:\isep\eclipse-workspace".
+Suppose you have created the clone of the repository in "c:\isep\odsoft-19-20-nmb-g000". You could, for instance, create the workspace in "c:\isep\eclipse-workspace".
 
 In order to open an existing project in Eclipse you should:
 
