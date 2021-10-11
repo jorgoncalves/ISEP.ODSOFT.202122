@@ -1,0 +1,22 @@
+@startuml class-diagram.png
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor User
+participant CalculatorApp
+participant Calculator
+
+create Calculator
+CalculatorApp -> Calculator : new
+Calculator -> Calculator : accumulator=0.0
+
+User ->> CalculatorApp : "add 5.5"
+CalculatorApp ->> Calculator : doOperation("add", 5.5)
+CalculatorApp <<-- Calculator : returns 5.5
+User <<-- CalculatorApp : displays "5.5"
+
+
+@enduml
