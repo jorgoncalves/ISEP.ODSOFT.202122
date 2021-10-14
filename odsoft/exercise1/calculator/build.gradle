@@ -12,8 +12,8 @@ repositories {
 }
 
 dependencies {
-	testCompile 'junit:junit:4.12'
-	testCompile 'com.github.stefanbirkner:system-rules:1.16.1'
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'com.github.stefanbirkner:system-rules:1.16.1'
 }
 
 javadoc {
