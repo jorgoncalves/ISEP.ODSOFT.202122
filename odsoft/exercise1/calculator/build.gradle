@@ -44,3 +44,4 @@ task runApp (type: JavaExec, dependsOn: classes){
 }
 
 build.finalizedBy renderPlantUml
+build.finalizedBy javadoc
