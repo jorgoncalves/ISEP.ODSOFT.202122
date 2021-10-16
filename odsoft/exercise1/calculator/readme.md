@@ -10,11 +10,20 @@ To properly work on all types of diagrams PlantUML depends on Graphviz. This is 
 
 Please refer to page [plantuml-graphviz-dot](http://plantuml.com/graphviz-dot) for further information on this issue and on instructions to install Graphviz on your system.
 
-
 ## Installation
 
+The following commands are for ubuntu OS.
 ```
-sudo apt-get update; sudo apt-get install -y java-17-amazon-corretto-jdk
+sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
+
 sudo update-alternatives --config java
+
 sudo apt-get install -y graphviz
+```
+
+## Overview
+
+To fully generate the overview.html it is required to build the project with
+```
+gradle build
 ```
