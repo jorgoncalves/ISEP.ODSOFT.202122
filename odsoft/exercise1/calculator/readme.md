@@ -9,3 +9,12 @@
 To properly work on all types of diagrams PlantUML depends on Graphviz. This is something that the gradle build does not solve automatically.
 
 Please refer to page [plantuml-graphviz-dot](http://plantuml.com/graphviz-dot) for further information on this issue and on instructions to install Graphviz on your system.
+
+
+## Installation
+
+```
+sudo apt-get update; sudo apt-get install -y java-17-amazon-corretto-jdk
+sudo update-alternatives --config java
+sudo apt-get install -y graphviz
+```
