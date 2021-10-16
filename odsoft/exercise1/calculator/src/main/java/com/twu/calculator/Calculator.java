@@ -36,6 +36,12 @@ public class Calculator {
             case "cubert":
                 accumulator = Math.cbrt(accumulator);
                 break;
+            case "factorial":
+                while (operand > 0) {
+                    accumulator *= operand;
+                    operand--;
+                }
+                break;
             case "cancel":
                 accumulator = 0;
                 break;

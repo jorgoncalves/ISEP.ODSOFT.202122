@@ -1,11 +1,11 @@
 package com.twu.calculator;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ExpectedSystemExit;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {
 
@@ -149,4 +149,13 @@ public class CalculatorTest {
         assertThat(actualResult, is(4.0));
     }
 
+    @Test
+    public void shouldReturnFactorialOfResult() {
+        Calculator calculator = new Calculator();
+        calculator.doOperation("add", 1);
+
+        double actualResult = calculator.doOperation("factorial", 6);
+
+        assertThat(actualResult, is(720.0));
+    }
 }
