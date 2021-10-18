@@ -32,6 +32,18 @@ public class CalculatorAppTest {
         assertThat(actualResult, is("> 10.0"+System.getProperty("line.separator")));
     }
 
+    @Test
+    public void severalOperationsIntegrationTest() {
+        Calculator calculator = new Calculator();
+        calculator.doOperation("add",5);
+        calculator.doOperation("sub",2);
+        calculator.doOperation("multiply",5);
+        calculator.doOperation("divide",3);
+        double result = calculator.doOperation("factorial",0);
+
+        assertThat(result, is(120));
+    }
+
     @After
     public void tearDown() {
         System.setIn(System.in);

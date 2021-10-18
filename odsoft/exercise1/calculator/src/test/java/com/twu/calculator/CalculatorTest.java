@@ -163,7 +163,6 @@ public class CalculatorTest {
     public void shouldReturnFactorialOfResult() {
         Calculator calculator = new Calculator();
         calculator.doOperation("add", 1);
-
         double actualResult = calculator.doOperation("factorial", 6);
 
         assertThat(actualResult, is(720.0));
