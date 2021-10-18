@@ -40,9 +40,15 @@ public class Calculator {
                 accumulator = Math.cbrt(accumulator);
                 break;
             case "factorial":
-                while (operand > 0) {
-                    accumulator *= operand;
-                    operand--;
+                if (accumulator == 0) {
+                    accumulator = 1;
+                } else {
+                    double initial = accumulator;
+                    accumulator = 1;
+                    while (initial > 1) {
+                        accumulator *= initial;
+                        initial--;
+                    }
                 }
                 break;
             case "cancel":

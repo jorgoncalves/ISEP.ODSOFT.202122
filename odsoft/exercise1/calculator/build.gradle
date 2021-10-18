@@ -22,15 +22,6 @@ javadoc {
 }
 
 task renderPlantUml(type: RenderPlantUmlTask) {
-    doLast{
-        File buildDir
-
-        // Create a file collection using a closure
-        FileCollection collection = files { buildDir.listFiles() }
-
-        buildDir = file('build')
-        collection.collect { relativePath(it) }.sort().each { println it }
-    }
 }
 
 // To execute the app
