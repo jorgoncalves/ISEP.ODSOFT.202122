@@ -36,12 +36,12 @@ public class CalculatorAppTest {
     public void severalOperationsIntegrationTest() {
         Calculator calculator = new Calculator();
         calculator.doOperation("add",5);
-        calculator.doOperation("sub",2);
+        calculator.doOperation("subtract",2);
         calculator.doOperation("multiply",5);
         calculator.doOperation("divide",3);
         double result = calculator.doOperation("factorial",0);
 
-        assertThat(result, is(120));
+        assertThat(result, is(120.0));
     }
 
     @After
