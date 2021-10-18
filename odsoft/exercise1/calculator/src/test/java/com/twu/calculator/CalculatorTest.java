@@ -150,11 +150,21 @@ public class CalculatorTest {
     }
 
     @Test
+    public void shouldReturnFactorialOf0() {
+        Calculator calculator = new Calculator();
+        calculator.doOperation("add", 0);
+
+        double actualResult = calculator.doOperation("factorial", 0);
+
+        assertThat(actualResult, is(1.0));
+    }
+
+    @Test
     public void shouldReturnFactorialOfResult() {
         Calculator calculator = new Calculator();
-        calculator.doOperation("add", 1);
+        calculator.doOperation("add", 6);
 
-        double actualResult = calculator.doOperation("factorial", 6);
+        double actualResult = calculator.doOperation("factorial", 0);
 
         assertThat(actualResult, is(720.0));
     }
