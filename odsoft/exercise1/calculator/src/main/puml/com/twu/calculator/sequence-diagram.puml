@@ -1,4 +1,4 @@
-@startuml class-diagram.png
+@startuml
 skinparam handwritten true
 skinparam monochrome true
 skinparam packageStyle rect
@@ -20,5 +20,13 @@ CalculatorApp ->> Calculator : doOperation("factorial", 0)
 CalculatorApp <<-- Calculator : returns 5.5
 User <<-- CalculatorApp : displays "5.5"
 
+Calculator -> Calculator : accumulator=3960.0
+CalculatorApp <<-- Calculator : returns 3960.0
+User <<-- CalculatorApp : displays "3960.0"
 
+User ->> CalculatorApp : "third"
+CalculatorApp ->> Calculator : doOperation("third")
+Calculator -> Calculator : accumulator=1320
+CalculatorApp <<-- Calculator : returns 1320.0
+User <<-- CalculatorApp : displays "1320.0"
 @enduml

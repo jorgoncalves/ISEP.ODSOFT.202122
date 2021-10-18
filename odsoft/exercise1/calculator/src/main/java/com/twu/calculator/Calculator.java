@@ -21,6 +21,9 @@ public class Calculator {
             case "abs":
                 accumulator = Math.abs(accumulator);
                 break;
+            case "third":
+                accumulator = accumulator/3;
+                break;   
             case "neg":
                 accumulator = -accumulator;
                 break;
@@ -32,7 +35,7 @@ public class Calculator {
                 break;
             case "cube":
                 accumulator = Math.pow(accumulator, 3);
-                break;
+                break;     
             case "cubert":
                 accumulator = Math.cbrt(accumulator);
                 break;
