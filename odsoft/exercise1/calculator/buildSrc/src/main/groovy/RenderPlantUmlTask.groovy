@@ -53,7 +53,7 @@ import groovy.io.FileType
 class RenderPlantUmlTask extends DefaultTask {
 
     def Path assetsPathInput = project.projectDir.toPath().resolve('src/main/puml/')
-    def Path assetsPathOutput = project.projectDir.toPath().resolve('src/main/puml/')
+    def Path assetsPathOutput = project.projectDir.toPath().resolve('build/puml/')
 
     RenderPlantUmlTask() {
         Path projectPath = project.projectDir.toPath()
