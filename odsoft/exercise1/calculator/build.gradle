@@ -48,5 +48,5 @@ task runApp (type: JavaExec, dependsOn: classes){
     classpath = sourceSets.main.runtimeClasspath
 }
 test.finalizedBy jacocoTestReport
-build.finalizedBy renderPlantUml
 build.finalizedBy javadoc
+build.finalizedBy renderPlantUml
