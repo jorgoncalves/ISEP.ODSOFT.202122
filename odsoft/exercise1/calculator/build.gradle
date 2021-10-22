@@ -30,13 +30,7 @@ jacoco {
     reportsDir = file("$buildDir/jacoco")
 }
 
-jacocoTestReport {
-    reports {
-        xml.required = false
-        csv.required = false
-        // html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
-    }
-}
+jacocoTestReport {}
 
 // To execute the app
 task runApp (type: JavaExec, dependsOn: classes){
