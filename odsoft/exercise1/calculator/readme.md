@@ -27,3 +27,11 @@ To fully generate the overview.html it is required to build the project with
 ```
 gradle build
 ```
+
+## Jenkins Plugins
+
+* AdoptOpenJDK installer Plugin
+* [Gradle Plugin](https://plugins.jenkins.io/gradle/)
+* [JaCoCo Plugin](https://plugins.jenkins.io/jacoco/)
+* [Javadoc plugin](https://plugins.jenkins.io/javadoc/)
+    - It may be needed to do the [following](https://stackoverflow.com/a/46197356/9915287) to allow access from jenkins to the html content
