@@ -43,4 +43,4 @@ task runApp (type: JavaExec, dependsOn: classes){
 }
 test.finalizedBy jacocoTestReport
 build.finalizedBy javadoc
-build.finalizedBy renderPlantUml
+javadoc.finalizedBy renderPlantUml
