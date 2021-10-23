@@ -40,7 +40,7 @@ public class Calculator {
                 accumulator = Math.cbrt(accumulator);
                 break;
             case "factorial":
-                if (accumulator == 0) {
+                if (accumulator <= 1) {
                     accumulator = 1;
                 } else {
                     double initial = accumulator;
