@@ -13,20 +13,20 @@ create Calculator
 CalculatorApp -> Calculator : new
 Calculator -> Calculator : accumulator=0.0
 
-User ->> CalculatorApp : "add 5.5"
-CalculatorApp ->> Calculator : doOperation("add", 5.5)
-User ->> CalculatorApp : "factorial 6"
+User ->> CalculatorApp : "add 6"
+CalculatorApp ->> Calculator : doOperation("add", 6)
+User ->> CalculatorApp : "factorial"
 CalculatorApp ->> Calculator : doOperation("factorial", 0)
-CalculatorApp <<-- Calculator : returns 5.5
-User <<-- CalculatorApp : displays "5.5"
+CalculatorApp <<-- Calculator : returns 6
+User <<-- CalculatorApp : displays "6"
 
-Calculator -> Calculator : accumulator=3960.0
-CalculatorApp <<-- Calculator : returns 3960.0
-User <<-- CalculatorApp : displays "3960.0"
+Calculator -> Calculator : accumulator=720.0
+CalculatorApp <<-- Calculator : returns 720.0
+User <<-- CalculatorApp : displays "720.0"
 
 User ->> CalculatorApp : "third"
 CalculatorApp ->> Calculator : doOperation("third")
-Calculator -> Calculator : accumulator=1320
-CalculatorApp <<-- Calculator : returns 1320.0
-User <<-- CalculatorApp : displays "1320.0"
+Calculator -> Calculator : accumulator=240
+CalculatorApp <<-- Calculator : returns 240.0
+User <<-- CalculatorApp : displays "240.0"
 @enduml
