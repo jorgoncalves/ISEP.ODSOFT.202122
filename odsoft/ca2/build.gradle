@@ -114,6 +114,3 @@ test {
   		//classDumpFile = file("${buildDir}/jacoco/classpathdumps")
     }	
 }
-
-test.finalizedBy jacocoTestReport
-build.finalizedBy javadoc
