@@ -117,4 +117,3 @@ test {
 
 test.finalizedBy jacocoTestReport
 build.finalizedBy javadoc
-javadoc.finalizedBy renderPlantUml
