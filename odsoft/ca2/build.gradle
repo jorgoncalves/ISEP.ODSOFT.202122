@@ -25,8 +25,6 @@ dependencies {
  	testCompile 'org.easymock:easymock:2.5.2'
 	testCompile 'com.google.gwt:gwt-dev:2.8.1'
 	compile 'net.sourceforge.plantuml:plantuml:8001'
-
-
 }
 
 javadoc {
@@ -116,3 +114,7 @@ test {
   		//classDumpFile = file("${buildDir}/jacoco/classpathdumps")
     }	
 }
+
+test.finalizedBy jacocoTestReport
+build.finalizedBy javadoc
+javadoc.finalizedBy renderPlantUml
