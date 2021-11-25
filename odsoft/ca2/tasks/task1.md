@@ -13,8 +13,51 @@ chmod 777 ./gradlew
 ./gradlew clean build
 ```
 
+#### Note
+
+gradlew permissions were updated
+
 to run the project
 
 ```
 sudo ./gradlew gwtRun
 ```
+
+---
+
+Test report
+odsoft/ca2/docs/javadoc
+
+---
+
+The sequence can be created by on the job configuration defining:
+
+- Build Triggers -> Build after other projects are built
+- Post-build Actions -> Build other projects
+
+---
+
+---
+
+## JobFanIn
+
+---
+
+Custom workspace
+CMS_Repository_Part2_Task1
+
+---
+
+## Deploy to container plugin
+
+---
+
+---
+
+## ATTENTION TO THE WORKSPACE
+
+--
+Groovy plugin installed
+
+https://plugins.jenkins.io/htmlpublisher/
+https://plugins.jenkins.io/seleniumhtmlreport/ x
