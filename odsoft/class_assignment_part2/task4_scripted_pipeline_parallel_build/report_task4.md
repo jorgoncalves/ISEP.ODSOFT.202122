@@ -312,3 +312,6 @@ stage("UI Tests") {
     }
 }
 ```
+
+To give the feedback regarding the state of the UI, we need to go to **Paused for Input** and choose the correct option, as shown below.
+![ui_test](./images/ui_test_validation.png)
