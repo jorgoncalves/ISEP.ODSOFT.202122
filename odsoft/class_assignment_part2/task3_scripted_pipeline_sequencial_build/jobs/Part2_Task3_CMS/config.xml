@@ -1,0 +1,227 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.42">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@1.9.3"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@1.9.3">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>3</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2633.v6baeedc13805">
+    <script>
+pipeline {
+    agent any
+    stages {
+        stage(&quot;Checkout&quot;) {
+            steps {
+                checkout([
+                        $class: &quot;GitSCM&quot;, 
+                        branches: [[name: &quot;*/master&quot;]], 
+                        extensions: [[$class: &quot;WipeWorkspace&quot;]], 
+                        userRemoteConfigs: [
+                            [credentialsId: &quot;333bd6ce-1181-4a3f-975c-5f15aecd87dd&quot;, 
+                            name: &quot;origin&quot;, 
+                            url: &quot;git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git&quot;]
+                        ]
+                    ])
+            }
+        }
+
+        stage(&quot;Build&quot;) {
+            steps {
+                    dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                        command(&quot;./gradlew clean build&quot;)
+                    }
+            }
+        }
+        stage(&quot;Run Unit Tests&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    command(&quot;./gradlew test&quot;)
+                }
+            }
+        }
+        stage(&quot;Run Integration Tests&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    command(&quot;./gradlew integrationTest&quot;)
+                }
+            }
+        }
+        stage(&quot;Run Mutation Tests&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    command(&quot;./gradlew pitest&quot;)
+                }
+            }
+        }
+        stage(&quot;Run Javadoc&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    command(&quot;./gradlew javadoc&quot;)
+                }
+            }
+        }
+        stage(&quot;Publish Javadoc&quot;) {
+            steps {
+                javadoc javadocDir: &quot;project/cms_students/build/docs/javadoc&quot;,
+                keepAll: true
+            }
+        }
+        stage(&quot;Publish Unit Test Report&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    publishHTML(
+                        [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: false,
+                            reportDir: &quot;build/reports/test&quot;,
+                            reportFiles: &quot;index.html&quot;,
+                            reportName: &quot;HTML Unit Test Report&quot;,
+                            reportTitles: &quot;&quot;
+                        ]
+                    )
+                }
+            }
+        }
+        stage(&quot;Publish Integration Test Report&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    publishHTML(
+                        [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: false,
+                            reportDir: &quot;build/reports/integrationTest&quot;,
+                            reportFiles: &quot;index.html&quot;,
+                            reportName: &quot;HTML Integration Test Report&quot;,
+                            reportTitles: &quot;&quot;
+                            ]
+                    )
+                }
+            }
+        }
+        stage(&quot;Publish Pit Mutation Test Report&quot;) {
+            steps {
+                dir(directory(&quot;${env.WORKSPACE}/project/cms_students&quot;)) {
+                    publishHTML(
+                        [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: false,
+                            reportDir: &quot;build/reports/pitest&quot;,
+                            reportFiles: &quot;index.html&quot;,
+                            reportName: &quot;HTML Pit Mutation Report&quot;,
+                            reportTitles: &quot;&quot;
+                            ]
+                        )
+                }
+            }
+        }
+        stage(&quot;JaCoCo Report&quot;) {
+            steps {
+                jacoco()
+            }
+        }
+        stage(&quot;Deploy War File&quot;) {
+            steps {
+                deploy adapters: [
+                    tomcat9(
+                        credentialsId: &apos;83e750f1-e55f-4dfb-a342-a90cabbe21b9&apos;, 
+                        path: &apos;&apos;, 
+                        url: &apos;http://tomcat:8181/&apos;)
+                    ], 
+                contextPath: &apos;Part2_Task4&apos;, 
+                onFailure: false, war: &apos;project/cms_students/build/libs/cms_students-1.0.war&apos;
+            }
+        }
+        stage(&quot;Smoke Test&quot;) {
+            steps {
+                script {
+                    if(isUnix())
+                    {
+                    sh (&quot;&quot;&quot;
+                        curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \&quot;Amelie Crutcher\&quot;
+                        then
+                            echo \&quot;Amelia was found!\&quot;
+                        else
+                            echo \&quot;Amelia wasn&apos;t found!\&quot; exit 1
+                        fi
+                    &quot;&quot;&quot;)
+                    } else {
+                        bat &quot;curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts&quot;
+                    }
+                }
+            }
+        }
+        stage(&quot;Email&quot;) {
+            steps {
+                    emailext ( 
+                        to: &quot;1210107@isep.ipp.pt&quot;,
+                        subject: &quot;Build ${env.BUILD_NUMBER} - UI Acceptance manual test&quot;,
+                        body: &quot;Please validate if the UI is as expected and then trigger the corresponding job.&quot;
+                    )
+            }
+        }
+        stage(&quot;UI Tests&quot;) {
+            steps {
+                input &quot;Please validate if the UI is as expected and then enter the correct input.&quot;
+            }
+        }
+    }
+    post {
+        success {
+            command(&quot;git config user.name &apos;Jorge Gonçalves&apos;&quot;)
+            command(&quot;git config user.email 1210107@isep.ipp.pt&quot;)
+            command(&quot;git tag -m &apos;Task3 Build #${BUILD_NUMBER} Passed&apos;-a Task3-Build-#${BUILD_NUMBER}-Passed&quot;)
+            command(&quot;git push --tags&quot;)
+            deleteDir()
+            cleanWs()
+        }
+        failure {
+            command(&quot;git config user.name &apos;Jorge Gonçalves&apos;&quot;)
+            command(&quot;git config user.email 1210107@isep.ipp.pt&quot;)
+            command(&quot;git tag -m &apos;Task3 Build #${BUILD_NUMBER} Failed&apos; -a Task3-Build-#${BUILD_NUMBER}-Failed&quot;)
+            command(&quot;git push --tags&quot;)
+            deleteDir()
+            cleanWs()
+        }
+    }
+}
+
+
+def command(command) {
+    if (isUnix() &amp;&amp; command != null) {
+        sh command
+    } else {
+        bat command
+    }
+}
+
+def directory(directory) {
+  newDir=directory
+  if (!isUnix()) {
+    newDir = newDir.replace(&apos;/&apos;,&apos;\\&apos;)
+  }
+  return newDir
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

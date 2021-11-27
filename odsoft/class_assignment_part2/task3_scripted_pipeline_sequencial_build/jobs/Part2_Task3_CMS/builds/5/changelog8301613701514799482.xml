@@ -1,0 +1,23 @@
+commit 4533fe93206370128045893f2b0e4ffb2c714cad
+tree 11dd427f9a8544fae1cc7c7a31e0ad19deceabc8
+parent dda4c267607e858bb09b550870a541895a5f3f07
+author Jorge Gonçalves <--local> 2021-11-27 22:02:59 +0000
+committer Jorge Gonçalves <--local> 2021-11-27 22:04:18 +0000
+
+    Ref #4: Sketch task2
+
+
+:000000 100644 0000000000000000000000000000000000000000 33483d9156276317705b4dd2fbaaf79bfd61ca36 A	odsoft/class_assignment_part2/task2_build_pipeline_parallel_build/images/sketch.png
+:000000 100644 0000000000000000000000000000000000000000 e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 A	odsoft/class_assignment_part2/task2_build_pipeline_parallel_build/images/sketch.png:Zone.Identifier
+:100644 100644 bb73d07f3cb609e645da0c6788f4f1b4a2fc5374 2459aa9c6e17d03eed3f2fb8413eee606eb8beaf M	odsoft/class_assignment_part2/task2_build_pipeline_parallel_build/report_task2.md
+commit dda4c267607e858bb09b550870a541895a5f3f07
+tree d28dde2158689a17fa77735babef24bae4ead027
+parent 3be507a25e47cb8bcac794d2b2a6f8dcbd0f0c19
+author Jorge Gonçalves <--local> 2021-11-27 21:53:45 +0000
+committer Jorge Gonçalves <--local> 2021-11-27 21:54:19 +0000
+
+    Ref #6: Typo
+
+
+:100644 100644 552bc3d9788293288d73d5d04982260fb3ee3bf5 5940f88b7c338da6dfd9690d0259808295e801d1 M	odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/Jenkinsfile
+:100644 100644 f8fb2fd1f6eeb02ef7b0a7a36e9613cf94561b7b 3c4900d15e5849347ad213f7245c6fca9f7aeaaa M	odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/report_task4.md

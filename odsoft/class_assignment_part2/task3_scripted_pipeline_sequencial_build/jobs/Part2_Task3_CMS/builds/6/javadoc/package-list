@@ -1,0 +1,7 @@
+pt.isep.cms.client
+pt.isep.cms.contacts.client
+pt.isep.cms.contacts.client.event
+pt.isep.cms.contacts.client.presenter
+pt.isep.cms.contacts.client.view
+pt.isep.cms.contacts.server
+pt.isep.cms.contacts.shared
