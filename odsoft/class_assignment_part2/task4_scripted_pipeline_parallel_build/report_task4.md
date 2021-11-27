@@ -344,11 +344,9 @@ To finalize things up, we are using the **post** stage, to send the tags to the 
 
 ## Additional Step
 
-Since we always recreate the workspace to finish's up, we have added the another stage to post, that as the propose of cleaning the workspace:
+Since we always recreate the workspace to finish's up, we have added to both the success and failure post steps functions for cleaning the workspace:
 
 ```Groovy
-always {
-    deleteDir()
-    cleanWs()
-}
+deleteDir()
+cleanWs()
 ```
