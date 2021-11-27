@@ -1,0 +1,11 @@
+commit ec008c3b34c9eb364ea7ac0aaa9d3abc63afe657
+tree 05b7f416cce30f30d2c9ec963537b0e8b9a8ecbc
+parent dad5ec487e6eb647ac81916d5503d7343e27b64d
+author Jorge Gonçalves <--local> 2021-11-27 21:11:13 +0000
+committer Jorge Gonçalves <--local> 2021-11-27 21:11:13 +0000
+
+    Ref #6: added clean after
+
+
+:100644 100644 7cd257ed78d7bd449dd2256d5b132e80dda3a9e7 b54ccf7e80c9e0b4a327cbcb5111a7cfdf8482e1 M	odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/Jenkinsfile
+:100644 100644 7793edc4eaa2445f9c06e7c73b56563bac3ec4bb 01775d643d9dda97daea68569f6b657b49898baa M	odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/report_task4.md
