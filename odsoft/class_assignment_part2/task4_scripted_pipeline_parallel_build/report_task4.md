@@ -272,7 +272,7 @@ stage("Smoke Test") {
             if(isUnix())
             {
                 sh ("""
-                curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\"
+                curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\"
                 then
                     echo \"Amelia was found!\"
                 else
@@ -280,7 +280,7 @@ stage("Smoke Test") {
                 fi
                 """)
             } else {
-                bat "curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts"
+                bat "curl -sI http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts"
             }
         }
     }

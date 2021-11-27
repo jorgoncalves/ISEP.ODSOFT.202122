@@ -141,7 +141,7 @@ pipeline {
                     if(isUnix())
                     {
                     sh ("""
-                        curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\" 
+                        curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\" 
                         then 
                             echo \"Amelia was found!\" 
                         else 
@@ -149,7 +149,7 @@ pipeline {
                         fi
                     """)
                     } else {
-                        bat "curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts"
+                        bat "curl -sI http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts"
                     }
                 }
             }
@@ -165,7 +165,7 @@ pipeline {
             }
         }
 
-        stage("Ui Tests") {
+        stage("UI Tests") {
             steps {
                 input "Please validate if the UI is as expected and then enter the correct input."
             }
