@@ -1,0 +1,462 @@
+Started by user unknown or anonymous
+[8mha:////4BFCsol8h90B2YYqk8gjDrdEDgTDPI/cESrw1W4ZZ+u0AAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4Etde/adGsYoplOFvJWF3kNxVJvHr8o0B1qHEB3UocUUAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4BKrCdcMZMbep/oc0954kaP+YIc0fOnAXDINx8Owc3AyAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/jenkins_home/workspace/Part2_Task3_CMS
+[8mha:////4H+VHjjj+4apPB2awzHC7sQ2rmK+11xNfkg1t79BMFJ2AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4NEWqP8Tl0bCPBXVwOy4X1t9311qHyGhGfjDPWNNrxOzAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4Bfjd+huL3QCr7ktYLqXuefD+sMesXtcXf07cz7+xq8DAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Checkout)
+[8mha:////4F/twJPKJe6cL3jUBdhCJy7DbXGHFq6GmM2etCy9Uj1MAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] checkout
+The recommended git tool is: NONE
+using credential 333bd6ce-1181-4a3f-975c-5f15aecd87dd
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git
+ > git init /var/jenkins_home/workspace/Part2_Task3_CMS # timeout=10
+Fetching upstream changes from git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git fetch --tags --force --progress -- git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 4533fe93206370128045893f2b0e4ffb2c714cad (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4533fe93206370128045893f2b0e4ffb2c714cad # timeout=10
+Commit message: "Ref #4: Sketch task2"
+ > git rev-list --no-walk 3be507a25e47cb8bcac794d2b2a6f8dcbd0f0c19 # timeout=10
+[8mha:////4EioCKhpNxe1HQ7oLzxOpoywEHNjuhxupGTJY6bDvWCgAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
+[8mha:////4PtuLVZvQufsU6OpdIecPP8eQONPDASRx/H7IZKIGvl7AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
+[8mha:////4OpttxFMNgC+xiE9sPWAeQ9VP9c8REUX6Jb155yiRcIDAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] stage
+[8mha:////4PCCXkcAqHi4NLHcDIwd43NkXjPYwvYAWBfXZV44UchHAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] { (Build)
+[8mha:////4DM77EWLsgUQqqkv+8w5GD7vjmERtxLYFwW3azGafqaeAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggysXWsbBkaT4AJIoT5nwCRVJ7Iq3kH0cxYucXOvm3e8wXrGOBIQTOrcDAYO8O8m3RZLFMYro4ys3RhHWEkp5hQWVCvTgsKSgqWVDWsOGwUdo6iQZ1gy628y8ZJ1M05hfIdONSmH+EBFS/mJEP6whxgd5v6SPjz/BXA7BPUbfupvX8DpQJrNb4AAAA=[0m[Pipeline] isUnix
+[8mha:////4PgLUzoeVAVVnMnURBHkJG0vWbat931Anh6X2wUi8ru9AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUFSNiYo2ycILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMUAJwqGOY2dxdha1vvRzIllCt3NU2aOrqwljOQ1EzoLUvq8VkFJw6qihA2HrcbWU7RoEuy4kw9Ze4mmvqQwb0cOpVUDPKHgMznJkL5lCrC/jyoS/jh/ATD1CcqmWeywPKsPyt/2UMIAAAA=[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4LUDShmNv444wQYVmRdsjBnoA0NsXi9B0D75LQ/QICJTAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUCDbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5Dv9rMd5mfxAbNWnxXCAAAA[0m[Pipeline] {
+[8mha:////4JMcfjpxyMkBju3DqNrL1UvFDyHw46R4h1slZHaBsEjsAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJKgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN8W7Eii+AAAA[0m[Pipeline] isUnix
+[8mha:////4EKaSC9IELd2prn2zBGZj3b7zAg0eL56+oIMxNZBgNkwAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJESDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAEG6D8DvgAAAA==[0m[Pipeline] sh
++ ./gradlew clean build
+:clean UP-TO-DATE
+:compileJava
+:processResources UP-TO-DATE
+:classes
+:gwtCompile
+Compiling module pt.isep.cms.Showcase
+   Compiling 6 permutations
+      Compiling permutation 0...
+      Compiling permutation 1...
+      Compiling permutation 2...
+      Compiling permutation 3...
+      Compiling permutation 4...
+      Compiling permutation 5...
+   Compile of permutations succeeded
+   Compilation succeeded -- 36.906s
+Linking into /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/putnami/out/showcase; Writing extras to /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/putnami/extra/showcase
+   Link succeeded
+   Linking succeeded -- 0.254s
+:war
+:assemble
+:gwtCheck SKIPPED
+:compileTestJava
+:processTestResources
+:testClasses
+:test
+:check
+:build
+
+BUILD SUCCESSFUL
+
+Total time: 45.026 secs
+[8mha:////4F7uxVkqVzyIygfiwbFPduGQcKL1S6AC5Uh54mTw8kXmAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJCQKRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g0YU4IMvgAAAA==[0m[Pipeline] }
+[8mha:////4OelhWim/J5Y5hl/JjlMqfPIF6pDQZt2yCpjsYLfROBbAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiRIOEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQFudLBjvgAAAA==[0m[Pipeline] // dir
+[8mha:////4GnjMVUnXzwvZsppa5e4XQD2a77xC39PvmThCL14GBP2AAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyKR3Hypah8QSYIEKY/wkQSeWJvJp3EM2MlVvs7NvmPV+wjgGOFDSzCgeDsTPMu0mXxTKF4eooM0sX1hFGcooJlQX16rSgoKRgSVXDisNGYecoGtQJttzKu2ycRN2cUyjfgUNt+hEeUPFiTjKkL8wBdrepj4Q/z18BzN4nqNv9p9o358biRr4AAAA=[0m[Pipeline] }
+[8mha:////4FPbsF0JTCWDeffwAxLuv7zRAChPdldAbR1Iiawt5HtGAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOISaBFVWisNLzCxMU6sO2M7JBUv4mv8AYtIVGyx2tlmXm9YxwAnDgZ7TYOl2Fn0bjR54cRhuDqesOcLdkyRncZWTy0r3SzYctKwpChhJWCjqXMcLZkEW9HLh6ycJFOdU8jfUUBp1R2eUIhsTjKkL8wBdrdRRaaf568AZu8TlIc6177+ACS9Aie+AAAA[0m[Pipeline] // stage
+[8mha:////4MEK6zsNeJZ4983G2rbZgoMPz53fTKviqbdOcYn2//YOAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjEB2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INji2eq8EAAAA=[0m[Pipeline] stage
+[8mha:////4BahEkPTr0KvgZ1rGRA6iqsufDhFGV9TA4sdshZH/poBAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUdEVMrFEXThCaEJJG/7dJSjpxIq7GHWipxIQHy7ZkvdcbyhjgRMFwp7GzGFvLez+aOfFMobt5ytzRlbeEkbzmjc4NKX1ea0NJw6qCwUbAVmPrKVo0CXbCyYesvERTXVKYt6MAZtUATyjETE4ypG+ZAuzvo4qEP85fAEx9AlYfFquXZ/kBAsTc3cIAAAA=[0m[Pipeline] { (Run Unit Tests)
+[8mha:////4D+Pd1rdPTCXRDngEKvQDbKmGYBz2V3Ih1BNFQKBOoiYAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyE0vHypah8QSYIEKY/wkQSeWJvJp3EM2MlVvs7NvmPV+wjgGOFDSzCgeDsTPMu0mXxTKF4eooM0sX1hFGcooJlQX16rSgoKRgSVXDisNGYecoGtQJttzKu2ycRN2cUyjfgUNt+hEeUPFiTjKkL8wBdrepj4Q/z18BzD5B3baf2vs3w5BRkb4AAAA=[0m[Pipeline] isUnix
+[8mha:////4CoXaZ2YLM/ezgSWKQAWbtJC8jbJ7LzIp3FUCT/wlp06AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUqtgQE2uUhROEJoSk0f9tkpJOnIircQdaKjHhwbItWe/1hioGOFEwzGnsLMbWst6PZk4sU+hunjJzdGUtYSSvmdBZkNLntQpKGlYVJWw4bDW2nqJFk2DHnXzI2ks09SWFeTtyKK0a4AkFn8lJhvQtU4D9fVSR8Mf5C4CpT1A2zWKH5Vl9AB5BZ5LCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4ICwfrwgLcIfMGtL8x8TXX82pjMvMkPparsV/Am4Qzw3AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUQjAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/hYjrHCAAAA[0m[Pipeline] {
+[8mha:////4HLRzJk3cd6iY/2hFqpgM0a1cRNu2rysJnmV/b5zBrsYAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIUGDqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAEIWoEpvgAAAA==[0m[Pipeline] isUnix
+[8mha:////4BkYqQSLEREbuV6yxvNmDtDEYzJ3l7wPTeJfU/Wc8kleAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiISEKRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYMpTb3af24Q1Ja5owvgAAAA==[0m[Pipeline] sh
++ ./gradlew test
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 0.904 secs
+[8mha:////4IDdNtevcLTVd3T1JJA/OILrSub+PcRbwBnXmjurutPeAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiISEhIaq0lhteYGJjnFh3xnZIKl7E1/gDgUhUbLHa2WaeL1imCEeOFltDnaPUOAy+t9PCgWN38Txgy2dsmBJ7g9IMkrWpZ5ScDcwpSlgIWBlqPCdHNsNatOquKq/IVqccp+8goHT6Bg8oxGTOKuYvjBE2114npp/nrwDGEDKU2/2ndm8FmBaQvgAAAA==[0m[Pipeline] }
+[8mha:////4A1U4F7yq5sO2vAEgqVMHzdBpwwjeuUtWv7GaJTkra/4AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIRqEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQE2e00svgAAAA==[0m[Pipeline] // dir
+[8mha:////4CGduvXZgptqI0OGza1HJuUBBs8LD+m2IV/WOf1/1vW+AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMJBoURUaa00vMDEh3Fi3RnbIal4EV/jD1hEomKL1c4283rDOgY4cTCiRxosxc4K70aTl5g4DFfHk+j5IjqmyA5Fi1PLGpsFW04IS4oSVhI2SJ3jaMkk2MpePVTlFJnqnEL+jhJKq+/whEJmc1IhfWEOsLuNOjL9PH8FMHufoDzsc9X1B3+EVkS+AAAA[0m[Pipeline] }
+[8mha:////4A/yEsa1hCD/IUUF6BLTzHF0Vw7BBPOJPSLWYgUVQbdMAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKiQImo0lppeIGJjXFi3RnbIal4EV/jD1hEomKL1c4283rDOgY4cTDYaxosxc6id6PJCycOw9XxhD1fsGOK7DS2empZ6WbBlpOGJUUJKwEbTZ3jaMkk2IpePmTlJJnqnEL+jgJKq+7whEJkc5IhfWEOsLuNKjL9PH8FMHufoDzUufb1B2AGAxa+AAAA[0m[Pipeline] // stage
+[8mha:////4NEvtNtlegyjNcNzRq4SnDWm0Pyaoa2EiCEOpQzJBgvpAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjAR2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INlFR9i8EAAAA=[0m[Pipeline] stage
+[8mha:////4D85NHEYwJWFiLH36QjGkyDQ4cxnINI0LIPabQ4vlGYpAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycohUoiNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsPfTawssIAAAA=[0m[Pipeline] { (Run Integration Tests)
+[8mha:////4I1j+nu7ydVAHvPE1TiVZTSplCDCx8yOQawAWhvAGoRpAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSxM6xsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NGWcPtb4AAAA=[0m[Pipeline] isUnix
+[8mha:////4L98MWGLYCJKDKvRroRXZ/LmGY359AlImdEKTEMaW7N/AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0qJgQE2uUhROEJoSk0f9tkpJOnIircQdaKjHhwbItWe/1hioGOFEwzGnsLMbWst6PZk4sU+hunjJzdGUtYSSvmdBZkNLntQpKGlYVJWw4bDW2nqJFk2DHnXzI2ks09SWFeTtyKK0a4AkFn8lJhvQtU4D9fVSR8Mf5C4CpT1A2zWKH5Vl9AKAKZ6XCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4OO326WAkdfIcZ+VN89YJwY7312ZISR1yQFE7pLFIIrXAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD02yRsvCAAAA[0m[Pipeline] {
+[8mha:////4Lmh0ZlvpqtOakYbZ1BbfW0JiL/XMkCQah3mQaSfuycJAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIEGBqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAF9GxrMvgAAAA==[0m[Pipeline] isUnix
+[8mha:////4KluJVFBd2SBAALQVYoYahaAqU6BNq7xpo3sBieWhutcAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSICEkRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYMpTb3af24Q2yB4JLvgAAAA==[0m[Pipeline] sh
++ ./gradlew integrationTest
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:integrationTest
+
+BUILD SUCCESSFUL
+
+Total time: 25.936 secs
+[8mha:////4GSIslTOzW7maVLCXFB1SQYlHP+5MraUwKRWikJ9u3pVAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSICEhRJXWcsMLTGyME+vO2A5JxYv4Gn8gEImKLVY728zzBcsU4cjRYmuoc5Qah8H3dlo4cOwungds+YwNU2JvUJpBsjb1jJKzgTlFCQsBK0ON5+TIZliLVt1V5RXZ6pTj9B0ElE7f4AGFmMxZxfyFMcLm2uvE9PP8FcAYQoZyu//U7g3vIC99vgAAAA==[0m[Pipeline] }
+[8mha:////4CNCtXDLFFCSBzuvVRyVXy9uf8x7BwcUTrVrO0v7MhmtAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOKCBFQoFa3lhheYxBgn1l2wHZyKF/E1/oBFJCq2WO1sM683LIOHmr3BTlNvKTQWBzeavDCx76+OE3Z8wYYpsNModZLc6tOMkqOGOUUJCwErTY3jYMlEWItOPVTlFJnqHH3+jgJK297hCYXI5qh8/MLkYXMb28D08/wVwDQMEcr9Ntfu8AETHo4GvgAAAA==[0m[Pipeline] // dir
+[8mha:////4Ad1sf1rJgcxQBrBXudwcSfIt/nTmx8g3ec10lUSZ/TKAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIRCh2iSmul4QUmPowT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYMRPdJgKXZWeDeavMTEYbg6nkTPF9ExRXYoWpxa1tgs2HJCWFKUsJKwQeocR0smwVb26qEqp8hU5xTyd5RQWn2HJxQym5MK6QtzgN1t1JHp5/krgNn7BOVhn6uuP4NosSS+AAAA[0m[Pipeline] }
+[8mha:////4Fle8OuEf9a29B4uYOeg/UP/GilWkSgLoEDHgvYtgjm5AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiBTpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOWhzrWvP7sqItW+AAAA[0m[Pipeline] // stage
+[8mha:////4FuLtUVuKpZcn8iLAXT8L68Jdq/OzTrf5EZMXnJmuKzPAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRTkA5R0VpueIFJjHFi3QX7QlLxIr7GHzBEomKrnZVW83xBmSIcKDrZWew9psbLIYwuNzlR7C+BJtnRWTaEiYKV2k6aWntcUBNbWCIKWClYW2wCJY+OYaM6czdVMOiqE8e87RUUvr3BA4TKZjaRvzBH2F7HNhH+PH8FMA8MomYo6t3nWL4Bv7mGhcEAAAA=[0m[Pipeline] stage
+[8mha:////4Jf4b5UUnBFtshPu2CcYbdBJSQShvyzznIK5ioixbMFYAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0oBtiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsPBA4E38IAAAA=[0m[Pipeline] { (Run Mutation Tests)
+[8mha:////4J83Jr46kjxQ0qJnMSOZRogC+dZwJNACPa430E5KpLQXAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaegjSxMqxsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NSnc5Zr4AAAA=[0m[Pipeline] isUnix
+[8mha:////4KdEFlCNn7fn0HZZCX/4xvju2oGQJI91ZGiYS1NJaCuCAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0qVgQE2uUhROEJoSk0f9tkpJOnIircQdaKjHhwbItWe/1hioGOFEwzGnsLMbWst6PZk4sU+hunjJzdGUtYSSvmdBZkNLntQpKGlYVJWw4bDW2nqJFk2DHnXzI2ks09SWFeTtyKK0a4AkFn8lJhvQtU4D9fVSR8Mf5C4CpT1A2zWKH5Vl9AIy697vCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4ElizAILY2/FvTHFwGHtGg4q+wlh+LN7CIe03qdUSPO9AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QTAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD+jQxyjCAAAA[0m[Pipeline] {
+[8mha:////4LhyC3F9yc7g+E+vEmbGBhwmziaHZsDpVOouIGGo1A13AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSIIGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAGaE3/ivgAAAA==[0m[Pipeline] isUnix
+[8mha:////4Mh+XqAJjXIVKFbr8EvRmmJXps9Rfv3spMFzVWDUTcWaAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSICGEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK7+9Q+vAHbImT7vgAAAA==[0m[Pipeline] sh
++ ./gradlew pitest
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:pitest
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+10:11:18 PM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+10:11:18 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+10:11:18 PM PIT >> INFO : Created  39 mutation test units in pre scan
+10:11:19 PM PIT >> INFO : Sending 44 test classes to minion
+10:11:19 PM PIT >> INFO : Sent tests to minion
+10:11:19 PM PIT >> INFO : MINION : 10:11:19 PM PIT >> INFO : Checking environment
+10:11:19 PM PIT >> INFO : MINION : 10:11:19 PM PIT >> INFO : Found  5 tests
+10:11:19 PM PIT >> INFO : MINION : 10:11:19 PM PIT >> INFO : Dependency analysis reduced number of potential tests by 0
+10:11:19 PM PIT >> INFO : MINION : 10:11:19 PM PIT >> INFO : 5 tests received
+10:11:32 PM PIT >> INFO : MINION : 10:11:32 PM PIT >> WARNING : More threads at end of test (39) testContactSort(pt.isep.cms.contacts.client.ExampleGWTTest) than start. (4)
+/-\|/10:11:32 PM PIT >> INFO : Calculated coverage in 14 seconds.
+10:11:33 PM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+10:11:33 PM PIT >> INFO : Created  39 mutation test units
+/-\10:11:37 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:11:37 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:11:37 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+|/10:11:42 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:11:47 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:11:51 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:11:56 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:12:00 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:12:05 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:12:09 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+10:12:14 PM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\10:12:15 PM PIT >> INFO : Completed in 57 seconds
+================================================================================
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 16 Killed 4 (25%)
+> KILLED 1 SURVIVED 2 TIMED_OUT 3 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 10 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator
+>> Generated 1 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+>> Generated 4 Killed 3 (75%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 2 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
+>> Generated 154 Killed 1 (1%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 153 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator
+>> Generated 1 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator
+>> Generated 32 Killed 2 (6%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 30 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+>> Generated 8 Killed 4 (50%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 4 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator
+>> Generated 15 Killed 2 (13%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 13 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator
+>> Generated 3 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 3 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+>> Generated 47 Killed 6 (13%)
+> KILLED 3 SURVIVED 0 TIMED_OUT 3 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 41 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> scan classpath : < 1 second
+> coverage and dependency analysis : 14 seconds
+> build mutation tests : < 1 second
+> run mutation analysis : 42 seconds
+--------------------------------------------------------------------------------
+> Total  : 56 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 40/583 (7%)
+>> Generated 281 mutations Killed 22 (8%)
+>> Mutations with no coverage 257. Test strength 92%
+>> Ran 13 tests (0.05 tests per mutation)
+
+BUILD SUCCESSFUL
+
+Total time: 58.607 secs
+[8mha:////4CzwEFyXjd5exvNflVHfIb44Nj3fuqWvdb7KkEjNL1XGAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCAaJAqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9M4rYBvgAAAA==[0m[Pipeline] }
+[8mha:////4IAFpYAiWM3lFjUJpzKM1MDD/qTiOdGdWtcxUHmbIDRUAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiJKBBqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKZhiFDut7l2hw9/Ae29vgAAAA==[0m[Pipeline] // dir
+[8mha:////4I6nwp3l8L2MwC+fMSnHUh6QNuNT8l6cu8XJgicjeCmTAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMKRUKgQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygP+1x1/QH9EnfVvgAAAA==[0m[Pipeline] }
+[8mha:////4KzwLlE0pgF0fgL9RkQjnv80HShELPmuX3XL8AuQvlRnAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSBCpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOWhzrWvP/tUT4C+AAAA[0m[Pipeline] // stage
+[8mha:////4FN2hqbq7VKQ20WBD1Jhosqoe3V7/c/W0A4bhC133KdZAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BKWgpeYTThApR0VpueIGJjXFi3QX7QlLxIr7GHzBEomKrnZVW83xBlSIcKDrRWew9ptaLIYwuNzFR7C+BJtHRWbSEiYIVyk6KjD0uqIgtLClKWElYW2wDJY+OYSM7fdd10OjqE8e87SWU3tzgAYXMZtaRvzBH2F5Hkwh/nr8CmAeGomEod83nWL0Bs4L0PsEAAAA=[0m[Pipeline] stage
+[8mha:////4KDAwNArJBY7+BLe2TB3as2F9KUh4kCIRkowCkSIm7C9AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0oRNiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsP+Y+xAMIAAAA=[0m[Pipeline] { (Run Javadoc)
+[8mha:////4ClRpWsnXiKxGMxQZzciYV/VCUj7MX5E5qPGUXjDlDhwAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeghSxcaxsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4NlEULJr4AAAA=[0m[Pipeline] isUnix
+[8mha:////4Ptbiz/0nIQWKTY1kBhNEU4++OhzrDUkcLm8nh2Ay2fSAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0qhgQE2uUhROEJoSk0f9tkpJOnIircQdaKjHhwbItWe/1hioGOFEwzGnsLMbWst6PZk4sU+hunjJzdGUtYSSvmdBZkNLntQpKGlYVJWw4bDW2nqJFk2DHnXzI2ks09SWFeTtyKK0a4AkFn8lJhvQtU4D9fVSR8Mf5C4CpT1A2zWKH5Vl9ADLx94zCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4JZevTgX5zx6U2miQrcAyTPFnGT1V/A6YCgsfr1cV5bFAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0QiAhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LDyb6zSXCAAAA[0m[Pipeline] {
+[8mha:////4O2Wh1PN+yyEDXoHwFPu4psXjhAHR4NLKox1L+PckZmXAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSIYEQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN5s4RMC+AAAA[0m[Pipeline] isUnix
+[8mha:////4JNCXt1zkCIoAZcZQXaAKcmFjnAA+bZWr5ACfO7qxLevAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCA0JCqWgtN7zAJMY4se6C7eBUvIiv8QcsIlGxxWpnm3m9YRk81OwNdpp6S6GxOLjR5IWJfX91nLDjCzZMgZ1GqZPkVp9mlBw1zClKWAhYaWocB0smwlp06qEqp8hU5+jzdxRQ2vYOTyhENkfl4xcmD5vb2Aamn+evAKYhQrk75Npvhw+LPcATvgAAAA==[0m[Pipeline] sh
++ ./gradlew javadoc
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:javadoc/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/contacts/client/view/ContactsDialog.java:102: warning: no @param for type
+	public ContactsDialog(ShowcaseConstants constants, Type type) {
+	       ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/ContentWidget.java:40: warning: no @return
+	protected static String getSimpleName(Class<?> c) {
+	                        ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/Showcase.java:67: warning: no @param for content
+	public static String getContentWidgetToken(ContentWidget content) {
+	                     ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/Showcase.java:76: warning: no @param for <C>
+	public static <C extends ContentWidget> String getContentWidgetToken(Class<C> cwClass) {
+	                                               ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/Showcase.java:76: warning: no @param for cwClass
+	public static <C extends ContentWidget> String getContentWidgetToken(Class<C> cwClass) {
+	                                               ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/ShowcaseResources.java:46: warning: no @return
+  CssResource css();
+              ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/ShowcaseResources.java:63: warning: no @return
+  ImageResource locale();
+                ^
+/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java/pt/isep/cms/client/ShowcaseShell.java:131: warning: no @return
+	public ContentWidget getContent() {
+	                     ^
+
+8 warnings
+
+BUILD SUCCESSFUL
+
+Total time: 2.609 secs
+[8mha:////4JVYRXshHk0W61X5c/3fnzikxNIeu9GwBGV1kmx9SX3PAAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiChASSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wApAemcr4AAAA=[0m[Pipeline] }
+[8mha:////4L7SC7q3CywCyHNto9AWadNGh95lgRP9oG2zjOBBsw39AAAAph+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiIQEFSkVrueEFJjHGiXUXbAen4kV8jT9gEYmKLVY728zrDcvgoWZvsNPUWwqNxcGNJi9M7Pur44QdX7BhCuw0Sp0kt/o0o+SoYU5RwkLASlPjOFgyEdaiUw9VOUWmOkefv6OA0rZ3eEIhsjkqH78wedjcxjYw/Tx/BTANQ4Ryv821O3wAm2iNZL4AAAA=[0m[Pipeline] // dir
+[8mha:////4AAeAQdAD0xj98SdPLMkhpcE7yY8cOxvmXyoz87LLkp3AAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPMIpUGgQVVorDS8w8WGcWHfGdkgqXsTX+AMWkajYYrWzzbzesI4BThyM6JEGS7GzwrvR5CUmDsPV8SR6voiOKbJD0eLUssZmwZYTwpKihJWEDVLnOFoyCbayVw9VOUWmOqeQv6OE0uo7PKGQ2ZxUSF+YA+xuo45MP89fAczeJygP+1x1/QES2t9BvgAAAA==[0m[Pipeline] }
+[8mha:////4LklktewxO/pMGneOtSB19Jhp3WM26NhNcBf0CaIQ/zaAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSBBpEldZKwwtMbIwT687YDknFi/gaf8AiEhVbrHa2mdcb1jHAiYPBXtNgKXYWvRtNXjhxGK6OJ+z5gh1TZKex1VPLSjcLtpw0LClKWAnYaOocR0smwVb08iErJ8lU5xTydxRQWnWHJxQim5MM6QtzgN1tVJHp5/krgNn7BOWhzrWvPzza3Su+AAAA[0m[Pipeline] // stage
+[8mha:////4BzkSjeAgLDQ0iw8QQAHDZwloOlziUdZ6z5414E1o7gNAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYTTAA2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxIah2G0/x/INi0tAxMEAAAA=[0m[Pipeline] stage
+[8mha:////4PjCJG04FwZ90w3/1Uqq6rcHrTe0U+WIcpkZzPdLEQO9AAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoh0ogtiYo26cILQhJA0+r9NUtKJE3E17kBLJSY8WLYl673eUMYAJwqGO42dxdha3vvRzIlnCt3NU+aOrrwljOQ1b3RuSOnzWhtKGlYVDDYCthpbT9GiSbATTj5k5SWa6pLCvB0FMKsGeEIhZnKSIX3LFGB/H1Uk/HH+AmDqE7D6sFi9PMsP+urdAcIAAAA=[0m[Pipeline] { (Publish Javadoc)
+[8mha:////4H6ei6bl1XKwZr2I2UNvTCMo7bIthE/LJyMv+0FtACTqAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaegjSxcKxsmVoPAEmiBDmfwJEUnkir+YdRDNj5RY7+7Z5zxesY4AjBc2swsFg7AzzbtJlsUxhuDrKzNKFdYSRnGJCZUG9Oi0oKClYUtWw4rBR2DmKBnWCLbfyLhsnUTfnFMp34FCbfoQHVLyYkwzpC3OA3W3qI+HP81cAs09Qt+2n9v4N8tcxgr4AAAA=[0m[Pipeline] javadoc
+Publishing Javadoc
+[8mha:////4H/PIh0LKsl0HD8nLaka5/Bysgxm+XcTN+TtIpDDEdNwAAAApB+LCAAAAAAAAP9tjbEOwiAURV9rHFwd/Qi6NSbGyZWw+AXYIkLJexSodPKL/DX/QbSJk3e4uecu5/mCdQxwpKCZVTgYjJ1h3k26LJYpDFdHmVm6sI4wklNMqCyoV6cFBSUFS6oaVhw2CjtH0aBOsOVW3mXjJOrmnEL5Dhxq04/wgIoXc5IhfWEOsLtNfST8ef4KYPY+Qd3uP9W+AagoPJm+AAAA[0m[Pipeline] }
+[8mha:////4GbMLzS4GmdA6wWS5J+KSvuTr5MjwDXWkV8T5SUF3pLuAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSgYQQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN7eqacu+AAAA[0m[Pipeline] // stage
+[8mha:////4IUkGvrCis9UVOyiO65F9XK0eozVnJKutQwKDiTHcdb1AAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRDgUSBqGgtN7zAxMY4se6CfSGpeBFf4w8EIlGx1c5Kq3m+oMwJDpS8bBy2AXMdZBd7PzU5UGovkQbZ0FnWhJmik9oNmqw7zqiJHcwRBSwULB3WkXJAz7BSjbmbKhr01YnTtO0VFMHe4AFCTWY2ib8wJlhfe5sJf56/Ahg7BrFlKHabz7F8A4zR+jLBAAAA[0m[Pipeline] stage
+[8mha:////4GqJs2TghOEqKOWGnSHUpxCDwQkgo0SDOyidISLIRy+EAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUJgbE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAdsxXVDCAAAA[0m[Pipeline] { (Publish Unit Test Report)
+[8mha:////4DmMZfVCBDgEp3q1NVFSbBsBL+mqBcoPdndofpafHLV3AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiaCgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFN5B3ife+AAAA[0m[Pipeline] isUnix
+[8mha:////4P/HJgJ0EvvUFS7yEiWrulLwjwVPYZ6KsUdBngr0GpFUAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUiIEBMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfAAQTxvcwgAAAA==[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4MsMCTVTNwL3eHVeV1V5NjRWnqQGoSFaHsZCmohmCg+qAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0AIkBMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfABpxnKZwgAAAA==[0m[Pipeline] {
+[8mha:////4OQT4LQ1aiTRgS9Dk2eI2cESOLmboungxBIf3GRq0QvvAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgCgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFN/DO8Oq+AAAA[0m[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/reports/test to /var/jenkins_home/jobs/Part2_Task3_CMS/htmlreports/HTML_20Unit_20Test_20Report
+[8mha:////4CHhz6QiE762feRCTnrfi1ShXFFQSmMsS+r6FqwME47cAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSICgQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcr97lPbNwESVPK+AAAA[0m[Pipeline] }
+[8mha:////4JeVtY8aCgBFsaFcBYmaunH3Rfh1ZJfc7v3UyX0PG9/TAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSUKRAVLRWGl5gEmPsWHeO7eBUvIiv8QcCkajYYrWzzTxfsI4Bjhw0WkW9odga9G7U88LMob86zmj5gi1TZKewUbnhTp0WbDgpWFKUsBKwUdQ6joZ0gq2w8i4rJ0lX5xTm7yCgNN0ADyjEbE4ypC9MAXa3sYtMP89fAUzeJyjr+lP7NwdUbKe+AAAA[0m[Pipeline] // dir
+[8mha:////4HLwdtysF8SspAla2nF5wgMvi5S/YeDW71/iDDaqjL6zAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiKpAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGMIGcrd/lPbN/6HNLi+AAAA[0m[Pipeline] }
+[8mha:////4EHzVFHkzKMz9w0evvSJiqj/zm49IoUi5BeOXqNyZjOsAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJChxCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7Bs1kbwS+AAAA[0m[Pipeline] // stage
+[8mha:////4MC3ezVb3xOjIPYFlwOE6h2iNoaly33j0QfbnOtaXpxtAAAApx+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRDQYGEqGgtN7zAxMY4se6CfSGpeBFf4w8EIlGx1c5Kq3m+oMwJDpS8bBy2AXMdZBd7PzU5UGovkQbZ0FnWhJmik9oNmqw7zqiJHcwRBSwULB3WkXJAz7BSjbmbKhr01YnTtO0VFMHe4AFCTWY2ib8wJlhfe5sJf56/Ahg7BrFlKHabz7F8A2WhssTBAAAA[0m[Pipeline] stage
+[8mha:////4PIDIOmAk/RZUNBviDdhFIzzlXU2MBazjH++fUlodHNPAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogUNiTE1DXKwglCE0La6P/yk9JOnIircQdaKjHhwbItWe/1hiIynIidaCy2HmPtRRd6NyUxELfXQINo6CJqwkjBCmUHRcZWS1WULCzKclhJWFusA0WPLsFGNvqhy6DRlefE03aUkHtzhydkciInzelbRobtrTeR8Mf5C4CxS5AfdrPt52fxAUPegdTCAAAA[0m[Pipeline] { (Publish Integration Test Report)
+[8mha:////4FkunP5XsxIejj+cvwjgvD+UjbLjpGyuSmWQtJM5KG7gAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiqJAQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFNwEi9SW+AAAA[0m[Pipeline] isUnix
+[8mha:////4AE3cQaF/QDncLw4dJ8EKyH2BhHjMIdM8nTqLOFVv1ZMAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUiAUJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfACIoMdYwgAAAA==[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4OCW1aW6sZdoOCt05bypGrr7OI1Ipb1hqVeoXACkBjJeAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0gAEJMXWNsnCC0ISQNvq//KS0EyfiatyBlkpMeLBsS9Z7vaGIDCdiJxqLrcdYe9GF3k1JDMTtNdAgGrqImjBSsELZQZGx1VIVJQuLshxWEtYW60DRo0uwkY1+6DJodOU58bQdJeTe3OEJmZzISXP6lpFhe+tNJPxx/gJg7BLkh91s+/lZfADxKa4dwgAAAA==[0m[Pipeline] {
+[8mha:////4F23nfq/dCmP4Pu/I1oPh86upDCXp0Ofc6sBuWp6xWztAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSgISEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDhnK//dQuvAFhm4w4vgAAAA==[0m[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/reports/integrationTest to /var/jenkins_home/jobs/Part2_Task3_CMS/htmlreports/HTML_20Integration_20Test_20Report
+[8mha:////4BT+XsC8YeAArvwEOqt6bekIzc1kgo893jLhR/EM9lmDAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSIISEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgEnfoSDvgAAAA==[0m[Pipeline] }
+[8mha:////4PFMvabuHXxIQaaZqg8hJwfvQNhBnbVYV2DNUyBwzqkOAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSUICEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgEhOLzWvgAAAA==[0m[Pipeline] // dir
+[8mha:////4GOyZmnlzay7N0o5mLikyGS6kLLbIfpC7JxpXy7hMUtRAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiukiIitZKwwtMYowd686xHZyKF/E1/kAgEhVbrHa2mecL1jHAkYNGq6g3FFuD3o16Xpg59FfHGS1fsGWK7BQ2KjfcqdOCDScFS4oSVgI2ilrH0ZBOsBVW3mXlJOnqnML8HQSUphvgAYWYzUmG9IUpwO42dpHp5/krgMn7BGVdf2r/Btjr5Mm+AAAA[0m[Pipeline] }
+[8mha:////4OVYgUN6dTOSfv/dHs+GL3F/HW9zf6MwYA3x9hq6WLp5AAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCCUJUaS03vMDExjix7oztkFS8iK/xBwKRqNhitbPNPF+wTBGOHC22hjpHqXEYfG+nhQPH7uJ5wJbP2DAl9galGSRrU88oORuYU5SwELAy1HhOjmyGtWjVXVVeka1OOU7fQUDp9A0eUIjJnFXMXxgjbK69Tkw/z18BjCFkKHf7T23f6wi/db4AAAA=[0m[Pipeline] // stage
+[8mha:////4Fjxjebf70WkbtqdMb3fY6hn9ErBsX2iD6SnngiFpXn2AAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYRDQYMQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHILYMxW7zOZZv0arFYsEAAAA=[0m[Pipeline] stage
+[8mha:////4LsdM588qL3VzqmJh24HJKsp7vlcLTH+5mlLaAirvr2mAAAAph+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycogURoSYukZZOEFoQkgb/V9+UtqJE3E17kBLJSY8WLYl673eUESGE7ETjcXWY6y96ELvpiQG4vYaaBANXURNGClYoeygyNhqqYqShUVZDisJa4t1oOjRJdjIRj90GTS68px42o4Scm/u8IRMTuSkOX3LyLC99SYS/jh/ATB2CfLDbrb9/Cw+mJlT6cIAAAA=[0m[Pipeline] { (Publish Pit Mutation Test Report)
+[8mha:////4ILPaDBGmP/75xP6oLOmCdHklGjeEcp5l267r0M6xwmEAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIi6BCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwZyv32U7vwBqhInei+AAAA[0m[Pipeline] isUnix
+[8mha:////4DHI7OlV1aJijwe5/qWyjZytguP2GRihfmQV3qZgLrj5AAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUiAkhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LD1PnFWXCAAAA[0m[Pipeline] dir
+Running in /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students
+[8mha:////4GL2GjwePUy8XKyHk5Wb1qB+jdHb3w65B5Epor8h92XXAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycoh0gAUhpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYL8sJttPz+LDypufCDCAAAA[0m[Pipeline] {
+[8mha:////4N+poiAy0qNS3/JFEekjE0ojvco+ZBik0BXfuAEImhorAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSQIEQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUO63n9qFN8jx5PW+AAAA[0m[Pipeline] publishHTML
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/reports/pitest to /var/jenkins_home/jobs/Part2_Task3_CMS/htmlreports/HTML_20Pit_20Mutation_20Report
+[8mha:////4DA7BT1YL9FkBnUNhAIhBB5S/w3pJZIo9rNGhAXFRkYZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOLSICSEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgHSROg8vgAAAA==[0m[Pipeline] }
+[8mha:////4H3BUmTKGetjI73BVhY858vzbOmgVjZrp+pb5PJJXOCwAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJSUCCEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFDud5/avgHUAtBpvgAAAA==[0m[Pipeline] // dir
+[8mha:////4Mev4+KoGqNpFGHKH6tnShYOEJ85Qsaq8JRBlBpX2A9OAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiOhCiSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nffWr7Bi3RiHa+AAAA[0m[Pipeline] }
+[8mha:////4INqGiK5Oo5eMX8ckYJiSucmqs9dkqKGnGWh1phfOvwkAAAAox+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOJCGyEqWisNLzCJMXasO8d2cCpexNf4A4FIVGyx2tlmni9YxwBHDhqtot5QbA16N+p5YebQXx1ntHzBlimyU9io3HCnTgs2nBQsKUpYCdgoah1HQzrBVlh5l5WTpKtzCvN3EFCaboAHFGI2JxnSF6YAu9vYRaaf568AJu8TlHX9qf0bHjLTyr4AAAA=[0m[Pipeline] // stage
+[8mha:////4FUIXDFXK7dhRR3JPOVfDqyFDTCfskF23FUbNZgVoaEgAAAApx+LCAAAAAAAAP9tjTEOwjAQBC+JUtBS8ggnSHSIitZKwwuMY4wT6y7YF5yKF/E1/kAgEhVb7ay0mucLyhjgQMGKzmDvMGonBj/auYlEob94SqKjs9CEkbwRjUkNtea4YENsYEmWQyFhZVB7ig4tw1p26q4qr9BWJw7ztpeQu/YGD8jkbGYV+AtTgM11bCPhz/NXANPAkO0Yim1df57lGxpFDj/CAAAA[0m[Pipeline] stage
+[8mha:////4HjC8jQRDXt39uCLmudy6a+6ZWNTUzmsJy/+7dL5IMaoAAAAph+LCAAAAAAAAP9tjbEOgjAYhH8gDK6OPkSB2Ti5Nl18gkprbWn+H9oiTD6Rr+Y7iJA4ecPl7pLL93pDGQOcKBjmNHYWY2tZ70ezJDZR6G6eJuboylrCSF4zoSdBSp+3Kihp2JTlUHDYaWw9RYsmwZ47+ZCVl2iqSwrLduSQWzXAEzK+kJMMaS1zgMN9VJHwx/kLgLlPUDR1vXrz/ZYfJWyAvsQAAAA=[0m[Pipeline] { (JaCoCo Report)
+[8mha:////4L9/UMc6SzXb5aGqZ9+Irafr6gol6lLUtjgfYeMKwnfyAAAApB+LCAAAAAAAAP9tjTESgjAQRRcYC1tLD7GIrWNFm0njCWKIMZDZxSQIlSfyat5BBmas/MWf/37z3h/YxABnDhZbQ52jqB32frDzwpFDd/M8YstX1EyRvUFpRsmNqVeUnAysyXIoBGwNac/RkU2wE616qtIrsuUlhfk7Cchd84AXZGI2JxXSAlOA/X1oItPP81cAU5+gqA7V0sf+C6iwe5rAAAAA[0m[Pipeline] jacoco
+[JaCoCo plugin] Collecting JaCoCo coverage data...
+[JaCoCo plugin] **/**.exec;**/classes;**/src/main/java; locations are configured
+[JaCoCo plugin] Number of found exec files for pattern **/**.exec: 40
+[JaCoCo plugin] Saving matched execfiles:  /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.04_CMS_Unit_Tests/builds/10/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.04_CMS_Unit_Tests/builds/11/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.04_CMS_Unit_Tests/builds/11/jacoco/execFiles/exec1/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.04_CMS_Unit_Tests/builds/12/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.05_CMS_Integration_Tests/builds/10/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.05_CMS_Integration_Tests/builds/10/jacoco/execFiles/exec1/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.05_CMS_Integration_Tests/builds/11/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.05_CMS_Integration_Tests/builds/9/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec1/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec2/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec3/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec4/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec5/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec6/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec7/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec8/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/62/jacoco/execFiles/exec9/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec1/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec2/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec3/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec4/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec5/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec6/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec7/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec8/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/64/jacoco/execFiles/exec9/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec0/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec1/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec2/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec3/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec4/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec5/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec6/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec7/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec8/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/builds/65/jacoco/execFiles/exec9/jacoco.exec /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/jacoco/integrationTest.exec /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/jacoco/test.exec
+[JaCoCo plugin] Saving matched class directories for class-pattern: **/classes: 
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.04_CMS_Unit_Tests/htmlreports/Unit_20Test_20Report/classes 0 files
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task1_build_pipeline_sequential_build/jobs/Part2_Task1.05_CMS_Integration_Tests/htmlreports/Integration_20Test_20Report/classes 0 files
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/htmlreports/HTML_20Integration_20Test_20Report/classes 0 files
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/odsoft/class_assignment_part2/task4_scripted_pipeline_parallel_build/jobs/Part2_Task4_CMS/htmlreports/HTML_20Unit_20Test_20Report/classes 0 files
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/classes 63 files
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/reports/integrationTest/classes 0 files
+[JaCoCo plugin]  - /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/reports/test/classes 0 files
+[JaCoCo plugin] Saving matched source directories for source-pattern: **/src/main/java: 
+[JaCoCo plugin] Source Inclusions: **/*.java,**/*.groovy,**/*.kt,**/*.kts
+[JaCoCo plugin] Source Exclusions: 
+[JaCoCo plugin] - /var/jenkins_home/workspace/Part2_Task3_CMS/project/calculator/src/main/java 3 files
+[JaCoCo plugin] - /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/src/main/java 29 files
+[JaCoCo plugin] Loading inclusions files..
+[JaCoCo plugin] inclusions: []
+[JaCoCo plugin] exclusions: []
+[JaCoCo plugin] Thresholds: JacocoHealthReportThresholds [minClass=0, maxClass=0, minMethod=0, maxMethod=0, minLine=0, maxLine=0, minBranch=0, maxBranch=0, minInstruction=0, maxInstruction=0, minComplexity=0, maxComplexity=0]
+[JaCoCo plugin] Publishing the results..
+[JaCoCo plugin] Loading packages..
+[JaCoCo plugin] Done.
+[JaCoCo plugin] Overall coverage: class: 13.636364, method: 9.139785, line: 9.539474, branch: 9.615385, instruction: 18.374916, complexity: 8.823529
+[8mha:////4LWhiy+xHu/ajkSc3SYLV2NfM4RKxQKGwwA+ri8ElF0DAAAApB+LCAAAAAAAAP9tjTESgjAQRRcYC1tLD7HIWDpWtJk0niCGGAOZXUyCUHkir+YdZGDGyl/8+e837/2BTQxw5mCxNdQ5itph7wc7Lxw5dDfPI7Z8Rc0U2RuUZpTcmHpFycnAmiyHQsDWkPYcHdkEO9Gqpyq9IlteUpi/k4DcNQ94QSZmc1IhLTAF2N+HJjL9PH8FMPV9gqI6HJeuvgV3CW3AAAAA[0m[Pipeline] }
+[8mha:////4PYOglxcEtfxSB1zMtKvxeH4BfofgadoT7XKt0LTYe8RAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQTJDpEldZKwwtMbIwd687YDknFi/gaf8BKJCq2WO1sM+8PbGKAMwXNrMLBYOwN827UebGJwnBzNDFLV9YTRnKKdWrqSKp2xY6SgjVFCRWHrcLeUTSoE+y4FU9RO4G6vqSQvxOH0sgHvKDg2ZxESAvMAfb3UUbCn+evAGbvE1SH5rh08wUdeanfwAAAAA==[0m[Pipeline] // stage
+[8mha:////4ItiZLRrIidQBhU3hjRgb6F83l9kQfL4diT2n9pr3XEBAAAApx+LCAAAAAAAAP9tjTEOwjAQBM+JUtBS8ggHJKgQFa2VhheYxBgn1l2wLzgVL+Jr/IFAJCq22llpNc8XFDHAgYKVrcHOYayd7P1gpyYThe7iKcmWzrImjOSNrEyqqDHHGStiA3NEBrmChcHaU3RoGZaq1Xddeo22PHGYtr2CzDU3eIBQk5l14C+MAVbXoYmEP89fAYw9g9gy5Jv17vMs3qnUw2/CAAAA[0m[Pipeline] stage
+[8mha:////4EfB09kb+/JmB70s7zn4KYFoZiNdyNnG7Vh6eTlY3OEmAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ39bdWBl5BApDLCgTqxRF04QkhCSRv+XJKWdOBFX4w6UVmLCg2Vbst7rDWUMUFMwzGlsLUZpWed7MyU2UGivngbm6MIkYSSvWaOHhpQ+LbWhpGFRlkPBYaVReooWTYI1d+IhKi/QVOcUpu3IIbfqDk/I+EROIqS5jAE2t15Fwh/nLwDGLkGx2+5nP3y/5QeNKyY7xAAAAA==[0m[Pipeline] { (Deploy War File)
+[8mha:////4HJ2TUnOFL08e+PABQ3aVPbk1td0l92STQ2ru6hxWeRAAAAApR+LCAAAAAAAAP9tjTESwiAURH+SsbC19BBEGy2cVLZMGk+AgAhh/o9AJJUn8mrewUwyY+UWO/u2ee8PrGKAhoJhTmNnMUrLej+YabFMobt5yszRlUnCSF6zVueWlD4v2FLSsKQooeKw1ig9RYsmwYY78RS1F2jqSwrTd+JQWvWAFxR8MicR0gxjgO19UJHw5/krgLFPUO13h7mP/Rf0TcntwAAAAA==[0m[Pipeline] deploy
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/libs/cms_students-1.0.war to container Tomcat 9.x Remote with context Part2_Task4
+  Redeploying [/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/libs/cms_students-1.0.war]
+  Undeploying [/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/libs/cms_students-1.0.war]
+  Deploying [/var/jenkins_home/workspace/Part2_Task3_CMS/project/cms_students/build/libs/cms_students-1.0.war]
+[8mha:////4D6YjZ4QbdHnaBGwGkZUk8X0tmzM1o0Wakw/UH0lbSE1AAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQDDUJCqWitNLzA2MbYse6C7eBUvIiv8QeiRKJii9XONvP+wCoGaCgY5jR2FqO0rPeDmRbLFLqbp8wcXZkkjOQ1a3VuSenzgi0lDUuKEioOa43SU7RoEmy4E09Re4GmvqQwfScOpVUPeEHBJ3MSIc0wBtjeBxUJf56/Ahj7PkG13x3nPnwBXLZq8cAAAAA=[0m[Pipeline] }
+[8mha:////4PyyQagdvbE6AgykiqEt7GmMRVv8C35jz+HYSYKk5Mh+AAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQDBQVCqWitNLzA2MbYse6C7eBUvIiv8QeiRKJii9XONvP+wCoGaCgY5jR2FqO0rPeDmRbLFLqbp8wcXZkkjOQ1a3VuSenzgi0lDUuKEioOa43SU7RoEmy4E09Re4GmvqQwfScOpVUPeEHBJ3MSIc0wBtjeBxUJf56/Ahj7PkG13x3nPnwBUuwUzsAAAAA=[0m[Pipeline] // stage
+[8mha:////4DcPzsf+yDa7WDuiqL1E7XSiPpy79tEXKWtY23d1ntGXAAAApx+LCAAAAAAAAP9tjTEOwjAQBC+JUtBS8giHSHSIitZKwwuMY4wT6y7YF5KKF/E1/oAhEhVb7ay0mucLyhjgQMGKzmDvMGonBj/a1MREob94mkRHZ6EJI3kjGjM11Jrjgg2xgSVZDoWElUHtKTq0DGvZqbuqvEJbnTikbS8hd+0NHpDJZGYV+AtzgM11bCPhz/NXAPPAkO0Yirrefp7lG65OeZnCAAAA[0m[Pipeline] stage
+[8mha:////4PFdLhb07EM7dWR5lT7dCTKGx5YMA8VUDSTpCblVIUaqAAAAph+LCAAAAAAAAP9tjTEOwjAUQ39bdWBl5BApnRETa5SFE4QkhLTR/yVJaSdOxNW4A6GVmPBg2Zas93pDHQMcKVjWGewdRuXY4EebE5so9FdPE+vowhRhJG+YMJMgbU5rFZQMrCpKqDhsDCpP0aFNsOWdfMjGS7TNOYW8HTiUTt/hCQXP5CRDWsocYHcbdST8cf4CYB4SVG27X7z9fusPFL5hxcQAAAA=[0m[Pipeline] { (Smoke Test)
+[8mha:////4A1bWZBzlydI7hYmGOUaz/jdzsDi9coFrF6IkjpNrQxVAAAApx+LCAAAAAAAAP9tjTEOwjAUQ39bdWBl5BCpwoqYWKMunCA0ISSN/i9JSjtxIq7GHQitxIQHy7Zkvdcb6hjgSMEwp7G3GDvLBj+anNhEob96mpijC+sII3nNWj21pPRprS0lDauKEioBG42dp2jRJNgKJx+y8RJNc04hbwcBpVV3eEIhMjnJkJYyB9jdRhUJf5y/AJiHBBXnfPH991t/ANWAUNjEAAAA[0m[Pipeline] script
+[8mha:////4I140b/ZcqWoLI5KPdWsJCCxg8kgftDUp4uJEYniTq7AAAAApx+LCAAAAAAAAP9tjbEOgjAYhH8gDK6OPkQJOhon1obFJ6il1kLz/9gWy+QT+Wq+gxUSJ2+43F1y+V5vKL2DEznNeoWDQS8NG+2kU2KR3HC1FFlPFyYJPVnFWhVb6lSz1paCglVZDgWHjUJpyRvUAba8Fw9RWYG6OgeXtiOH3HR3eELGEzkIF5YyO9jdps4T/jh/ATCPAYq63i9++H7LD4CBkmTEAAAA[0m[Pipeline] {
+[8mha:////4FLo0P509EY8eJtxDdAZsm95KQcFqe9dMOe3lYRL6A+YAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjCDpEldZKwwtMbIwd687YDknFi/gaf8BKJCq2WO1sM+8PbGKAMwXNrMLBYOwN827UebGJwnBzNDFLV9YTRnKKdWrqSKp2xY6SgjVFCRWHrcLeUTSoE+y4FU9RO4G6vqSQvxOH0sgHvKDg2ZxESAvMAfb3UUbCn+evAGafoGqaw9JH/wUnbr2YwAAAAA==[0m[Pipeline] isUnix
+[8mha:////4Chb0tPgMSBXpNfQoYK2pBNdUj5KsGNy/qirqLxi48j5AAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjCFEhqrRWGl5gYmPsWHfGdkgqXsTX+ANWIlGxxWpnm3l/YBMDnCloZhUOBmNvmHejzotNFIabo4lZurKeMJJTrFNTR1K1K3aUFKwpSqg4bBX2jqJBnWDHrXiK2gnU9SWF/J04lEY+4AUFz+YkQlpgDrC/jzIS/jx/BTD7BFXTHJY++i9mX6aBwAAAAA==[0m[Pipeline] sh
++ curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr -
++ grep -q Amelie Crutcher
++ echo Amelia wasn't found! exit 1
+Amelia wasn't found! exit 1
+[8mha:////4C/Zus9r4e0p88AoH6cBJXyqliKx8DOs4ivA2IkrzX6rAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjCIkGUaW10vACExtjx7oztkNS8SK+xh+wEomKLVY728z7A5sY4ExBM6twMBh7w7wbdV5sojDcHE3M0pX1hJGcYp2aOpKqXbGjpGBNUULFYauwdxQN6gQ7bsVT1E6gri8p5O/EoTTyAS8oeDYnEdICc4D9fZSR8Of5K4DZ+wRV0xyXPnwBUQiOBMAAAAA=[0m[Pipeline] }
+[8mha:////4L29o7OZqQO/hGh1nHHQhVuE9nwnHcPvEVS4AdIDLqmZAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSj0FAgqrRWGl5gYmPsWHfGdkgqXsTX+ANWIlGxxWpnm3l/YBMDnCloZhUOBmNvmHejzotNFIabo4lZurKeMJJTrFNTR1K1K3aUFKwpSqg4bBX2jqJBnWDHrXiK2gnU9SWF/J04lEY+4AUFz+YkQlpgDrC/jzIS/jx/BTB7n6BqmuPShy9zM/7VwAAAAA==[0m[Pipeline] // script
+[8mha:////4PD2DgqZSqX0LiCdjHLMCqeLJn4f+hQX7Ad10g01hz4WAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjdEiIitZKwwtMYowd686cHZKKF/E1/oCVSFRssdrZZt4f2ESGE7ERTuNgMXZWBD+avMREPNw8TcLRVXSEkbwWrZ5a6vV5xZaShjVFCZWErcbOU7RoEuykU09Ve4WmviTO31FCafsHvKCQ2ZwUpwVmhv197CPhz/NXAHMICaqmOSzdfAEgEr+6wAAAAA==[0m[Pipeline] }
+[8mha:////4Jghej69sk1ruv80rPaQpW0TlbqW69v9XZAHzHV9d+H9AAAApB+LCAAAAAAAAP9tjTESgjAQRRcYC1tLD7FI6ThWtJk0niCGGAOZXUyCUHkir+YdZGDGyl/8+e837/2BTQxw5mCxNdQ5itph7wc7Lxw5dDfPI7Z8Rc0U2RuUZpTcmHpFycnAmiyHQsDWkPYcHdkEO9Gqpyq9IlteUpi/k4DcNQ94QSZmc1IhLTAF2N+HJjL9PH8FMPV9gqKqjksfvgIpz2vAAAAA[0m[Pipeline] // stage
+[8mha:////4PNVJnC3nENEoRVGEHjy7Z6UyP/nyjlTc5gStUSvxtjHAAAApx+LCAAAAAAAAP9tjTEOwjAQBM+JUtBS8ggHEB2iorXS8AKTGOPEugv2BafiRXyNPxCIRMVWOyut5vmCIgY4ULCyNdg5jLWTvR/s1GSi0F08JdnSWdaEkbyRlUkVNeY4Y0VsYI7IIFewMFh7ig4tw1K1+q5Lr9GWJw7TtleQueYGDxBqMrMO/IUxwOo6NJHw5/krgLFnEDuGfLNdf57FGzNUkajCAAAA[0m[Pipeline] stage
+[8mha:////4Dg98FtS//P9iGp7+/DRWyYfg+wFBuI5YMPrDJ7MbgbTAAAApx+LCAAAAAAAAP9tjbEOgjAYhH8gDK6OPkQRV+PE2rD4BLXUWmj+H9timXwiX813sELi5A2Xu0su3+sNpXdwIqdZr3Aw6KVho510SiySG66WIuvpwiShJ6tYq2JLnWrW2lJQsCrLoeCwUSgteYM6wJb34iEqK1BX5+DSduSQm+4OT8h4IgfhwlJmB7vb1HnCH+cvAOYxQFEf9ovX32/5AUfIQ0nEAAAA[0m[Pipeline] { (Email)
+[8mha:////4KiAHUMxM3jBPApsl2VLGNNH6jbj4ohtNmZPm2zJ1ZQ8AAAApB+LCAAAAAAAAP9tjTESgjAQRRcYC1tLDxEGWsfKNkPjCWKIMZDZDckiVJ7Iq3kHGZix8hd//vvNe39glyKcKVrRGewdJu1E8KNdlpgo9ndPk+joJjRhIm9EY6aGWnPZsCE2sCXLoZCwN6g9JYeW4SA79VSlV2jLK8flO0nIXTvACzK5mFlFXmGOcHyMbSL8ef4KYA4MRVVXa9fhC0BMCbfAAAAA[0m[Pipeline] emailext
+Sending email to: 1210107@isep.ipp.pt
+[8mha:////4Og+hYEUCYnZuO+u6J7YWKxUhkbiFVlf5kuohkBvLLLkAAAApB+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjQImo0lppeIGJjbFj3RnbIal4EV/jD1iJRMUWq51t5v2BTQxwpqCZVTgYjL1h3o06LzZRGG6OJmbpynrCSE6xTk0dSdWu2FFSsKYooeKwVdg7igZ1gh234ilqJ1DXlxTyd+JQGvmAFxQ8m5MIaYE5wP4+ykj48/wVwOx9gqo5HJduvvoSGh3AAAAA[0m[Pipeline] }
+[8mha:////4K45CMbUS423syq7mah7PUW+8+wstqo8PYuSOW9T1cLXAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQDiA6lorXS8AJjG2PHugu2g1PxIr7GH4gSiYotVjvbzPsDqxigoWCY09hZjNKy3g9mWixT6G6eMnN0ZZIwktes1bklpc8LtpQ0LClKqDisNUpP0aJJsOFOPEXtBZr6ksL0nTiUVj3gBQWfzEmENMMYYHsfVCT8ef4KYOz7BNX+cJx79wXiHLqvwAAAAA==[0m[Pipeline] // stage
+[8mha:////4EhTMEEnTkRB+U73iGEUD4HnJ9ADUhoZSxYy7fyPz3A5AAAApx+LCAAAAAAAAP9tjTEOwjAQBM+JUtBS8ghHIKgQFa2VhheYxBgn1l2wLzgVL+Jr/IFAJCq22llpNc8XFDHAgYKVrcHOYayd7P1gpyYThe7iKcmWzrImjOSNrEyqqDHHGStiA3NEBrmChcHaU3RoGZaq1Xddeo22PHGYtr2CzDU3eIBQk5l14C+MAVbXoYmEP89fAYw9g9gy5OvN7vMs3oDFXPjCAAAA[0m[Pipeline] stage
+[8mha:////4LRgpUaHwBSNRFK9yHrQV4d1WPDi62YpICNo0nvmn7iVAAAAqB+LCAAAAAAAAP9tjTEOwjAUQ39bdWBl5BCpQIIFdWKNunCCkISQNPq/JCntxIm4GnegtBITHizbkvVebyhjgJqCYU5jazFKyzrfmymxgUJ79TQwRxcmCSN5zRo9NKT0aakNJQ2LshwKDiuN0lO0aBKsuRMPUXmBpjqnMG1HDrlVd3hCxidyEiHNZQywufUqEv44fwEwdgmK7W4/++H7LT/vj+XMxAAAAA==[0m[Pipeline] { (UI Tests)
+[8mha:////4A3+K6cMwDriYcP2CgmQrrVOfbWr59eFsGTyQPfaug+NAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQjKKBAqWitNLzA2MbYse6C7eBUvIiv8QeiRKJii9XONvP+wCoGaCgY5jR2FqO0rPeDmRbLFLqbp8wcXZkkjOQ1a3VuSenzgi0lDUuKEioOa43SU7RoEmy4E09Re4GmvqQwfScOpVUPeEHBJ3MSIc0wBtjeBxUJf56/Ahj7BNVuf5j72H8BHLG7wMAAAAA=[0m[Pipeline] input
+Please validate if the UI is as expected and then enter the correct input.
+[8mha:////4KPwgTQ5TSfulml5XivHGmalZcLkHOo/vSmHACYIWwiMAAABIB+LCAAAAAAAAP9dj7FOwzAYhP+kAlbEiNjY7SaEOi3qVJBAKlAp3aPUddIkxjb2H9ouPASvAQsSr8BD8AJszAwsBDrB3XC3fCfd0wdsOQun2hakEqouleMlMbIp2kaW2ta51EviGmO0ReJQGEdKZRokk+tker42wspS1Vcaxe5b5+WTfb374I2h01iJsDeusruMykwVNEFbquJkZeFg0cydVoRr5bQU5M9Kb/j4PHwwrz74F7AthSpwsZm7hXvwWnz/Hz7a5A8MG3k+wMq0ZQfBO0RIF4hmQGkQMtJtHQzibhzQSs/oJLMYptPM1Ufp6DKhx/T3HQ15xCMW8bzP+oGIw2jGmBBBzvsZz2c9Ro3VXIj52Y3B9TdS4rnhRgEAAA==[0mProceed or [8mha:////4Mdo7C6Or3eQBJD7xTOG99o8iTv8L8TotJOSQS6pV6kdAAABGx+LCAAAAAAAAP9dkL1OwzAUhW9SlRkxIjZ2uwmhToo6lQGkApXSga1yjPNr2cZ2aFn6ELwGLEi8Ag/BC7AxM7AQyATnDucs35HuefqAoTVwqkyBai6bSlpWIS3aoktorUyTC7VGttVaGYes49qiSurWocVVujy719yISjaXyvHdt8HLJ/l698Gbw6A1wsHevKZ3FAsqC5w6U8niZGPgoGxvrJKIKWmV4OhPy3j6+Dx90K8++OewI7gsXNnX3cIWvA7f/4fPev+BoZfnA2x0F4YOvEMH16VzeoJxEBI06i6YxKM4wLXK8IIaF66W1DZHq9lFio/x73c4ZBGLSMTyhCQBj8MoI4TzIGcJZXk2Jphm3SDfoN6YzT8BAAA=[0mAbort
+[8mha:////4KvE2bIE9h/9e2FuOu34Nr36lhVz+VH6n+Esioaq2VzSAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQjKBASSkVrpeEFxjbGjnUXbAen4kV8jT8QJRIVW6x2tpn3B1YxQEPBMKexsxilZb0fzLRYptDdPGXm6MokYSSvWatzS0qfF2wpaVhSlFBxWGuUnqJFk2DDnXiK2gs09SWF6TtxKK16wAsKPpmTCGmGMcD2PqhI+PP8FcDY9wmq3f449+ELo9N5gcAAAAA=[0m[Pipeline] }
+[8mha:////4KmP0Zu7RSjF417qKADtosfv4yDorT8Wz88HNfTDiwQCAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQjkCgQSkVrpeEFxjbGjnUXbAen4kV8jT8QJRIVW6x2tpn3B1YxQEPBMKexsxilZb0fzLRYptDdPGXm6MokYSSvWatzS0qfF2wpaVhSlFBxWGuUnqJFk2DDnXiK2gs09SWF6TtxKK16wAsKPpmTCGmGMcD2PqhI+PP8FcDY9wmq3f449+ELrYkHvsAAAAA=[0m[Pipeline] // stage
+[8mha:////4O47BLU9At7EX9M1PSuGVX08ONMVRet2DwYJoqDIwwA/AAAApx+LCAAAAAAAAP9tjTEOwjAQBM+JUtBS8ggHBB2iorXS8AKTGOPEugv2BafiRXyNPxCIRMVWOyut5vmCIgY4ULCyNdg5jLWTvR/s1GSi0F08JdnSWdaEkbyRlUkVNeY4Y0VsYI7IIFewMFh7ig4tw1K1+q5Lr9GWJw7TtleQueYGDxBqMrMO/IUxwOo6NJHw5/krgLFnEDuGfLNdf57FG4df5g7CAAAA[0m[Pipeline] stage
+[8mha:////4LTHKXfjDigB8oit6ek1XPD0zlS9Z6DIMsQNnb4AMwLrAAAApx+LCAAAAAAAAP9tjbEOgjAYhH8gDK6OPkSROBon1obFJ6il1kLz/9gWy+QT+Wq+gxUSJ2+43F1y+V5vKL2DEznNeoWDQS8NG+2kU2KR3HC1FFlPFyYJPVnFWhVb6lSz1paCglVZDgWHjUJpyRvUAba8Fw9RWYG6OgeXtiOH3HR3eELGEzkIF5YyO9jdps4T/jh/ATCPAYr6sF+8/n7LD3YaojLEAAAA[0m[Pipeline] { (Declarative: Post Actions)
+[8mha:////4Jd5uokMk/JrwUuCg2QfKCM6FV3DAW7tNQYAJbGZ3qrVAAAApB+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjQImo0lppeIGJjbFj3RnbIal4EV/jD1iJRMUWq51t5v2BTQxwpqCZVTgYjL1h3o06LzZRGG6OJmbpynrCSE6xTk0dSdWu2FFSsKYooeKwVdg7igZ1gh234ilqJ1DXlxTyd+JQGvmAFxQ8m5MIaYE5wP4+ykj48/wVwOwTVM2xWfrgvzQysKHAAAAA[0m[Pipeline] deleteDir
+[8mha:////4OwL4EpXli5JYn3fWi1VuIQFI2I9PWWzuYtO+awhTtEzAAAApB+LCAAAAAAAAP9tjbEOgjAURR8QB1dHP6KEMBon14bFL6il1kLzXmkfwuQX+Wv+gwQSJ+9wc89dzvsDuxThTNGKzmDvMGkngh/tssREsb97mkRHN6EJE3kjGjM11JrLhg2xgS1ZDoWEvUHtKTm0DAfZqacqvUJbXjku30lC7toBXpDJxcwq8gpzhONjbBPhz/NXAHNgKKq6WrsOX3UDq7jAAAAA[0m[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[8mha:////4K6WM3zynX7HGSWTgljG5/tGPoqmB+dMOXZ40jKBE/MAAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjCDpEldZKwwtMbIwd687YDknFi/gaf8BKJCq2WO1sM+8PbGKAMwXNrMLBYOwN827UebGJwnBzNDFLV9YTRnKKdWrqSKp2xY6SgjVFCRWHrcLeUTSoE+y4FU9RO4G6vqSQvxOH0sgHvKDg2ZxESAvMAfb3UUbCn+evAGafoGoOzdJH/wWyler3wAAAAA==[0m[Pipeline] isUnix
+[8mha:////4GknE38BjEddQBiSfL1ydPIdwEM/WWcG48xErbaHmL2PAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjCFEhqrRWGl5gYmPsWHfGdkgqXsTX+ANWIlGxxWpnm3l/YBMDnCloZhUOBmNvmHejzotNFIabo4lZurKeMJJTrFNTR1K1K3aUFKwpSqg4bBX2jqJBnWDHrXiK2gnU9SWF/J04lEY+4AUFz+YkQlpgDrC/jzIS/jx/BTD7BFVzaJY++i/zpPHuwAAAAA==[0m[Pipeline] sh
++ git config user.name Jorge Gonçalves
+fatal: not in a git directory
+Error when executing success post condition:
+hudson.AbortException: script returned exit code 128
+	at org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution.handleExit(DurableTaskStep.java:659)
+	at org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution.check(DurableTaskStep.java:605)
+	at org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution.run(DurableTaskStep.java:549)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+[8mha:////4MCGmL6BP9y53Mds4hU3QeuYu/3xzYwJA+ZKzab/28YEAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjCIkGUaW10vACExtjx7oztkNS8SK+xh+wEomKLVY728z7A5sY4ExBM6twMBh7w7wbdV5sojDcHE3M0pX1hJGcYp2aOpKqXbGjpGBNUULFYauwdxQN6gQ7bsVT1E6gri8p5O/EoTTyAS8oeDYnEdICc4D9fZSR8Of5K4DZJ6iaQ7P00X8BMPfcxcAAAAA=[0m[Pipeline] isUnix
+[8mha:////4As+rzHTojYiBvVitJAOW7x8bZLMx/yZSQSNaj2kUv3dAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjiIICUaW10vACExtjx7oztkNS8SK+xh+wEomKLVY728z7A5sY4ExBM6twMBh7w7wbdV5sojDcHE3M0pX1hJGcYp2aOpKqXbGjpGBNUULFYauwdxQN6gQ7bsVT1E6gri8p5O/EoTTyAS8oeDYnEdICc4D9fZSR8Of5K4DZJ6iaQ7P00X8BccbH3MAAAAA=[0m[Pipeline] sh
++ git config user.name Jorge Gonçalves
+fatal: not in a git directory
+Error when executing failure post condition:
+hudson.AbortException: script returned exit code 128
+	at org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution.handleExit(DurableTaskStep.java:659)
+	at org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution.check(DurableTaskStep.java:605)
+	at org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution.run(DurableTaskStep.java:549)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+[8mha:////4L+9TFUWxaAJLpqeIoclcNZtOuP87riivKIjYg3FYWZvAAAAph+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYSjiAYJUaW10vACExtjx7oztkNS8SK+xh+wEomKLVY728z7A5sY4ExBM6twMBh7w7wbdV5sojDcHE3M0pX1hJGcYp2aOpKqXbGjpGBNUULFYauwdxQN6gQ7bsVT1E6gri8p5O/EoTTyAS8oeDYnEdICc4D9fZSR8Of5K4DZ+wRVczgu3XwB33esysAAAAA=[0m[Pipeline] }
+[8mha:////4Jt1Y3i3/B3JdVavjxwtdxg6bDqU6VnOZ52AY/42GSLxAAAApR+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQDokIoFa2VhhcY2xg71l2wHZyKF/E1/kCUSFRssdrZZt4fWMUADQXDnMbOYpSW9X4w02KZQnfzlJmjK5OEkbxmrc4tKX1esKWkYUlRQsVhrVF6ihZNgg134ilqL9DUlxSm78ShtOoBLyj4ZE4ipBnGANv7oCLhz/NXAGPfJ6j2h+Pcuy/9TNwbwAAAAA==[0m[Pipeline] // stage
+[8mha:////4Br9Iey1jABTfrg9c+wzMBgEub8w3t3pQCK5Z+OsNJRcAAAApB+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQDUjpERWul4QUmNsaJdWfsC07Fi/gafyAiEhVb7UwzrzesUoQjRSt6g4PD1DkR/GjnJzLF4eopi54uoiNM5I1oTW5Jm9OCLbGBZUUJlYS1wc5TcmgZNrJXD1V7hbY+c5zdQULp9B2eUMi5zCryF6YI29uoE+Gv8zcAUwgM1b7ZMRTNB/cKUNO+AAAA[0m[Pipeline] }
+[8mha:////4LpWC4t32ItgB7sSvaWJ3h+xtkRGFkQv9Ycp3NcZ4cnuAAAApB+LCAAAAAAAAP9tjTEOwjAQBM+JKGgpeYSjCDpERWul4QUmNsaJdRfsC07Fi/gafyAiEhVb7UwzrzesUoQjRSc7i73H1Ho5hNHNT2aK/TVQlh1dZEuYKFjZ2NyQsacFG2ILy0QBpYK1xTZQ8ugYNqrTD10Fja46c5zdQUHhzR2eINRcZh35C1OE7W00ifDX+RuAaRgYynpfM4jdB+S2VHC+AAAA[0m[Pipeline] // node
+[8mha:////4Hj24HUg9qXyJlQ1J/WlVZUC2h7ltyMAO7rex5P4z0s2AAAApB+LCAAAAAAAAP9tjTEOwjAQBC+JKGgpeYQjIjpERWul4QUmNsaJdWfsC07Fi/gafyAiEhVb7UwzrzesUoQjRSt6g4PD1DkR/GjnJzLF4eopi54uoiNM5I1oTW5Jm9OCLbGBZUUJlYS1wc5TcmgZNrJXD1V7hbY+c5zdQULp9B2eUMi5zCryF6YI29uoE+Gv8zcAUwgM1W7fMBTNB6L880C+AAAA[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 128
+Finished: FAILURE

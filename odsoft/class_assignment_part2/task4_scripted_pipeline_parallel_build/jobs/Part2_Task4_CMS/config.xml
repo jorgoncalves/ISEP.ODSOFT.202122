@@ -165,7 +165,7 @@ pipeline {
                     if(isUnix())
                     {
                     sh (&quot;&quot;&quot;
-                        curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts --stderr - | if grep -q \&quot;Amelie Crutcher\&quot; 
+                        curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \&quot;Amelie Crutcher\&quot; 
                         then 
                             echo \&quot;Amelia was found!\&quot; 
                         else 
@@ -173,7 +173,7 @@ pipeline {
                         fi
                     &quot;&quot;&quot;)
                     } else {
-                        bat &quot;curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts&quot;
+                        bat &quot;curl -sI http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts&quot;
                     }
                 }
             }
