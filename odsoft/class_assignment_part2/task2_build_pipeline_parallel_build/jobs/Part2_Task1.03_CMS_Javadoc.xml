@@ -1,0 +1,55 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>3</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <customWorkspace>Part2_Task1_CMS_Workspace</customWorkspace>
+  <builders>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy@2.4">
+      <source class="hudson.plugins.groovy.StringSystemScriptSource">
+        <script plugin="script-security@1.78">
+          <script>System.setProperty(&quot;hudson.model.DirectoryBrowserSupport.CSO&quot;,&quot;&quot;)</script>
+          <sandbox>false</sandbox>
+        </script>
+      </source>
+    </hudson.plugins.groovy.SystemGroovy>
+    <hudson.plugins.gradle.Gradle plugin="gradle@1.37.1">
+      <switches></switches>
+      <tasks>javadoc</tasks>
+      <rootBuildScriptDir>$WORKSPACE/project/cms_students</rootBuildScriptDir>
+      <buildFile></buildFile>
+      <gradleName>(Default)</gradleName>
+      <useWrapper>true</useWrapper>
+      <makeExecutable>true</makeExecutable>
+      <useWorkspaceAsHome>false</useWorkspaceAsHome>
+      <wrapperLocation>$WORKSPACE/project/cms_students</wrapperLocation>
+      <passAllAsSystemProperties>false</passAllAsSystemProperties>
+      <projectProperties></projectProperties>
+      <passAllAsProjectProperties>false</passAllAsProjectProperties>
+    </hudson.plugins.gradle.Gradle>
+  </builders>
+  <publishers>
+    <hudson.tasks.JavadocArchiver plugin="javadoc@1.6">
+      <javadocDir>$WORKSPACE/project/cms_students/build/docs/javadoc</javadocDir>
+      <keepAll>false</keepAll>
+    </hudson.tasks.JavadocArchiver>
+  </publishers>
+  <buildWrappers/>
+</project>

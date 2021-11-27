@@ -327,12 +327,16 @@ To finalize things up, we are using the **post** stage, to send the tags to the 
             command("git config user.email 1210107@isep.ipp.pt")
             command("git tag -m 'Task4 Build #${BUILD_NUMBER} Passed'-a Task4-Build-#${BUILD_NUMBER}-Passed")
             command("git push --tags")
+            deleteDir()
+            cleanWs()
         }
         failure {
             command("git config user.name 'Jorge Gonçalves'")
             command("git config user.email 1210107@isep.ipp.pt")
             command("git tag -m 'Task4 Build #${BUILD_NUMBER} Failed' -a Task4-Build-#${BUILD_NUMBER}-Failed")
             command("git push --tags")
+            deleteDir()
+            cleanWs()
         }
     }
 
