@@ -323,12 +323,16 @@ To finalize things up, we are using the **post** stage, to send the tags to the 
 ```Groovy
    post{
         success {
-            command("git tag -m 'Build #${BUILD_NUMBER} Passed'-a Build-#${BUILD_NUMBER}-Passed")
+            command("git tag -m 'Task4 Build #${BUILD_NUMBER} Passed'-a Task4-Build-#${BUILD_NUMBER}-Passed")
             command("git push --tags")
+            deleteDir()
+            cleanWs()
         }
         failure {
-            command("git tag -m 'Build #${BUILD_NUMBER} Failed' -a Build-#${BUILD_NUMBER}-Failed")
+            command("git tag -m 'Task4 Build #${BUILD_NUMBER} Failed' -a Task4-Build-#${BUILD_NUMBER}-Failed")
             command("git push --tags")
+            deleteDir()
+            cleanWs()
         }
     }
 
@@ -336,12 +340,9 @@ To finalize things up, we are using the **post** stage, to send the tags to the 
 
 ## Additional Step
 
-Since we always recreate the workspace, to finish's things up, we have the below stage:
+Since we always recreate the workspace, to finish's things up, we have added the below functions to the post success and failed stages:
 
 ```Groovy
-post {
-    always {
-        cleanWs()
-    }
-}
+    deleteDir()
+    cleanWs()
 ```

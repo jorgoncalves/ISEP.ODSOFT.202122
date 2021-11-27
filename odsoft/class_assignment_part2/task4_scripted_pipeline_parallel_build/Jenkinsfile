@@ -173,10 +173,14 @@ pipeline {
             success {
                 command("git tag -m 'Build #${BUILD_NUMBER} Passed'-a Build-#${BUILD_NUMBER}-Passed")
                 command("git push --tags")
+                deleteDir()
+                cleanWs()
             }
             failure {
                 command("git tag -m 'Build #${BUILD_NUMBER} Failed' -a Build-#${BUILD_NUMBER}-Failed")
                 command("git push --tags")
+                deleteDir()
+                cleanWs()
             } 
             always { 
                 cleanWs()
