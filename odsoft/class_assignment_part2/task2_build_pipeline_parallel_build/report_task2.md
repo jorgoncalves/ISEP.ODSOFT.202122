@@ -44,10 +44,10 @@ This criteria was used because it would increase the changes of finding support 
 
 ## Pipeline design
 
-This approach was design having in mind that some jobs are execute in a parallel. On the **UI Acceptance Manual Tests** is it expected that the user triggers **Failed** or **Success** so that the pipeline finishes and link to jobs are included on teh email sent.
-![Pipeline](./images/Pipeline.png)
+This approach was design having in mind that some jobs are execute in a parallel. On the **UI Acceptance Manual Tests** is it expected that the user triggers **Failed** or **Success** so that the pipeline finishes and link to jobs are included on the email sent.
+![Pipeline](./images/sketch.png)
 
-We choose a design that wanted to accomplish that some jobs executed simultaneous would make full pipeline run faster. For that reason automated tests, such us, Unit, Integrations and Mutation and also Javadoc are done at the same time. 
+We choose a design that wanted to accomplish that some jobs executed simultaneous would make full pipeline run faster. For that reason automated tests, such us, Unit, Integrations and Mutation and also Javadoc are done at the same time.
 
 ## Checkout
 
@@ -64,7 +64,7 @@ As for the Build job, we are using the **Custom workspace**, previously created 
 
 Regarding the build in itself, we are using the **gradle wrapper** that already came with the project, but it could be also used the gradle, if properly configured with the version requested for the project. We start by specifying the wrapper location with **${workspace}/project/cms_students** and defining the tasks **clean build** to be execute. **clean** to remove any previous artifacts that could be wrongfully sent to the repo, and **build** to initiate the build itself. Since we have a project within a project (our build.gradle isn't top level) we must specify the **Root Build script** that in this case is the same as the wrapper location.
 
-The job finishes doing a **Post-build Actions** that has the propose of triggering the next jobs, **Part2_Task1.03_CMS_Javadoc**, **Part2_Task1.04_CMS_Unit_Tests**,  **Part2_Task1.05_CMS_Integration_Tests** and  **Part2_Task1.06_CMS_Mutation_Tests**.
+The job finishes doing a **Post-build Actions** that has the propose of triggering the next jobs, **Part2_Task1.03_CMS_Javadoc**, **Part2_Task1.04_CMS_Unit_Tests**, **Part2_Task1.05_CMS_Integration_Tests** and **Part2_Task1.06_CMS_Mutation_Tests**.
 
 ![build](./images/build.png)
 
@@ -203,7 +203,6 @@ To do the **UI Acceptance Manual Test** job we dont need nether the workspace no
 
 This job has two **Post-build Actions**.exec\*\*
 
-
 The first action, **Editable Email Notification** will send an email to the **Project Recipient List** informing that the pipeline is waiting for the UI approval.
 
 The last action, **Build other projects (manual step)**, will add both Part2_Task1.10_CMS_CI_Feedback_Success and Part2_Task1.10_CMS_CI_Feedback_Failed as part of the pipeline. After the user checks how the UI is, he should do a manual execution of the corresponding job.
@@ -258,9 +257,6 @@ The final action, we just send a email to the user informing that the pipeline a
 
 This task has the propose notifying users by email.
 
-
-The  action, we just send a email to the user informing that the pipeline as concluded with our $BUILD_STATUS and the logs with attachment.
+The action, we just send a email to the user informing that the pipeline as concluded with our $BUILD_STATUS and the logs with attachment.
 
 ![ci_feedback](./images/failed.png)
-
-
