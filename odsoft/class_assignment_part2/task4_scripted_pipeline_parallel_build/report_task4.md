@@ -4,7 +4,7 @@
 
 The presented class assignment is done under the context of the below task context.
 
-**Task 4** - ask 4 Configure a Jenkins Pipeline using a Scripted Pipeline, to perform a parallel build.
+**Task 4** - Configure a Jenkins Pipeline using a Scripted Pipeline, to perform a parallel build.
 
 As for the pipeline stages, it was given the following Stages:
 
@@ -272,7 +272,7 @@ stage("Smoke Test") {
             if(isUnix())
             {
                 sh ("""
-                curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\"
+                curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\"
                 then
                     echo \"Amelia was found!\"
                 else
@@ -280,7 +280,7 @@ stage("Smoke Test") {
                 fi
                 """)
             } else {
-                bat "curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts"
+                bat "curl -sI http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts"
             }
         }
     }
@@ -323,12 +323,16 @@ To finalize things up, we are using the **post** stage, to send the tags to the 
 ```Groovy
    post{
         success {
+            command("git config user.name 'Jorge Gonçalves'")
+            command("git config user.email 1210107@isep.ipp.pt")
             command("git tag -m 'Task4 Build #${BUILD_NUMBER} Passed'-a Task4-Build-#${BUILD_NUMBER}-Passed")
             command("git push --tags")
             deleteDir()
             cleanWs()
         }
         failure {
+            command("git config user.name 'Jorge Gonçalves'")
+            command("git config user.email 1210107@isep.ipp.pt")
             command("git tag -m 'Task4 Build #${BUILD_NUMBER} Failed' -a Task4-Build-#${BUILD_NUMBER}-Failed")
             command("git push --tags")
             deleteDir()
@@ -340,9 +344,11 @@ To finalize things up, we are using the **post** stage, to send the tags to the 
 
 ## Additional Step
 
-Since we always recreate the workspace, to finish's things up, we have added the below functions to the post success and failed stages:
+Since we always recreate the workspace to finish's up, we have added the another stage to post, that as the propose of cleaning the workspace:
 
 ```Groovy
+always {
     deleteDir()
     cleanWs()
+}
 ```

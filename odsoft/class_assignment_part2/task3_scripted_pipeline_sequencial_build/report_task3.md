@@ -1,10 +1,10 @@
-# Class assignment Part 2 (CMS Students) Task 4
+# Class assignment Part 2 (CMS Students) Task 3
 
 ## Requirements
 
 The presented class assignment is done under the context of the below task context.
 
-**Task 3** - ask to Configure a Jenkins Pipeline using a Scripted Pipeline, to perform a sequential build;
+**Task 3** - Configure a Jenkins Pipeline using a Scripted Pipeline , to perform a sequential build;
 
 As for the pipeline stages, it was given the following Stages:
 

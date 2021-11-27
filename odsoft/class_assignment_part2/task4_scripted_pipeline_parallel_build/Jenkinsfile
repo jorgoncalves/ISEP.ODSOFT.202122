@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stage("Tests and Javadoc") {
+        stage("Tests & Javadoc") {
             parallel {
                 stage("Run Unit Tests") {
                     steps {
@@ -60,6 +60,7 @@ pipeline {
 
         stage("Parallel Publisher") {
             parallel {
+
                 stage("Publish Javadoc") {
                     steps {
                         javadoc javadocDir: "project/cms_students/build/docs/javadoc",
@@ -131,14 +132,7 @@ pipeline {
 
         stage("Deploy War File") {
             steps {
-                deploy adapters: [
-                    tomcat9(
-                        credentialsId: '83e750f1-e55f-4dfb-a342-a90cabbe21b9', 
-                        path: '', 
-                        url: 'http://tomcat:8181/')
-                    ], 
-                contextPath: 'Part2_Task4', 
-                onFailure: false, war: 'project/cms_students/build/libs/cms_students-1.0.war'
+                deploy adapters: [tomcat9(credentialsId: '83e750f1-e55f-4dfb-a342-a90cabbe21b9', path: '', url: 'http://tomcat:8181/')], contextPath: 'Part2_Task4', onFailure: false, war: 'project/cms_students/build/libs/cms_students-1.0.war'
             }
         }
         stage("Smoke Test") {
@@ -146,9 +140,16 @@ pipeline {
                 script {
                     if(isUnix())
                     {
-                        sh ("curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\" then echo \"Amelia was found!\" else echo \"Amelia wasn't found!\" exit 1 fi")
+                    sh ("""
+                        curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\" 
+                        then 
+                            echo \"Amelia was found!\" 
+                        else 
+                            echo \"Amelia wasn't found!\" exit 1 
+                        fi
+                    """)
                     } else {
-                        bat "curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts"
+                        bat "curl -sI http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts"
                     }
                 }
             }
@@ -169,22 +170,23 @@ pipeline {
                 input "Please validate if the UI is as expected and then enter the correct input."
             }
         }
-        post {
-            success {
-                command("git tag -m 'Build #${BUILD_NUMBER} Passed'-a Build-#${BUILD_NUMBER}-Passed")
-                command("git push --tags")
-                deleteDir()
-                cleanWs()
-            }
-            failure {
-                command("git tag -m 'Build #${BUILD_NUMBER} Failed' -a Build-#${BUILD_NUMBER}-Failed")
-                command("git push --tags")
-                deleteDir()
-                cleanWs()
-            } 
-            always { 
-                cleanWs()
-            }
+    }
+    post {
+        success {
+            command("git config user.name 'Jorge Gonçalves'")
+            command("git config user.email 1210107@isep.ipp.pt")
+            command("git tag -m 'Task4 Build #${BUILD_NUMBER} Passed'-a Task4-Build-#${BUILD_NUMBER}-Passed")
+            command("git push --tags")
+            deleteDir()
+            cleanWs()
+        }
+        failure {
+            command("git config user.name 'Jorge Gonçalves'")
+            command("git config user.email 1210107@isep.ipp.pt")
+            command("git tag -m 'Task4 Build #${BUILD_NUMBER} Failed' -a Task4-Build-#${BUILD_NUMBER}-Failed")
+            command("git push --tags")
+            deleteDir()
+            cleanWs()
         }
     }
 }
