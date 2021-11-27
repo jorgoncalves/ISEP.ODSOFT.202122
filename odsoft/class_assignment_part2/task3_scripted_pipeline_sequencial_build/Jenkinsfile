@@ -1,0 +1,178 @@
+
+pipeline {
+    agent any
+    stages {
+        stage("Checkout") {
+            steps {
+                checkout([
+                        $class: "GitSCM", 
+                        branches: [[name: "*/master"]], 
+                        extensions: [[$class: "WipeWorkspace"]], 
+                        userRemoteConfigs: [
+                            [credentialsId: "333bd6ce-1181-4a3f-975c-5f15aecd87dd", 
+                            name: "origin", 
+                            url: "git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git"]
+                        ]
+                    ])
+            }
+        }
+
+        stage("Build") {
+            steps {
+                    dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                        command("./gradlew clean build")
+                    }
+            }
+        }
+        stage("Run Unit Tests") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    command("./gradlew test")
+                }
+            }
+        }
+        stage("Run Integration Tests") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    command("./gradlew integrationTest")
+                }
+            }
+        }
+        stage("Run Mutation Tests") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    command("./gradlew pitest")
+                }
+            }
+        }
+        stage("Run Javadoc") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    command("./gradlew javadoc")
+                }
+            }
+        }
+        stage("Publish Javadoc") {
+            steps {
+                javadoc javadocDir: "project/cms_students/build/docs/javadoc",
+                keepAll: true
+            }
+        }
+        stage("Publish Unit Test Report") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    publishHTML(
+                        [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: false,
+                            reportDir: "build/reports/test",
+                            reportFiles: "index.html",
+                            reportName: "HTML Unit Test Report",
+                            reportTitles: ""
+                        ]
+                    )
+                }
+            }
+        }
+        stage("Publish Integration Test Report") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    publishHTML(
+                        [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: false,
+                            reportDir: "build/reports/integrationTest",
+                            reportFiles: "index.html",
+                            reportName: "HTML Integration Test Report",
+                            reportTitles: ""
+                            ]
+                    )
+                }
+            }
+        }
+        stage("Publish Pit Mutation Test Report") {
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    publishHTML(
+                        [
+                            allowMissing: false,
+                            alwaysLinkToLastBuild: false,
+                            keepAll: false,
+                            reportDir: "build/reports/pitest",
+                            reportFiles: "index.html",
+                            reportName: "HTML Pit Mutation Report",
+                            reportTitles: ""
+                            ]
+                        )
+                }
+            }
+        }
+        stage("JaCoCo Report") {
+            steps {
+                jacoco()
+            }
+        }
+        stage("Deploy War File") {
+            steps {
+                deploy adapters: [
+                    tomcat9(
+                        credentialsId: '83e750f1-e55f-4dfb-a342-a90cabbe21b9', 
+                        path: '', 
+                        url: 'http://tomcat:8181/')
+                    ], 
+                contextPath: 'Part2_Task4', 
+                onFailure: false, war: 'project/cms_students/build/libs/cms_students-1.0.war'
+            }
+        }
+        stage("Smoke Test") {
+            steps {
+                script {
+                    if(isUnix())
+                    {
+                        sh ("curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\" then echo \"Amelia was found!\" else echo \"Amelia wasn't found!\" exit 1 fi")
+                    } else {
+                        bat "curl -sI http://tomcat:8181/Part2_Task1/Showcase.html/#/!CwContacts"
+                    }
+                }
+            }
+        }
+        stage("Email") {
+            steps {
+                    emailext ( 
+                        to: "1210107@isep.ipp.pt",
+                        subject: "Build ${env.BUILD_NUMBER} - UI Acceptance manual test",
+                        body: "Please validate if the UI is as expected and then trigger the corresponding job."
+                    )
+            }
+        }
+        stage("UI Tests") {
+            steps {
+                input "Please validate if the UI is as expected and then enter the correct input."
+            }
+        }
+        post { 
+            always { 
+                cleanWs()
+            }
+        }
+    }
+}
+
+
+def command(command) {
+    if (isUnix() && command != null) {
+        sh command
+    } else {
+        bat command
+    }
+}
+
+def directory(directory) {
+  newDir=directory
+  if (!isUnix()) {
+    newDir = newDir.replace('/','\\')
+  }
+  return newDir
+}
