@@ -61,3 +61,26 @@ Groovy plugin installed
 
 https://plugins.jenkins.io/htmlpublisher/
 https://plugins.jenkins.io/seleniumhtmlreport/ x
+
+
+---
+
+SMTP configuration
+
+
+---
+
+
+---
+Smoke test
+curl -v --silent http://tomcat:8181/Part2_Task1/Showcase.html\#\!CwContacts --stderr - | if grep -q "Amelie Crutcher"
+then
+    echo "Amelia was found!"
+else
+	echo "Amelia wasn't found!"
+    exit 1
+fi
+
+---
+
+Talk about parametrized parameters
