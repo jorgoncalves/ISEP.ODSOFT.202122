@@ -1,0 +1,42 @@
+Started by upstream project "[8mha:////4PUrHpAcRlftGbDHAMXH5JJMDZ5Lx0c7CgGTD2RvigCVAAAAtx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzVEgZt/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfQDG9osQ4AAAAA==[0mPart2_Task1.01_CMS_RepositoryCheckout" build number [8mha:////4FpefSB0NTuzpO257sLdPIv5Cg3UAVK4iaLHnij2h5ygAAAAuR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZd/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfWNDAPRgsgbiAAAA[0m31
+originally caused by:
+ Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[Gradle] - Launching build.
+[cms_students] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/gradlew clean build
+Starting a Gradle Daemon, 6 busy and 1 incompatible and 1 stopped Daemons could not be reused, use --status for details
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:clean UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:gwtCompile
+Compiling module pt.isep.cms.Showcase
+   Compiling 6 permutations
+      Compiling permutation 0...
+      Compiling permutation 1...
+      Compiling permutation 2...
+      Compiling permutation 3...
+      Compiling permutation 4...
+      Compiling permutation 5...
+   Compile of permutations succeeded
+   Compilation succeeded -- 31.075s
+Linking into /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/putnami/out/showcase; Writing extras to /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/putnami/extra/showcase
+   Link succeeded
+   Linking succeeded -- 0.324s
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:war
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:assemble
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:gwtCheck SKIPPED
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileTestJava
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processTestResources
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:testClasses
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:test
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:check
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:build
+
+[8mha:////4IZfF4hV9Hc2uH4SHVkDZ+eBjHCBDchl7FNBJ9huSFfQAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 42.027 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+Triggering a new build of [8mha:////4HVpYZ+9UDrCkJ1tZf1BkT1BOsHI5ZG34Qzt5uKwqHd5AAAAqx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAypEgYF/az8JP2AxKISo/iQxOJsQz0D43hn3+B4L6DRKfnJ+gBtS1cy1QAAAA==[0mPart2_Task1.03_CMS_Javadoc
+Finished: SUCCESS

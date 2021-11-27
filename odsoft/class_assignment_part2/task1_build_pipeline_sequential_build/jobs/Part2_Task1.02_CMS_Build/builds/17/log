@@ -1,0 +1,14 @@
+Started by upstream project "[8mha:////4PUrHpAcRlftGbDHAMXH5JJMDZ5Lx0c7CgGTD2RvigCVAAAAtx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzVEgZt/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfQDG9osQ4AAAAA==[0mPart2_Task1.01_CMS_RepositoryCheckout" build number [8mha:////4HYyeTnqv+WaUSYbIhetsfnzMnS9fd9rkZhzjFZq9BAXAAAAuR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZd/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfUMjAMxTja3iAAAA[0m12
+originally caused by:
+ Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[Gradle] - Launching build.
+[ca2] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/odsoft/ca2/gradlew clean build
+Starting a Gradle Daemon, 3 busy Daemons could not be reused, use --status for details
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:clean
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:gwtCompile
+Compiling module pt.isep.cms.Showcase

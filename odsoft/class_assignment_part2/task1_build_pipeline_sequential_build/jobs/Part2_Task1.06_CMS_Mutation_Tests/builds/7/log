@@ -1,0 +1,141 @@
+Started by upstream project "[8mha:////4MUeK7X9MPZZc2z591H7twBu+MHFnELE7oFQk7QCSXXgAAAAth+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyVEgYt/az8JP2AxKISo/iQxOJsQz0D03hn3+B4z7yS1PSixJLM/Lz4kNTikmJ9ADj2Po/fAAAA[0mPart2_Task1.05_CMS_Integration_Tests" build number [8mha:////4GH4KhQZOO9ylweXcVEgFA2tfSOAZmwx3PXYA6JayYREAAAAuB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYd/az8JP2AxKISo/iQxOJsQz0D03hn3+B4z7yS1PSixJLM/Lz4kNTikmJ9Q0MA/WTQvOEAAAA=[0m11
+originally caused by:
+ Started by upstream project "[8mha:////4LzI5yVIaVVsJ5lOb8+fW7Ei18A8R+ZPnSfGoN5pfrpwAAAArx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzZEgZl/az8JP2AxKISo/iQxOJsQz0Dk3hn3+D40LzMkviQ1OKSYn0Akq0uktgAAAA=[0mPart2_Task1.04_CMS_Unit_Tests" build number [8mha:////4BiPc5VlYUuJjAK3cSm3OD8/Y/gOODuDmLzGqm/GdorQAAAAsR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZV/az8JP2AxKISo/iQxOJsQz0Dk3hn3+D40LzMkviQ1OKSYn1DIwBQvO+92gAAAA==[0m12
+ originally caused by:
+  Started by upstream project "[8mha:////4HVpYZ+9UDrCkJ1tZf1BkT1BOsHI5ZG34Qzt5uKwqHd5AAAAqx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAypEgYF/az8JP2AxKISo/iQxOJsQz0D43hn3+B4L6DRKfnJ+gBtS1cy1QAAAA==[0mPart2_Task1.03_CMS_Javadoc" build number [8mha:////4CEMTQdSTYfvgTepbCtj37cAAJJZsD5zug+2F6aQC+JdAAAArR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYl/az8JP2AxKISo/iQxOJsQz0D43hn3+B4L6DRKfnJ+oYWAFwyRdjXAAAA[0m18
+  originally caused by:
+   Started by upstream project "[8mha:////4Cu7YmK/qZz/3gCTbn5Xf4wwbps7A9oBFxNI+yxpNvFuAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyJEgY5/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9AOnzgkLTAAAA[0mPart2_Task1.02_CMS_Build" build number [8mha:////4Hf6NwXqxt3IXFqUcbI9zeDy6rZ+mHJ+MHp9q/qUllqGAAAArB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYF/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9IwsA7Mo0JNUAAAA=[0m28
+   originally caused by:
+    Started by upstream project "[8mha:////4PUrHpAcRlftGbDHAMXH5JJMDZ5Lx0c7CgGTD2RvigCVAAAAtx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzVEgZt/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfQDG9osQ4AAAAA==[0mPart2_Task1.01_CMS_RepositoryCheckout" build number [8mha:////4JzZ1IsPpSoJT9EcSvB8WMdaTusvF10tF2CU50AIqMoEAAAAuR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZd/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfWMjAE4xu5/iAAAA[0m32
+    originally caused by:
+     Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[Gradle] - Launching build.
+[cms_students] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/gradlew pitest
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileTestJava UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processTestResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:testClasses UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:pitest
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+WARNING. Support for Gradle <4.0 in gradle-pitest-plugin is deprecated (due to incompatible changes in Gradle itself).
+11:28:34 AM PIT >> INFO : Verbose logging is disabled. If you encounter a problem, please enable it before reporting an issue.
+11:28:35 AM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+11:28:35 AM PIT >> INFO : Created  39 mutation test units in pre scan
+11:28:35 AM PIT >> INFO : Sending 44 test classes to minion
+11:28:35 AM PIT >> INFO : Sent tests to minion
+11:28:35 AM PIT >> INFO : MINION : 11:28:35 AM PIT >> INFO : Checking environment
+11:28:36 AM PIT >> INFO : MINION : 11:28:36 AM PIT >> INFO : Found  5 tests
+11:28:36 AM PIT >> INFO : MINION : 11:28:36 AM PIT >> INFO : Dependency analysis reduced number of potential tests by 0
+11:28:36 AM PIT >> INFO : MINION : 11:28:36 AM PIT >> INFO : 5 tests received
+11:28:46 AM PIT >> INFO : MINION : 11:28:46 AM PIT >> WARNING : More threads at end of test (40) testContactSort(pt.isep.cms.contacts.client.ExampleGWTTest) than start. (4)
+/-\|/11:28:46 AM PIT >> INFO : Calculated coverage in 11 seconds.
+11:28:47 AM PIT >> INFO : Incremental analysis reduced number of mutations by 0
+11:28:47 AM PIT >> INFO : Created  39 mutation test units
+/-\11:28:51 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:28:51 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:28:51 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+|/11:28:56 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:00 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:05 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:10 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:14 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:19 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:23 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+11:29:28 AM PIT >> WARNING : Minion exited abnormally due to TIMED_OUT
+-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\11:29:28 AM PIT >> INFO : Completed in 53 seconds
+================================================================================
+- Mutators
+================================================================================
+> org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
+>> Generated 16 Killed 4 (25%)
+> KILLED 1 SURVIVED 2 TIMED_OUT 3 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 10 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator
+>> Generated 1 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator
+>> Generated 4 Killed 3 (75%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 2 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
+>> Generated 154 Killed 1 (1%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 153 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator
+>> Generated 1 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 1 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator
+>> Generated 32 Killed 2 (6%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 30 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.MathMutator
+>> Generated 8 Killed 4 (50%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 4 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator
+>> Generated 15 Killed 2 (13%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 1 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 13 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator
+>> Generated 3 Killed 0 (0%)
+> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 3 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+>> Generated 47 Killed 6 (13%)
+> KILLED 3 SURVIVED 0 TIMED_OUT 3 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 41 
+--------------------------------------------------------------------------------
+================================================================================
+- Timings
+================================================================================
+> pre-scan for mutations : < 1 second
+> scan classpath : < 1 second
+> coverage and dependency analysis : 11 seconds
+> build mutation tests : < 1 second
+> run mutation analysis : 41 seconds
+--------------------------------------------------------------------------------
+> Total  : 53 seconds
+--------------------------------------------------------------------------------
+================================================================================
+- Statistics
+================================================================================
+>> Line Coverage: 40/583 (7%)
+>> Generated 281 mutations Killed 22 (8%)
+>> Mutations with no coverage 257. Test strength 92%
+>> Ran 13 tests (0.05 tests per mutation)
+
+[8mha:////4IZfF4hV9Hc2uH4SHVkDZ+eBjHCBDchl7FNBJ9huSFfQAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 54.756 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/reports/pitest to /var/jenkins_home/jobs/Part2_Task1.06_CMS_Mutation_Tests/htmlreports/HTML_20Report
+Triggering a new build of [8mha:////4HSTv7iVuPIloBX32kynPsgKdNHglQpe+ThkhWRZ0D7rAAAAqx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzJEgZ5/az8JP2AxKISo/iQxOJsQz0D83hn3+B4l9SCnPxKfQDrfG5u1AAAAA==[0mPart2_Task1.07_CMS_Deploy
+Finished: SUCCESS

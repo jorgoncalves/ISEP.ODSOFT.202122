@@ -1,0 +1,13 @@
+Started by upstream project "[8mha:////4GFTuRVGkaGgY/i3B4Z4siPTKvAmdJEVRilXFaKEErZeAAAAth+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyVEgYt/az8JP2AxKISo/iQxOJsQz3DeGff4Pig1IL84syS/KJK54zU5Oz80hJ9AJHK2pPfAAAA[0mPart2_Task1.1_CMS_RepositoryCheckout" build number [8mha:////4BTqXF3tTyeq6ExCH8EulM2xzWUEkIRT/ozT1K603RL6AAAAth+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBm39rPwk/YDEohKj+JDE4mxDPcN4Z9/g+KDUgvzizJL8okrnjNTk7PzSEn1zAGJ5q5LgAAAA[0m7
+originally caused by:
+ Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[Gradle] - Launching build.
+[ca2] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/odsoft/ca2/gradlew clean build
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:clean
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:gwtCompile
+Compiling module pt.isep.cms.Showcase

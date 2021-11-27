@@ -1,0 +1,12 @@
+Started by upstream project "[8mha:////4PP5S/YpSxpzm1o1zjP26routJ+EFKUMgjKElOZ1r2FQAAAAsB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy5EgYV/az8JP2AxKISo/iQxOJsQz0D83hn3+D44MriktTc+JDU4hJ9ACOjKIXZAAAA[0mPart2_Task1.07_CMS_System_Test" build number [8mha:////4Cp3bI4qqSoAe0kmQiBkr4dRnYs2sZAQortE2MqUgMNqAAAAsh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgY1/az8JP2AxKISo/iQxOJsQz0D83hn3+D44MriktTc+JDU4hJ9IwMAySXMFdsAAAA=[0m20
+originally caused by:
+ Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/Part2_Task1.08_Smoke_Test
+[Part2_Task1.08_Smoke_Test] $ /bin/sh -xe /tmp/jenkins13161796863325903830.sh
++ + curlgrep -q -v 'Amelie Crutcher' --silent
+ 'http://tomcat:8181/Part2_Task1/Showcase.html#!CwContacts' --stderr -
++ echo 'Amelia was found!'
+Amelia was found!
+Triggering a new build of [8mha:////4HEiljs7vLN220kwSSm3LWn5EICvjdS7mRlFsplDuUv/AAAAvh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAydEgYj/az8JP2AxKISo/iQxOJsQz0Dy3hn3+D4UM94x+Tk1IKSxLzk1HjfxLzSxJz4kNTiEn0AwkxVdecAAAA=[0mPart2_Task1.09_CMS_UI_Acceptance_Manual_Test
+Finished: SUCCESS

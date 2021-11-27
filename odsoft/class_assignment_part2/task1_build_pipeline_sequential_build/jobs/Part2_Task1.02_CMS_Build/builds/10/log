@@ -1,0 +1,13 @@
+Started by upstream project "[8mha:////4Po9bO5UYeR7ckaaLMgQ/DTQxoVzDzbM+C0h8h2q0CNcAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAylEgYN/az8JP2AxKISo/iQxOJsw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfQCIegzV3QAAAA==[0mPart2_Task1_CMS_RepositoryCheckout" build number [8mha:////4HyW6/i5iJCfl5ezteCWHdrWESLhcaUeN+eEntcJdp0MAAAAtB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBk39rPwk/YDEohKj+JDE4mzDeGff4Pig1IL84syS/KJK54zU5Oz80hJ9UwAhkGyK3gAAAA==[0m5
+originally caused by:
+ Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[Gradle] - Launching build.
+[ca2] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/odsoft/ca2/gradlew clean build
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:clean UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:gwtCompile
+Compiling module pt.isep.cms.Showcase

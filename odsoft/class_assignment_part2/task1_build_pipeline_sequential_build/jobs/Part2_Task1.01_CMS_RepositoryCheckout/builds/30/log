@@ -1,0 +1,16 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+The recommended git tool is: NONE
+using credential 333bd6ce-1181-4a3f-975c-5f15aecd87dd
+ > git rev-parse --resolve-git-dir /var/jenkins_home/Part2_Task1_CMS_Workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git # timeout=10
+Fetching upstream changes from git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git fetch --tags --force --progress -- git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Build was aborted
+Aborted by [8mha:////4CUkzLYCKJnZBAsVqRRdNNrmwB7azL/4LqDdotWGaDoDAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL90rzsvPzyPAATbMabwgAAAA==[0munknown
+Finished: ABORTED

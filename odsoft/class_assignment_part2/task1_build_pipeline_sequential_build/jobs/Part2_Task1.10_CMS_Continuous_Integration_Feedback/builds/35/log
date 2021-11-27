@@ -1,0 +1,34 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace_2
+The recommended git tool is: NONE
+using credential 333bd6ce-1181-4a3f-975c-5f15aecd87dd
+ > git rev-parse --resolve-git-dir /var/jenkins_home/Part2_Task1_CMS_Workspace_2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git # timeout=10
+Fetching upstream changes from git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git fetch --tags --force --progress -- git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 035f8f99dfcc010ef5314b8e0b471b18bc10795a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 035f8f99dfcc010ef5314b8e0b471b18bc10795a # timeout=10
+Commit message: "updated folder structure"
+ > git rev-list --no-walk 74fd9a73d9ec0873cab61eb85c634857c509fa40 # timeout=10
+No emails were triggered.
+The recommended git tool is: NONE
+using credential 333bd6ce-1181-4a3f-975c-5f15aecd87dd
+ > git tag -l Build_35-Test2 # timeout=10
+ > git tag -a -f -m The build 35 as concluded with status - Test2.
+
+jenkins-Part2_Task1.10_CMS_Continuous_Integration_Feedback-35 Build_35-Test2 # timeout=10
+Pushing tag Build_35-Test2 to repo origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git push git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git Build_35-Test2 -f # timeout=10
+Email was triggered for: Always
+Sending email for trigger: Always
+Finished: SUCCESS

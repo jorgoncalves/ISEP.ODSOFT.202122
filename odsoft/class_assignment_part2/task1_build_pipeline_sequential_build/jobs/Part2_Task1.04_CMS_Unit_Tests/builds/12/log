@@ -1,0 +1,47 @@
+Started by upstream project "[8mha:////4HVpYZ+9UDrCkJ1tZf1BkT1BOsHI5ZG34Qzt5uKwqHd5AAAAqx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAypEgYF/az8JP2AxKISo/iQxOJsQz0D43hn3+B4L6DRKfnJ+gBtS1cy1QAAAA==[0mPart2_Task1.03_CMS_Javadoc" build number [8mha:////4CEMTQdSTYfvgTepbCtj37cAAJJZsD5zug+2F6aQC+JdAAAArR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYl/az8JP2AxKISo/iQxOJsQz0D43hn3+B4L6DRKfnJ+oYWAFwyRdjXAAAA[0m18
+originally caused by:
+ Started by upstream project "[8mha:////4Cu7YmK/qZz/3gCTbn5Xf4wwbps7A9oBFxNI+yxpNvFuAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyJEgY5/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9AOnzgkLTAAAA[0mPart2_Task1.02_CMS_Build" build number [8mha:////4Hf6NwXqxt3IXFqUcbI9zeDy6rZ+mHJ+MHp9q/qUllqGAAAArB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYF/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9IwsA7Mo0JNUAAAA=[0m28
+ originally caused by:
+  Started by upstream project "[8mha:////4PUrHpAcRlftGbDHAMXH5JJMDZ5Lx0c7CgGTD2RvigCVAAAAtx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzVEgZt/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfQDG9osQ4AAAAA==[0mPart2_Task1.01_CMS_RepositoryCheckout" build number [8mha:////4JzZ1IsPpSoJT9EcSvB8WMdaTusvF10tF2CU50AIqMoEAAAAuR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZd/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfWMjAE4xu5/iAAAA[0m32
+  originally caused by:
+   Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[Gradle] - Launching build.
+[cms_students] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/gradlew test
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileTestJava UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processTestResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:testClasses UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:test UP-TO-DATE
+
+[8mha:////4IZfF4hV9Hc2uH4SHVkDZ+eBjHCBDchl7FNBJ9huSFfQAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 0.835 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+[JaCoCo plugin] Collecting JaCoCo coverage data...
+[JaCoCo plugin] **/test.exec;**/classes;**/src/main/java; locations are configured
+[JaCoCo plugin] Number of found exec files for pattern **/test.exec: 1
+[JaCoCo plugin] Saving matched execfiles:  /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/jacoco/test.exec
+[JaCoCo plugin] Saving matched class directories for class-pattern: **/classes: 
+[JaCoCo plugin]  - /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/classes 63 files
+[JaCoCo plugin]  - /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/reports/test/classes 0 files
+[JaCoCo plugin] Saving matched source directories for source-pattern: **/src/main/java: 
+[JaCoCo plugin] Source Inclusions: **/*.java,**/*.groovy,**/*.kt,**/*.kts
+[JaCoCo plugin] Source Exclusions: 
+[JaCoCo plugin] - /var/jenkins_home/Part2_Task1_CMS_Workspace/project/calculator/src/main/java 3 files
+[JaCoCo plugin] - /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java 29 files
+[JaCoCo plugin] Loading inclusions files..
+[JaCoCo plugin] inclusions: []
+[JaCoCo plugin] exclusions: []
+[JaCoCo plugin] Thresholds: JacocoHealthReportThresholds [minClass=0, maxClass=0, minMethod=0, maxMethod=0, minLine=0, maxLine=0, minBranch=0, maxBranch=0, minInstruction=0, maxInstruction=0, minComplexity=0, maxComplexity=0]
+[JaCoCo plugin] Publishing the results..
+[JaCoCo plugin] Loading packages..
+[JaCoCo plugin] Done.
+[JaCoCo plugin] Overall coverage: class: 9.090909, method: 5.9139786, line: 6.414474, branch: 5.769231, instruction: 6.473365, complexity: 5.882353
+[htmlpublisher] Archiving HTML reports...
+[htmlpublisher] Archiving at PROJECT level /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/reports/test to /var/jenkins_home/jobs/Part2_Task1.04_CMS_Unit_Tests/htmlreports/Unit_20Test_20Report
+Triggering a new build of [8mha:////4MUeK7X9MPZZc2z591H7twBu+MHFnELE7oFQk7QCSXXgAAAAth+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyVEgYt/az8JP2AxKISo/iQxOJsQz0D03hn3+B4z7yS1PSixJLM/Lz4kNTikmJ9ADj2Po/fAAAA[0mPart2_Task1.05_CMS_Integration_Tests
+Finished: SUCCESS

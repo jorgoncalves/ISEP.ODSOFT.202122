@@ -1,0 +1,27 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential username_password_https
+Cloning the remote Git repository
+Cloning repository https://jorgoncalves@bitbucket.org/mei-isep/odsoft-21-22-rcc-g401.git
+ > git init /var/jenkins_home/Part2_Task1_CMS_Workspace # timeout=10
+Fetching upstream changes from https://jorgoncalves@bitbucket.org/mei-isep/odsoft-21-22-rcc-g401.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_ASKPASS to set credentials cjKWr2j9QZa34fAVNpu5
+ > git fetch --tags --force --progress -- https://jorgoncalves@bitbucket.org/mei-isep/odsoft-21-22-rcc-g401.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://jorgoncalves@bitbucket.org/mei-isep/odsoft-21-22-rcc-g401.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 035f8f99dfcc010ef5314b8e0b471b18bc10795a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 035f8f99dfcc010ef5314b8e0b471b18bc10795a # timeout=10
+Commit message: "updated folder structure"
+ > git rev-list --no-walk 035f8f99dfcc010ef5314b8e0b471b18bc10795a # timeout=10
+Triggering a new build of [8mha:////4Cu7YmK/qZz/3gCTbn5Xf4wwbps7A9oBFxNI+yxpNvFuAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyJEgY5/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9AOnzgkLTAAAA[0mPart2_Task1.02_CMS_Build
+Finished: SUCCESS

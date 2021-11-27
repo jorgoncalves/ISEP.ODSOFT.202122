@@ -1,0 +1,47 @@
+Started by upstream project "[8mha:////4Cu7YmK/qZz/3gCTbn5Xf4wwbps7A9oBFxNI+yxpNvFuAAAAqh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyJEgY5/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9AOnzgkLTAAAA[0mPart2_Task1.02_CMS_Build" build number [8mha:////4Lz6kHqCC4G+W0WmcpU3DubaeEQWJAdE62duZB9DJulxAAAArB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYF/az8JP2AxKISo/iQxOJsQz0Do3hn3+B4p9LMnBR9I3MAfdeLtNUAAAA=[0m27
+originally caused by:
+ Started by upstream project "[8mha:////4PUrHpAcRlftGbDHAMXH5JJMDZ5Lx0c7CgGTD2RvigCVAAAAtx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzVEgZt/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfQDG9osQ4AAAAA==[0mPart2_Task1.01_CMS_RepositoryCheckout" build number [8mha:////4FpefSB0NTuzpO257sLdPIv5Cg3UAVK4iaLHnij2h5ygAAAAuR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZd/az8JP2AxKISo/iQxOJsQz0Dw3hn3+D4oNSC/OLMkvyiSueM1OTs/NISfWNDAPRgsgbiAAAA[0m31
+ originally caused by:
+  Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+Script returned: 
+[Gradle] - Launching build.
+[cms_students] $ /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/gradlew javadoc
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes UP-TO-DATE
+[8mha:////4Kz3i/trJTv/DaI7N4EE7IwSjFIipQg9x+iUVH8W38qsAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:javadoc/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/contacts/client/view/ContactsDialog.java:102: warning: no @param for type
+	public ContactsDialog(ShowcaseConstants constants, Type type) {
+	       ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/ContentWidget.java:40: warning: no @return
+	protected static String getSimpleName(Class<?> c) {
+	                        ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/Showcase.java:67: warning: no @param for content
+	public static String getContentWidgetToken(ContentWidget content) {
+	                     ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/Showcase.java:76: warning: no @param for <C>
+	public static <C extends ContentWidget> String getContentWidgetToken(Class<C> cwClass) {
+	                                               ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/Showcase.java:76: warning: no @param for cwClass
+	public static <C extends ContentWidget> String getContentWidgetToken(Class<C> cwClass) {
+	                                               ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/ShowcaseResources.java:46: warning: no @return
+  CssResource css();
+              ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/ShowcaseResources.java:63: warning: no @return
+  ImageResource locale();
+                ^
+/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/src/main/java/pt/isep/cms/client/ShowcaseShell.java:131: warning: no @return
+	public ContentWidget getContent() {
+	                     ^
+
+8 warnings
+
+[8mha:////4IZfF4hV9Hc2uH4SHVkDZ+eBjHCBDchl7FNBJ9huSFfQAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 2.409 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+Publishing Javadoc
+Triggering a new build of [8mha:////4LzI5yVIaVVsJ5lOb8+fW7Ei18A8R+ZPnSfGoN5pfrpwAAAArx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzZEgZl/az8JP2AxKISo/iQxOJsQz0Dk3hn3+D40LzMkviQ1OKSYn0Akq0uktgAAAA=[0mPart2_Task1.04_CMS_Unit_Tests
+Finished: SUCCESS

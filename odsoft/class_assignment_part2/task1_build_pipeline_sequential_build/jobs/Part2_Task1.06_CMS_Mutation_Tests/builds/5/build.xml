@@ -1,0 +1,78 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>Part2_Task1.05_CMS_Integration_Tests</upstreamProject>
+            <upstreamUrl>job/Part2_Task1.05_CMS_Integration_Tests/</upstreamUrl>
+            <upstreamBuild>9</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Part2_Task1.04_CMS_Unit_Tests</upstreamProject>
+                <upstreamUrl>job/Part2_Task1.04_CMS_Unit_Tests/</upstreamUrl>
+                <upstreamBuild>10</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>Part2_Task1.03_CMS_Javadoc</upstreamProject>
+                    <upstreamUrl>job/Part2_Task1.03_CMS_Javadoc/</upstreamUrl>
+                    <upstreamBuild>16</upstreamBuild>
+                    <upstreamCauses>
+                      <hudson.model.Cause_-UpstreamCause>
+                        <upstreamProject>Part2_Task1.02_CMS_Build</upstreamProject>
+                        <upstreamUrl>job/Part2_Task1.02_CMS_Build/</upstreamUrl>
+                        <upstreamBuild>26</upstreamBuild>
+                        <upstreamCauses>
+                          <hudson.model.Cause_-UpstreamCause>
+                            <upstreamProject>Part2_Task1.01_CMS_RepositoryCheckout</upstreamProject>
+                            <upstreamUrl>job/Part2_Task1.01_CMS_RepositoryCheckout/</upstreamUrl>
+                            <upstreamBuild>29</upstreamBuild>
+                            <upstreamCauses>
+                              <hudson.model.Cause_-UserIdCause/>
+                            </upstreamCauses>
+                          </hudson.model.Cause_-UpstreamCause>
+                        </upstreamCauses>
+                      </hudson.model.Cause_-UpstreamCause>
+                    </upstreamCauses>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <htmlpublisher.HtmlPublisherTarget_-HTMLPublishedForProjectMarkerAction plugin="htmlpublisher@1.28">
+      <actualHtmlPublisherTarget>
+        <reportName>HTML Report</reportName>
+        <reportDir>${workspace}/odsoft/ca2/build/reports/pitest</reportDir>
+        <reportFiles>index.html</reportFiles>
+        <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+        <reportTitles></reportTitles>
+        <keepAll>false</keepAll>
+        <allowMissing>false</allowMissing>
+        <includes>**/*</includes>
+        <escapeUnderscores>true</escapeUnderscores>
+      </actualHtmlPublisherTarget>
+    </htmlpublisher.HtmlPublisherTarget_-HTMLPublishedForProjectMarkerAction>
+    <hudson.plugins.promoted__builds__simple.PromoteAction plugin="promoted-builds-simple@1.9">
+      <levelValue>0</levelValue>
+    </hudson.plugins.promoted__builds__simple.PromoteAction>
+  </actions>
+  <queueId>49</queueId>
+  <timestamp>1638001297733</timestamp>
+  <startTime>1638001297742</startTime>
+  <result>SUCCESS</result>
+  <duration>53496</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/Part2_Task1_CMS_Workspace</workspace>
+  <hudsonVersion>2.303.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

@@ -1,0 +1,92 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>Part2_Task1.08_Smoke_Test</upstreamProject>
+            <upstreamUrl>job/Part2_Task1.08_Smoke_Test/</upstreamUrl>
+            <upstreamBuild>16</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Part2_Task1.07_CMS_System_Test</upstreamProject>
+                <upstreamUrl>job/Part2_Task1.07_CMS_System_Test/</upstreamUrl>
+                <upstreamBuild>21</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.model.Cause_-UpstreamCause>
+                    <upstreamProject>Part2_Task1.06_CMS_Mutation_Tests</upstreamProject>
+                    <upstreamUrl>job/Part2_Task1.06_CMS_Mutation_Tests/</upstreamUrl>
+                    <upstreamBuild>6</upstreamBuild>
+                    <upstreamCauses>
+                      <hudson.model.Cause_-UpstreamCause>
+                        <upstreamProject>Part2_Task1.05_CMS_Integration_Tests</upstreamProject>
+                        <upstreamUrl>job/Part2_Task1.05_CMS_Integration_Tests/</upstreamUrl>
+                        <upstreamBuild>10</upstreamBuild>
+                        <upstreamCauses>
+                          <hudson.model.Cause_-UpstreamCause>
+                            <upstreamProject>Part2_Task1.04_CMS_Unit_Tests</upstreamProject>
+                            <upstreamUrl>job/Part2_Task1.04_CMS_Unit_Tests/</upstreamUrl>
+                            <upstreamBuild>11</upstreamBuild>
+                            <upstreamCauses>
+                              <hudson.model.Cause_-UpstreamCause>
+                                <upstreamProject>Part2_Task1.03_CMS_Javadoc</upstreamProject>
+                                <upstreamUrl>job/Part2_Task1.03_CMS_Javadoc/</upstreamUrl>
+                                <upstreamBuild>17</upstreamBuild>
+                                <upstreamCauses>
+                                  <hudson.model.Cause_-UpstreamCause>
+                                    <upstreamProject>Part2_Task1.02_CMS_Build</upstreamProject>
+                                    <upstreamUrl>job/Part2_Task1.02_CMS_Build/</upstreamUrl>
+                                    <upstreamBuild>27</upstreamBuild>
+                                    <upstreamCauses>
+                                      <hudson.model.Cause_-UpstreamCause>
+                                        <upstreamProject>Part2_Task1.01_CMS_RepositoryCheckout</upstreamProject>
+                                        <upstreamUrl>job/Part2_Task1.01_CMS_RepositoryCheckout/</upstreamUrl>
+                                        <upstreamBuild>31</upstreamBuild>
+                                        <upstreamCauses>
+                                          <hudson.model.Cause_-UserIdCause/>
+                                        </upstreamCauses>
+                                      </hudson.model.Cause_-UpstreamCause>
+                                    </upstreamCauses>
+                                  </hudson.model.Cause_-UpstreamCause>
+                                </upstreamCauses>
+                              </hudson.model.Cause_-UpstreamCause>
+                            </upstreamCauses>
+                          </hudson.model.Cause_-UpstreamCause>
+                        </upstreamCauses>
+                      </hudson.model.Cause_-UpstreamCause>
+                    </upstreamCauses>
+                  </hudson.model.Cause_-UpstreamCause>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.plugins.promoted__builds__simple.PromoteAction plugin="promoted-builds-simple@1.9">
+      <levelValue>0</levelValue>
+    </hudson.plugins.promoted__builds__simple.PromoteAction>
+    <com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder plugin="credentials@2.6.1">
+      <boundCredentials class="concurrent-hash-map"/>
+    </com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder>
+    <hudson.tasks.MailMessageIdAction plugin="mailer@1.34">
+      <messageId>&lt;1866293281.13.1638012129422@036e56a71d53&gt;</messageId>
+    </hudson.tasks.MailMessageIdAction>
+  </actions>
+  <queueId>108</queueId>
+  <timestamp>1638012128754</timestamp>
+  <startTime>1638012128767</startTime>
+  <result>SUCCESS</result>
+  <duration>4</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/Part2_Task1_CMS_Workspace</workspace>
+  <hudsonVersion>2.303.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

@@ -1,0 +1,10 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/libs/cms_students-1.0.war to container Tomcat 9.x Remote with context Part2_Task1
+  Redeploying [/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/libs/cms_students-1.0.war]
+  Undeploying [/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/libs/cms_students-1.0.war]
+  Deploying [/var/jenkins_home/Part2_Task1_CMS_Workspace/project/cms_students/build/libs/cms_students-1.0.war]
+Triggering a new build of [8mha:////4IpFQeGVJKc9BqHsxkYsq5FAtNwlouSktu1xK3giKxZIAAAAqx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzJEgZ5/az8JP2AxKISo/iQxOJsQz0Di/jg3Pzs1PiQ1OISfQBw9MdE1AAAAA==[0mPart2_Task1.08_Smoke_Test
+Finished: SUCCESS

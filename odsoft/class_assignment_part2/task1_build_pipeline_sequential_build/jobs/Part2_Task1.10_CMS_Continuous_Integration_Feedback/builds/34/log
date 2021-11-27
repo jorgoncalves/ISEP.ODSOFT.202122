@@ -1,0 +1,69 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/Part2_Task1_CMS_Workspace_2
+The recommended git tool is: NONE
+using credential 333bd6ce-1181-4a3f-975c-5f15aecd87dd
+ > git rev-parse --resolve-git-dir /var/jenkins_home/Part2_Task1_CMS_Workspace_2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git # timeout=10
+Fetching upstream changes from git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git fetch --tags --force --progress -- git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 74fd9a73d9ec0873cab61eb85c634857c509fa40 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 74fd9a73d9ec0873cab61eb85c634857c509fa40 # timeout=1
+Commit message: "fixed integration tests"
+First time build. Skipping changelog.
+No emails were triggered.
+The recommended git tool is: NONE
+using credential 333bd6ce-1181-4a3f-975c-5f15aecd87dd
+ > git tag -l Build_34-Test # timeout=10
+ > git tag -a -f -m The build 34 as concluded with status - Test.
+
+jenkins-Part2_Task1.10_CMS_Continuous_Integration_Feedback-34 Build_34-Test # timeout=10
+Pushing tag Build_34-Test to repo origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git push git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git Build_34-Test -f # timeout=10
+Pushing HEAD to branch origin at repo origin
+using GIT_SSH to set credentials  cat /var/jenkins_home/.ssh/id_rsa
+ > git push git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git HEAD:origin -f # timeout=10
+ERROR: Failed to push branch origin to origin
+hudson.plugins.git.GitException: Command "git push git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git HEAD:origin -f" returned status code 1:
+stdout: 
+stderr: error: The destination you provided is not a full refname (i.e.,
+starting with "refs/"). We tried to guess what you meant by:
+
+- Looking for a ref that matches 'origin' on the remote side.
+- Checking if the <src> being pushed ('HEAD')
+  is a ref in "refs/{heads,tags}/". If so we add a corresponding
+  refs/{heads,tags}/ prefix on the remote side.
+
+Neither worked, so we gave up. You must fully qualify the ref.
+hint: The <src> part of the refspec is a commit object.
+hint: Did you mean to create a new branch by pushing to
+hint: 'HEAD:refs/heads/origin'?
+error: failed to push some refs to 'bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git'
+
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:2681)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandWithCredentials(CliGitAPIImpl.java:2102)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.access$500(CliGitAPIImpl.java:86)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$8.execute(CliGitAPIImpl.java:2768)
+	at hudson.plugins.git.GitPublisher.perform(GitPublisher.java:322)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:806)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:755)
+	at hudson.model.Build$BuildExecution.post2(Build.java:178)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:699)
+	at hudson.model.Run.execute(Run.java:1913)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:99)
+	at hudson.model.Executor.run(Executor.java:431)
+Build step 'Git Publisher' marked build as failure
+Email was triggered for: Always
+Sending email for trigger: Always
+Finished: FAILURE
