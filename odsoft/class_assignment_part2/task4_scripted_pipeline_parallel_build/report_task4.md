@@ -4,7 +4,7 @@
 
 The presented class assignment is done under the context of the below task context.
 
-**Task 4** - ask 4 Configure a Jenkins Pipeline using a Scripted Pipeline, to perform a parallel build.
+**Task 4** - Configure a Jenkins Pipeline using a Scripted Pipeline, to perform a parallel build.
 
 As for the pipeline stages, it was given the following Stages:
 
