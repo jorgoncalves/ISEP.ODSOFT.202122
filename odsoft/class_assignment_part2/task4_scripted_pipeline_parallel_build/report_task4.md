@@ -315,3 +315,33 @@ stage("UI Tests") {
 
 To give the feedback regarding the state of the UI, we need to go to **Paused for Input** and choose the correct option, as shown below.
 ![ui_test](./images/ui_test_validation.png)
+
+## CI Feedback
+
+To finalize things up, we are using the **post** stage, to send the tags to the repository. On the success and failure we define the tag that should be sent.
+
+```Groovy
+   post{
+        success {
+            command("git tag -m 'Build #${BUILD_NUMBER} Passed'-a Build-#${BUILD_NUMBER}-Passed")
+            command("git push --tags")
+        }
+        failure {
+            command("git tag -m 'Build #${BUILD_NUMBER} Failed' -a Build-#${BUILD_NUMBER}-Failed")
+            command("git push --tags")
+        }
+    }
+
+```
+
+## Additional Step
+
+Since we always recreate the workspace, to finish's things up, we have the below stage:
+
+```Groovy
+post {
+    always {
+        cleanWs()
+    }
+}
+```

@@ -169,6 +169,11 @@ pipeline {
                 input "Please validate if the UI is as expected and then enter the correct input."
             }
         }
+        post { 
+            always { 
+                cleanWs()
+            }
+        }
     }
 }
 
