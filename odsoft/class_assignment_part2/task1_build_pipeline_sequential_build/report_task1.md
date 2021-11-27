@@ -48,7 +48,7 @@ This criteria was used because it would increase the changes of finding support 
 
 ## Pipeline design
 
-This approach was design having in mind that the jobs should execute in a sequencial why, so with this implementation we only execute a job at a given time. On the **UI Acceptance Manual Tests** is it expected that the user triggers **Positive** or **Negative** so that the pipeline finishes.
+This approach was design having in mind that the jobs should execute in a sequencial, so with this implementation we only execute a job at a given time. On the **UI Acceptance Manual Tests** is it expected that the user triggers **Positive** or **Negative** so that the pipeline finishes.
 ![sketch](./images/sketch.png)
 
 We choose a design that wanted to accomplish the failing fast strategy, where the point was to have the jobs that could fail more easily being executed first.
