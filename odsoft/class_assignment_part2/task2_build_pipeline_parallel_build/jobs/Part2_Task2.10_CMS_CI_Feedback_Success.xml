@@ -42,7 +42,7 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <customWorkspace>$(Part2_Task1_CMS_Workspace_2)</customWorkspace>
+  <customWorkspace>$(Part2_Task2_CMS_Workspace_2)</customWorkspace>
   <builders/>
   <publishers>
     <hudson.plugins.git.GitPublisher plugin="git@4.9.0">

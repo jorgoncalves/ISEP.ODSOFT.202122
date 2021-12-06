@@ -7,7 +7,7 @@
     <jenkins.model.BuildDiscarderProperty>
       <strategy class="hudson.tasks.LogRotator">
         <daysToKeep>-1</daysToKeep>
-        <numToKeep>1</numToKeep>
+        <numToKeep>3</numToKeep>
         <artifactDaysToKeep>-1</artifactDaysToKeep>
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
@@ -20,22 +20,22 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <customWorkspace>${workspace}/project/cms_students</customWorkspace>
-  <builders/>
+  <customWorkspace>Part2_Task2_CMS_Workspace</customWorkspace>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>curl -v --silent http://tomcat:8181/Part2_Task2/Showcase.html\#\!CwContacts --stderr - | if grep -q &quot;Amelie Crutcher&quot;
+then
+    echo &quot;Amelia was found!&quot;
+else
+	echo &quot;Amelia wasn&apos;t found!&quot;
+    exit 1
+fi</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
   <publishers>
-    <hudson.plugins.deploy.DeployPublisher plugin="deploy@1.16">
-      <adapters>
-        <hudson.plugins.deploy.tomcat.Tomcat9xAdapter>
-          <url> http://tomcat:8181/</url>
-          <path></path>
-        </hudson.plugins.deploy.tomcat.Tomcat9xAdapter>
-      </adapters>
-      <contextPath>Part2_Task1</contextPath>
-      <war>projects/cms/build/libs/cms_students-1.0.war</war>
-      <onFailure>false</onFailure>
-    </hudson.plugins.deploy.DeployPublisher>
     <hudson.tasks.BuildTrigger>
-      <childProjects>Part2_Task1.08_Smoke_Test</childProjects>
+      <childProjects>Part2_Task2.09_CMS_UI_Acceptance_Manual_Test</childProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>

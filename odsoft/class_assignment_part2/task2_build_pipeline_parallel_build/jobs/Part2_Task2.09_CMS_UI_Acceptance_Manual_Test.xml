@@ -1,17 +1,17 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <project>
-  <actions/>
+  <actions />
   <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
-  <scm class="hudson.scm.NullSCM"/>
+  <properties />
+  <scm class="hudson.scm.NullSCM" />
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
+  <triggers />
   <concurrentBuild>false</concurrentBuild>
-  <builders/>
+  <builders />
   <publishers>
     <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.84">
       <recipientList>1210107@isep.ipp.pt,1190128@isep.ipp.pt</recipientList>
@@ -21,7 +21,7 @@
             <subject>$PROJECT_DEFAULT_SUBJECT</subject>
             <body>$PROJECT_DEFAULT_CONTENT</body>
             <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.DevelopersRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.DevelopersRecipientProvider />
             </recipientProviders>
             <attachmentsPattern></attachmentsPattern>
             <attachBuildLog>false</attachBuildLog>
@@ -35,9 +35,9 @@
       <defaultSubject>Build $BUILD_NUMER - UI Acceptence manual test</defaultSubject>
       <defaultContent>Please validate if the UI is as expected and then trigger the corresponding job.
 
-If successful build job:  ${PROJECT_URL}/job/Part2_Task1.10_CMS_Continuous_Integration_Feedback_Success/
+If successful build job:  ${PROJECT_URL}/job/Part2_Task2.10_CMS_Continuous_Integration_Feedback_Success/
 
-Otherwise build: ${PROJECT_URL}/job/Part2_Task1.10_CMS_Continuous_Integration_Feedback_Failed/
+Otherwise build: ${PROJECT_URL}/job/Part2_Task2.10_CMS_Continuous_Integration_Feedback_Failed/
 </defaultContent>
       <attachmentsPattern></attachmentsPattern>
       <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
@@ -50,9 +50,9 @@ Otherwise build: ${PROJECT_URL}/job/Part2_Task1.10_CMS_Continuous_Integration_Fe
       <disabled>false</disabled>
     </hudson.plugins.emailext.ExtendedEmailPublisher>
     <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.5.8">
-      <configs/>
-      <downstreamProjectNames>Part2_Task1.10_CMS_CI_Feedback_Success,Part2_Task1.10_CMS_CI_Feedback_Failed</downstreamProjectNames>
+      <configs />
+      <downstreamProjectNames>Part2_Task2.10_CMS_CI_Feedback_Success,Part2_Task2.10_CMS_CI_Feedback_Failed</downstreamProjectNames>
     </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
-  <buildWrappers/>
-</project
+  <buildWrappers />
+</project>

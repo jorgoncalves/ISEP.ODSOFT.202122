@@ -20,15 +20,19 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <customWorkspace>Part2_Task1_CMS_Workspace</customWorkspace>
+  <customWorkspace>Part2_Task2_CMS_Workspace</customWorkspace>
   <builders>
-    <hudson.tasks.Shell>
-      <command>echo $WORKSPACE</command>
-      <configuredLocalRules/>
-    </hudson.tasks.Shell>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy@2.4">
+      <source class="hudson.plugins.groovy.StringSystemScriptSource">
+        <script plugin="script-security@1.78">
+          <script>System.setProperty(&quot;hudson.model.DirectoryBrowserSupport.CSO&quot;,&quot;&quot;)</script>
+          <sandbox>false</sandbox>
+        </script>
+      </source>
+    </hudson.plugins.groovy.SystemGroovy>
     <hudson.plugins.gradle.Gradle plugin="gradle@1.37.1">
       <switches></switches>
-      <tasks>clean build</tasks>
+      <tasks>javadoc</tasks>
       <rootBuildScriptDir>$WORKSPACE/project/cms_students</rootBuildScriptDir>
       <buildFile></buildFile>
       <gradleName>(Default)</gradleName>
@@ -42,15 +46,10 @@
     </hudson.plugins.gradle.Gradle>
   </builders>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>Part2_Task1.03_CMS_Javadoc,Part2_Task1.04_CMS_Unit_Tests,Part2_Task1.05_CMS_Integration_Tests,Part2_Task1.06_CMS_Mutation_Tests</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
+    <hudson.tasks.JavadocArchiver plugin="javadoc@1.6">
+      <javadocDir>$WORKSPACE/project/cms_students/build/docs/javadoc</javadocDir>
+      <keepAll>false</keepAll>
+    </hudson.tasks.JavadocArchiver>
   </publishers>
   <buildWrappers/>
 </project>

@@ -36,11 +36,11 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <customWorkspace>Part2_Task1_CMS_Workspace</customWorkspace>
+  <customWorkspace>Part2_Task2_CMS_Workspace</customWorkspace>
   <builders/>
   <publishers>
     <hudson.tasks.BuildTrigger>
-      <childProjects>Part2_Task1.02_CMS_Build</childProjects>
+      <childProjects>Part2_Task2.02_CMS_Build</childProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
