@@ -17,6 +17,10 @@ package pt.isep.cms.client;
 
 import pt.isep.cms.client.MainMenuTreeViewModel.MenuConstants;
 
+import pt.isep.cms.books.client.BooksController;
+import pt.isep.cms.books.client.view.BooksDialog;
+import pt.isep.cms.books.client.CwBooks;
+
 import pt.isep.cms.contacts.client.CwContacts;
 import pt.isep.cms.contacts.client.view.ContactsDialog;
 import pt.isep.cms.contacts.client.ContactsController;
@@ -25,8 +29,10 @@ import pt.isep.cms.contacts.client.ContactsController;
 /**
  * Constants used throughout the showcase.
  */
-public interface ShowcaseConstants extends MenuConstants, 
+public interface ShowcaseConstants extends MenuConstants,
     CwContacts.CwConstants, ContactsDialog.CwConstants,
+    CwBooks.CwConstants, BooksDialog.CwConstants,
+    BooksController.CwConstants,
     ContactsController.CwConstants {
 
   /**
