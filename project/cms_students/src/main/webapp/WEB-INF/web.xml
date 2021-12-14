@@ -11,10 +11,21 @@
     <servlet-name>contactsServiceServlet</servlet-name>
     <servlet-class>pt.isep.cms.contacts.server.ContactsServiceImpl</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>contactsServiceServlet</servlet-name>
     <url-pattern>/showcase/contactsService</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlets for the tags -->
+  <servlet>
+    <servlet-name>tagsServiceServlet</servlet-name>
+    <servlet-class>pt.isep.cms.tags.server.TagsServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>tagsServiceServlet</servlet-name>
+    <url-pattern>/showcase/tagsService</url-pattern>
   </servlet-mapping>
 
 </web-app>
