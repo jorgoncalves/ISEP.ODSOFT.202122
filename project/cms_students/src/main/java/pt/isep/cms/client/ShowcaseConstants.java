@@ -27,6 +27,9 @@ import pt.isep.cms.contacts.client.CwContacts;
 import pt.isep.cms.bookmarks.client.view.BookmarksDialog;
 import pt.isep.cms.contacts.client.view.ContactsDialog;
 import pt.isep.cms.contacts.client.ContactsController;
+import pt.isep.cms.tags.client.CwTags;
+import pt.isep.cms.tags.client.TagsController;
+import pt.isep.cms.tags.client.view.TagsDialog;
 
 /**
  * Constants used throughout the showcase.
@@ -34,6 +37,7 @@ import pt.isep.cms.contacts.client.ContactsController;
 public interface ShowcaseConstants extends MenuConstants,
         CwBookmarks.CwConstants, BookmarksDialog.CwConstants, BookmarksController.CwConstants,
         CwBooks.CwConstants, BooksDialog.CwConstants, BooksController.CwConstants,
+        CwTags.CwConstants, TagsDialog.CwConstants, TagsController.CwConstants,
         CwContacts.CwConstants, ContactsDialog.CwConstants, ContactsController.CwConstants {
 
     /**

@@ -55,6 +55,9 @@
   <!-- Specify the paths for translatable code source for Contacts  -->
   <source path="contacts/client" />
   <source path="contacts/shared" />
+  <!-- Specify the paths for translatable code source for Tags  -->
+  <source path="tags/client" />
+  <source path="tags/shared" />
 
   <!-- Specify the paths for translatable code source for Books  -->
   <source path="books/client" />
