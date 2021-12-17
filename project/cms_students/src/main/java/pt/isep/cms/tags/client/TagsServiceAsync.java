@@ -15,7 +15,7 @@ public interface TagsServiceAsync {
 
     public void deleteTags(ArrayList<String> ids, AsyncCallback<ArrayList<TagDetails>> callback);
 
-    public void getTagDetails(AsyncCallback<ArrayList<TagDetails>> callback);
+    public void getTagsDetails(AsyncCallback<ArrayList<TagDetails>> callback);
 
     public void getTag(String id, AsyncCallback<Tag> callback);
 

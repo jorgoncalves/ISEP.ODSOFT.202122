@@ -19,7 +19,7 @@ import java.util.List;
 
 public class TagsPresenter implements Presenter {
 
-	private List<TagDetails> tagDetails;
+	private List<TagDetails> tagsDetails;
 
 	public interface Display {
 		HasClickHandlers getAddButton();
@@ -65,7 +65,7 @@ public class TagsPresenter implements Presenter {
 				int selectedRow = display.getClickedRow(event);
 
 				if (selectedRow >= 0) {
-					String id = tagDetails.get(selectedRow).getId();
+					String id = tagsDetails.get(selectedRow).getId();
 					eventBus.fireEvent(new EditTagEvent(id));
 				}
 			}
@@ -86,35 +86,35 @@ public class TagsPresenter implements Presenter {
 		// point is to create a test case that helps illustrate the higher
 		// level concepts used when creating MVP-based applications.
 		//
-		for (int i = 0; i < tagDetails.size(); ++i) {
-			for (int j = 0; j < tagDetails.size() - 1; ++j) {
-				if (tagDetails.get(j).getDisplayName()
-						.compareToIgnoreCase(tagDetails.get(j + 1).getDisplayName()) >= 0) {
-					TagDetails tmp = tagDetails.get(j);
-					tagDetails.set(j, tagDetails.get(j + 1));
-					tagDetails.set(j + 1, tmp);
+		for (int i = 0; i < tagsDetails.size(); ++i) {
+			for (int j = 0; j < tagsDetails.size() - 1; ++j) {
+				if (tagsDetails.get(j).getDisplayName()
+						.compareToIgnoreCase(tagsDetails.get(j + 1).getDisplayName()) >= 0) {
+					TagDetails tmp = tagsDetails.get(j);
+					tagsDetails.set(j, tagsDetails.get(j + 1));
+					tagsDetails.set(j + 1, tmp);
 				}
 			}
 		}
 	}
 
-	public void setTagDetails(List<TagDetails> tagDetails) {
-		this.tagDetails = tagDetails;
+	public void setTagDetails(List<TagDetails> tagsDetails) {
+		this.tagsDetails = tagsDetails;
 	}
 
 	public TagDetails getTagDetail(int index) {
-		return tagDetails.get(index);
+		return tagsDetails.get(index);
 	}
 
 	private void fetchTagDetails() {
-		rpcService.getTagDetails(new AsyncCallback<ArrayList<TagDetails>>() {
+		rpcService.getTagsDetails(new AsyncCallback<ArrayList<TagDetails>>() {
 			public void onSuccess(ArrayList<TagDetails> result) {
-				tagDetails = result;
+				tagsDetails = result;
 				sortTagDetails();
 				List<String> data = new ArrayList<String>();
 
 				for (int i = 0; i < result.size(); ++i) {
-					data.add(tagDetails.get(i).getDisplayName());
+					data.add(tagsDetails.get(i).getDisplayName());
 				}
 
 				display.setData(data);
@@ -131,17 +131,17 @@ public class TagsPresenter implements Presenter {
 		ArrayList<String> ids = new ArrayList<String>();
 
 		for (int i = 0; i < selectedRows.size(); ++i) {
-			ids.add(tagDetails.get(selectedRows.get(i)).getId());
+			ids.add(tagsDetails.get(selectedRows.get(i)).getId());
 		}
 
 		rpcService.deleteTags(ids, new AsyncCallback<ArrayList<TagDetails>>() {
 			public void onSuccess(ArrayList<TagDetails> result) {
-				tagDetails = result;
+				tagsDetails = result;
 				sortTagDetails();
 				List<String> data = new ArrayList<String>();
 
 				for (int i = 0; i < result.size(); ++i) {
-					data.add(tagDetails.get(i).getDisplayName());
+					data.add(tagsDetails.get(i).getDisplayName());
 				}
 
 				display.setData(data);
