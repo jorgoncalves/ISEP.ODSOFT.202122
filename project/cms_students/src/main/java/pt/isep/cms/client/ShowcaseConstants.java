@@ -29,26 +29,26 @@ import pt.isep.cms.tags.client.view.TagsDialog;
  * Constants used throughout the showcase.
  */
 public interface ShowcaseConstants extends MenuConstants,
-    CwContacts.CwConstants, ContactsDialog.CwConstants, ContactsController.CwConstants,
-        CwTags.CwConstants,TagsDialog.CwConstants, TagsController.CwConstants {
+        CwContacts.CwConstants, ContactsDialog.CwConstants, ContactsController.CwConstants,
+        CwTags.CwConstants, TagsDialog.CwConstants, TagsController.CwConstants {
 
-  /**
-   * The path to source code for examples, raw files, and style definitions.
-   */
-  //String DST_SOURCE = "gwtShowcaseSource/";
+    /**
+     * The path to source code for examples, raw files, and style definitions.
+     */
+    //String DST_SOURCE = "gwtShowcaseSource/";
 
-  /**
-   * The destination folder for parsed source code from Showcase examples.
-   */
-  //String DST_SOURCE_EXAMPLE = DST_SOURCE + "java/";
+    /**
+     * The destination folder for parsed source code from Showcase examples.
+     */
+    //String DST_SOURCE_EXAMPLE = DST_SOURCE + "java/";
 
-  /**
-   * The destination folder for raw files that are included in entirety.
-   */
-  //String DST_SOURCE_RAW = DST_SOURCE + "raw/";
+    /**
+     * The destination folder for raw files that are included in entirety.
+     */
+    //String DST_SOURCE_RAW = DST_SOURCE + "raw/";
 
-  /**
-   * The destination folder for parsed CSS styles used in Showcase examples.
-   */
-  //String DST_SOURCE_STYLE = DST_SOURCE + "css/";
+    /**
+     * The destination folder for parsed CSS styles used in Showcase examples.
+     */
+    //String DST_SOURCE_STYLE = DST_SOURCE + "css/";
 }

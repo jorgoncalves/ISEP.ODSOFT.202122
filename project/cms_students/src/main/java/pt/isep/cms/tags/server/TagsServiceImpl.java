@@ -57,10 +57,10 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
       deleteTag(ids.get(i));
     }
 
-    return getTagDetails();
+    return getTagsDetails();
   }
 
-  public ArrayList<TagDetails> getTagDetails() {
+  public ArrayList<TagDetails> getTagsDetails() {
     ArrayList<TagDetails> tagDetails = new ArrayList<TagDetails>();
 
     Iterator<String> it = tags.keySet().iterator();

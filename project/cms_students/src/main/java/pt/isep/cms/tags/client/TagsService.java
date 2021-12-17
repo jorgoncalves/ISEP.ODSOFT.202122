@@ -17,7 +17,7 @@ public interface TagsService extends RemoteService {
 
   ArrayList<TagDetails> deleteTags(ArrayList<String> ids);
 
-  ArrayList<TagDetails> getTagDetails();
+  ArrayList<TagDetails> getTagsDetails();
 
   Tag getTag(String id);
 

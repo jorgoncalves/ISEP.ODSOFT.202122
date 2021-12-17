@@ -227,6 +227,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 
 			// Will it load?!!!
 			category.addCwPanel(new CwContacts(constants));
+			category.addCwPanel(new CwTags(constants));
 		}
 
 		// Services.

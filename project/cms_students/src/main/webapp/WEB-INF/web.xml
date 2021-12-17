@@ -5,7 +5,7 @@
   <welcome-file-list>
     <welcome-file>Showcase.html</welcome-file>
   </welcome-file-list>
-  
+
   <!-- Servlets for the contacts -->
   <servlet>
     <servlet-name>contactsServiceServlet</servlet-name>
@@ -16,6 +16,7 @@
     <servlet-name>contactsServiceServlet</servlet-name>
     <url-pattern>/showcase/contactsService</url-pattern>
   </servlet-mapping>
+
 
   <!-- Servlets for the tags -->
   <servlet>
