@@ -17,4 +17,15 @@
     <url-pattern>/showcase/contactsService</url-pattern>
   </servlet-mapping>
 
+  <!-- Servlets for the bookmark -->
+  <servlet>
+    <servlet-name>bookmarksServiceServlet</servlet-name>
+    <servlet-class>pt.isep.cms.bookmarks.server.BookmarksServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>bookmarksServiceServlet</servlet-name>
+    <url-pattern>/showcase/bookmarksService</url-pattern>
+  </servlet-mapping>
+
 </web-app>
