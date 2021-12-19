@@ -22,6 +22,7 @@ import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.SelectionModel;
 import com.google.gwt.view.client.TreeViewModel;
 
+import pt.isep.cms.bookmarks.client.CwBookmarks;
 import pt.isep.cms.contacts.client.CwContacts;
 import pt.isep.cms.books.client.CwBooks;
 
@@ -228,6 +229,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 			// Will it load?!!!
 			category.addCwPanel(new CwContacts(constants));
 			category.addCwPanel(new CwBooks(constants));
+			category.addCwPanel(new CwBookmarks(constants));
 		}
 
 		// Services.
