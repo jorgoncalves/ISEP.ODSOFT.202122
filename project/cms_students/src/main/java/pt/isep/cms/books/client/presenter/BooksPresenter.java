@@ -1,5 +1,10 @@
 package pt.isep.cms.books.client.presenter;
 
+import pt.isep.cms.books.client.BooksServiceAsync;
+import pt.isep.cms.books.client.event.AddBookEvent;
+import pt.isep.cms.books.client.event.EditBookEvent;
+import pt.isep.cms.books.shared.BookDetails;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -8,152 +13,144 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
-import pt.isep.cms.books.client.BooksServiceAsync;
-
-import pt.isep.cms.books.client.event.EditBookEvent;
-import pt.isep.cms.contacts.client.event.AddContactEvent;
-import pt.isep.cms.contacts.client.event.EditContactEvent;
-
-import pt.isep.cms.books.client.presenter.BooksPresenter;
-import pt.isep.cms.books.shared.Book;
-import pt.isep.cms.contacts.client.presenter.Presenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BooksPresenter implements Presenter {
 
-    private List<Book> books;
+	private List<BookDetails> bookDetails;
 
-    public interface Display {
-        HasClickHandlers getAddButton();
+	public interface Display {
+		HasClickHandlers getAddButton();
 
-        HasClickHandlers getDeleteButton();
+		HasClickHandlers getDeleteButton();
 
-        HasClickHandlers getList();
+		HasClickHandlers getList();
 
-        void setData(List<String> data);
+		void setData(List<String> data);
 
-        int getClickedRow(ClickEvent event);
+		int getClickedRow(ClickEvent event);
 
-        List<Integer> getSelectedRows();
+		List<Integer> getSelectedRows();
 
-        Widget asWidget();
-    }
+		Widget asWidget();
+	}
 
-    private final BooksServiceAsync rpcService;
-    private final HandlerManager eventBus;
-    private final BooksPresenter.Display display;
+	private final BooksServiceAsync rpcService;
+	private final HandlerManager eventBus;
+	private final Display display;
 
-    public BooksPresenter(BooksServiceAsync rpcService, HandlerManager eventBus, BooksPresenter.Display view) {
-        this.rpcService = rpcService;
-        this.eventBus = eventBus;
-        this.display = view;
-    }
+	public BooksPresenter(BooksServiceAsync rpcService, HandlerManager eventBus, Display view) {
+		this.rpcService = rpcService;
+		this.eventBus = eventBus;
+		this.display = view;
+	}
 
-    public void bind() {
-        display.getAddButton().addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                eventBus.fireEvent(new AddContactEvent());
-            }
-        });
+	public void bind() {
+		display.getAddButton().addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				eventBus.fireEvent(new AddBookEvent());
+			}
+		});
 
-        display.getDeleteButton().addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                deleteSelectedBooks();
-            }
-        });
+		display.getDeleteButton().addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				deleteSelectedBooks();
+			}
+		});
 
-        display.getList().addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                int selectedRow = display.getClickedRow(event);
+		display.getList().addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				int selectedRow = display.getClickedRow(event);
 
-                if (selectedRow >= 0) {
-                    String id = books.get(selectedRow).getId();
-                    eventBus.fireEvent(new EditBookEvent(id));
-                }
-            }
-        });
-    }
+				if (selectedRow >= 0) {
+					String id = bookDetails.get(selectedRow).getId();
+					eventBus.fireEvent(new EditBookEvent(id));
+				}
+			}
+		});
+	}
 
-    public void go(final HasWidgets container) {
-        bind();
-        container.clear();
-        container.add(display.asWidget());
-        fetchBooks();
-    }
+	public void go(final HasWidgets container) {
+		bind();
+		container.clear();
+		container.add(display.asWidget());
 
-    public void sortBooks() {
+		fetchBookDetails();
+	}
 
-        // Yes, we could use a more optimized method of sorting, but the
-        // point is to create a test case that helps illustrate the higher
-        // level concepts used when creating MVP-based applications.
-        //
-        for (int i = 0; i < books.size(); ++i) {
-            for (int j = 0; j < books.size() - 1; ++j) {
-                if (books.get(j).title
-                        .compareToIgnoreCase(books.get(j + 1).getTitle()) >= 0) {
-                    Book tmp = books.get(j);
-                    books.set(j, books.get(j + 1));
-                    books.set(j + 1, tmp);
-                }
-            }
-        }
-    }
+	public void sortBookDetails() {
 
-    public void setBook(List<Book> books) {
-        this.books = books;
-    }
+		// Yes, we could use a more optimized method of sorting, but the
+		// point is to create a test case that helps illustrate the higher
+		// level concepts used when creating MVP-based applications.
+		//
+		for (int i = 0; i < bookDetails.size(); ++i) {
+			for (int j = 0; j < bookDetails.size() - 1; ++j) {
+				if (bookDetails.get(j).getDisplayName()
+						.compareToIgnoreCase(bookDetails.get(j + 1).getDisplayName()) >= 0) {
+					BookDetails tmp = bookDetails.get(j);
+					bookDetails.set(j, bookDetails.get(j + 1));
+					bookDetails.set(j + 1, tmp);
+				}
+			}
+		}
+	}
 
-    public Book getBook(int index) {
-        return books.get(index);
-    }
+	public void setBookDetails(List<BookDetails> bookDetails) {
+		this.bookDetails = bookDetails;
+	}
 
-    private void fetchBooks() {
-        rpcService.getBooks(new AsyncCallback<ArrayList<Book>>() {
-            public void onSuccess(ArrayList<Book> result) {
-                books = result;
-                sortBooks();
-                List<String> data = new ArrayList<String>();
+	public BookDetails getBookDetail(int index) {
+		return bookDetails.get(index);
+	}
 
-                for (int i = 0; i < result.size(); ++i) {
-                    data.add(books.get(i).getTitle());
-                }
+	private void fetchBookDetails() {
+		rpcService.getBookDetails(new AsyncCallback<ArrayList<BookDetails>>() {
+			public void onSuccess(ArrayList<BookDetails> result) {
+				bookDetails = result;
+				sortBookDetails();
+				List<String> data = new ArrayList<String>();
 
-                display.setData(data);
-            }
+				for (int i = 0; i < result.size(); ++i) {
+					data.add(bookDetails.get(i).getDisplayName());
+				}
 
-            public void onFailure(Throwable caught) {
-                Window.alert("Error fetching Books");
-            }
-        });
-    }
+				display.setData(data);
+			}
 
-    private void deleteSelectedBooks() {
-        List<Integer> selectedRows = display.getSelectedRows();
-        ArrayList<String> ids = new ArrayList<String>();
+			public void onFailure(Throwable caught) {
+				Window.alert("Error fetching book details");
+			}
+		});
+	}
 
-        for (int i = 0; i < selectedRows.size(); ++i) {
-            ids.add(books.get(selectedRows.get(i)).getId());
-        }
+	private void deleteSelectedBooks() {
+		List<Integer> selectedRows = display.getSelectedRows();
+		ArrayList<String> ids = new ArrayList<String>();
 
-        rpcService.deleteBooks(ids, new AsyncCallback<ArrayList<Book>>() {
-            public void onSuccess(ArrayList<Book> result) {
-                books = result;
-                sortBooks();
-                List<String> data = new ArrayList<String>();
+		for (int i = 0; i < selectedRows.size(); ++i) {
+			ids.add(bookDetails.get(selectedRows.get(i)).getId());
+		}
 
-                for (int i = 0; i < result.size(); ++i) {
-                    data.add(books.get(i).getTitle());
-                }
+		rpcService.deleteBooks(ids, new AsyncCallback<ArrayList<BookDetails>>() {
+			public void onSuccess(ArrayList<BookDetails> result) {
+				bookDetails = result;
+				sortBookDetails();
+				List<String> data = new ArrayList<String>();
 
-                display.setData(data);
+				for (int i = 0; i < result.size(); ++i) {
+					data.add(bookDetails.get(i).getDisplayName());
+				}
 
-            }
+				display.setData(data);
 
-            public void onFailure(Throwable caught) {
-                Window.alert("Error deleting selected book");
-            }
-        });
-    }
+			}
+
+			public void onFailure(Throwable caught) {
+				Window.alert("Error deleting selected books");
+			}
+		});
+	}
 }

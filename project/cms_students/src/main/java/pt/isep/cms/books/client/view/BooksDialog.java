@@ -17,9 +17,8 @@ package pt.isep.cms.books.client.view;
 
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.i18n.client.Constants;
-import pt.isep.cms.books.client.presenter.EditBookPresenter;
 import pt.isep.cms.client.ShowcaseConstants;
-import pt.isep.cms.contacts.client.presenter.EditContactPresenter;
+import pt.isep.cms.books.client.presenter.EditBookPresenter;
 
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DecoratorPanel;
@@ -32,7 +31,7 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * Dialog Box for Adding and Updating Contacts.
+ * Dialog Box for Adding and Updating Books.
  */
 public class BooksDialog implements EditBookPresenter.Display {
 	
@@ -74,18 +73,21 @@ public class BooksDialog implements EditBookPresenter.Display {
 	private final ShowcaseConstants globalConstants;
 
 	// Widgets
-	private final TextBox title;
-	private final TextBox isbn;
+	private final TextBox firstName;
+	private final TextBox lastName;
+	private final TextBox emailAddress;
 	private final FlexTable detailsTable;
 	private final Button saveButton;
 	private final Button cancelButton;
 
 	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Tile"));
-		detailsTable.setWidget(0, 1, title);
-		detailsTable.setWidget(1, 0, new Label("ISBN"));
-		detailsTable.setWidget(1, 1, isbn);
-		title.setFocus(true);
+		detailsTable.setWidget(0, 0, new Label("Firstname"));
+		detailsTable.setWidget(0, 1, firstName);
+		detailsTable.setWidget(1, 0, new Label("Lastname"));
+		detailsTable.setWidget(1, 1, lastName);
+		detailsTable.setWidget(2, 0, new Label("Email Address"));
+		detailsTable.setWidget(2, 1, emailAddress);
+		firstName.setFocus(true);
 	}
 
 	DecoratorPanel contentDetailsDecorator;
@@ -111,15 +113,16 @@ public class BooksDialog implements EditBookPresenter.Display {
 		VerticalPanel contentDetailsPanel = new VerticalPanel();
 		contentDetailsPanel.setWidth("100%");
 
-		// Create the contacts list
+		// Create the books list
 		//
 		detailsTable = new FlexTable();
 		detailsTable.setCellSpacing(0);
 		detailsTable.setWidth("100%");
 		detailsTable.addStyleName("books-ListContainer");
 		detailsTable.getColumnFormatter().addStyleName(1, "add-book-input");
-		title = new TextBox();
-		isbn = new TextBox();
+		firstName = new TextBox();
+		lastName = new TextBox();
+		emailAddress = new TextBox();
 		initDetailsTable();
 		contentDetailsPanel.add(detailsTable);
 
@@ -167,15 +170,25 @@ public class BooksDialog implements EditBookPresenter.Display {
 	}
 
 	@Override
-	public HasValue<String> getTitle() {
-		return title;
+	public HasValue<String> getFirstName() {
+		// TODO Auto-generated method stub
+		return firstName;
+		// return null;
 	}
 
 	@Override
-	public HasValue<String> getISBN() {
-		return isbn;
+	public HasValue<String> getLastName() {
+		// TODO Auto-generated method stub
+		return lastName;
+		// return null;
 	}
 
+	@Override
+	public HasValue<String> getEmailAddress() {
+		// TODO Auto-generated method stub
+		return emailAddress;
+		// return null;
+	}
 
 	@Override
 	public void show() {

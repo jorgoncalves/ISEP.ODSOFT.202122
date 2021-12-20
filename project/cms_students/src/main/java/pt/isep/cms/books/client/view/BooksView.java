@@ -11,7 +11,8 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.Widget;
-import pt.isep.cms.books.client.presenter.*;
+import pt.isep.cms.books.client.presenter.BooksPresenter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class BooksView extends Composite implements BooksPresenter.Display {
 
 		contentTable = new FlexTable();
 		contentTable.setWidth("100%");
-		contentTable.getCellFormatter().addStyleName(0, 0, "Books-ListContainer");
+		contentTable.getCellFormatter().addStyleName(0, 0, "books-ListContainer");
 		contentTable.getCellFormatter().setWidth(0, 0, "100%");
 		contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
 
@@ -54,7 +55,7 @@ public class BooksView extends Composite implements BooksPresenter.Display {
 		contentTable.getCellFormatter().addStyleName(0, 0, "books-ListMenu");
 		contentTable.setWidget(0, 0, hPanel);
 
-		// Create the Books list
+		// Create the books list
 		//
 		booksTable = new FlexTable();
 		booksTable.setCellSpacing(0);

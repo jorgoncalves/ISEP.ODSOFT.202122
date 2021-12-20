@@ -2,30 +2,33 @@ package pt.isep.cms.books.shared;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Book implements Serializable {
-    public String id;
-    public String title;
-    public String isbn;
-
-
-    public Book() {}
-
-    public Book(String id, String title, String isbn) {
-        this.id = id;
-        this.title = title;
-        this.isbn = isbn;
-    }
-
-
-
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-    public String getTitle() { return title; }
-    public void setTile(String title) { this.title = title; }
-    public String getISBN() { return isbn; }
-    public void setISBN(String isbn) { this.isbn = isbn; }
-
-    public void put(String id, Book book) {
-    }
+	public String id;
+  public String firstName;
+  public String lastName;
+  public String emailAddress;
+	
+	public Book() {}
+	
+	public Book(String id, String firstName, String lastName, String emailAddress) {
+		this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+		this.emailAddress = emailAddress;
+	}
+	
+	public BookDetails getLightWeightBook() {
+	  return new BookDetails(id, getFullName());
+	}
+	
+  public String getId() { return id; }
+  public void setId(String id) { this.id = id; }
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String firstName) { this.firstName = firstName; }
+  public String getLastName() { return lastName; }
+  public void setLastName(String lastName) { this.lastName = lastName; }
+  public String getEmailAddress() { return emailAddress; }
+  public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
+  public String getFullName() { return firstName + " " + lastName; }
 }
-
