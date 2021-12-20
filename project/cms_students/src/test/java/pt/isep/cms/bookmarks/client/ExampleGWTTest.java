@@ -5,8 +5,6 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
-import pt.isep.cms.bookmarks.client.BookmarksService;
-import pt.isep.cms.bookmarks.client.BookmarksServiceAsync;
 import pt.isep.cms.bookmarks.client.presenter.BookmarksPresenter;
 import pt.isep.cms.bookmarks.client.view.BookmarksView;
 import pt.isep.cms.bookmarks.shared.Bookmark;
