@@ -1,7 +1,7 @@
 package pt.isep.cms.books.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import pt.isep.cms.books.client.BookService;
+import pt.isep.cms.books.client.BooksService;
 import pt.isep.cms.books.shared.Book;
 import pt.isep.cms.contacts.shared.Contact;
 import pt.isep.cms.contacts.shared.ContactDetails;
@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.UUID;
 
 public class BooksServiceImpl extends RemoteServiceServlet implements
-        BookService {
+        BooksService {
 
     private final String[] titleData = new String[] {
             "Mutant Academy", "Iceman: The Melt Down", "Burger Boy",
@@ -77,8 +77,8 @@ public class BooksServiceImpl extends RemoteServiceServlet implements
     }
 
     @Override
-    public ArrayList<String> getBooks(ArrayList<String> ids) {
-        return null;
+    public ArrayList<Book> getBooks(ArrayList<Book> books) {
+        return books;
     }
 
     public ArrayList<String> getBooks() {

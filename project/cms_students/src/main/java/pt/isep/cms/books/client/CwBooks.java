@@ -7,9 +7,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import pt.isep.cms.client.ContentWidget;
 import pt.isep.cms.client.ShowcaseConstants;
-import pt.isep.cms.books.shared.Book;
-import pt.isep.cms.books.client.BookService;
-import pt.isep.cms.books.client.BooksServiceAsync;
 
 /**
  * Main Content Widget for Books.
@@ -50,7 +47,7 @@ public class CwBooks extends ContentWidget {
     @Override
     public Widget onInitialize() {
         // The service should be created on GWT module loading
-        BooksServiceAsync rpcService = GWT.create(BookService.class);
+        BooksServiceAsync rpcService = GWT.create(BooksService.class);
 
         // Should setup the Presenter Panel for the Contacts....
         VerticalPanel vPanel = new VerticalPanel();

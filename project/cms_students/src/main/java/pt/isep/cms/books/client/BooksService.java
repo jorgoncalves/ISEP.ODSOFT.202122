@@ -5,11 +5,11 @@ import pt.isep.cms.books.shared.Book;
 
 import java.util.ArrayList;
 
-public interface BookService  extends RemoteService {
+public interface BooksService  extends RemoteService {
 
     Book addBook(Book book);
-    Boolean deleteBooks(ArrayList<String> ids);
+    ArrayList<Book> deleteBooks(ArrayList<String> ids);
     Book getBook(String id);
-    ArrayList<String> getBooks(ArrayList<String> ids);
+    ArrayList<Book> getBooks(ArrayList<Book> book);
     Book updateBook(Book Book);
 }
