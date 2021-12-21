@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class Book implements Serializable {
-	public String id;
-  public String firstName;
-  public String lastName;
-  public String emailAddress;
+    public String id;
+  public String title;
+  public String isbn;
+  public String author;
 	
 	public Book() {}
 	
-	public Book(String id, String firstName, String lastName, String emailAddress) {
+	public Book(String id, String title, String author,String isbn) {
 		this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-		this.emailAddress = emailAddress;
+    this.title = title;
+    this.isbn = isbn;
+    this.author = author;
 	}
 	
 	public BookDetails getLightWeightBook() {
@@ -23,12 +23,17 @@ public class Book implements Serializable {
 	}
 	
   public String getId() { return id; }
+
   public void setId(String id) { this.id = id; }
-  public String getFirstName() { return firstName; }
-  public void setFirstName(String firstName) { this.firstName = firstName; }
-  public String getLastName() { return lastName; }
-  public void setLastName(String lastName) { this.lastName = lastName; }
-  public String getEmailAddress() { return emailAddress; }
-  public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
-  public String getFullName() { return firstName + " " + lastName; }
+
+  public String getTitle() { return title; }
+  public void setTile(String title) { this.title = title; }
+
+  public String getAuthor() { return author; }
+  public void setAuthor(String author) { this.author = author; }
+
+  public String getISBN() { return isbn; }
+  public void setISBN(String isbn) { this.isbn = isbn; }
+
+  public String getFullName() { return title + " Author: " + author + "- ISBN: " + isbn; }
 }

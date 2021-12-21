@@ -19,11 +19,11 @@ public class EditBookPresenter implements Presenter {
 
 		HasClickHandlers getCancelButton();
 
-		HasValue<String> getFirstName();
+		HasValue<String> getTile();
 
-		HasValue<String> getLastName();
+		HasValue<String> getAuthor();
 
-		HasValue<String> getEmailAddress();
+		HasValue<String> getISBN();
 
 		void show();
 
@@ -52,9 +52,9 @@ public class EditBookPresenter implements Presenter {
 		rpcService.getBook(id, new AsyncCallback<Book>() {
 			public void onSuccess(Book result) {
 				book = result;
-				EditBookPresenter.this.display.getFirstName().setValue(book.getFirstName());
-				EditBookPresenter.this.display.getLastName().setValue(book.getLastName());
-				EditBookPresenter.this.display.getEmailAddress().setValue(book.getEmailAddress());
+				EditBookPresenter.this.display.getTile().setValue(book.getTitle());
+				EditBookPresenter.this.display.getAuthor().setValue(book.getAuthor());
+				EditBookPresenter.this.display.getISBN().setValue(book.getISBN());
 			}
 
 			public void onFailure(Throwable caught) {
@@ -85,9 +85,9 @@ public class EditBookPresenter implements Presenter {
 	}
 
 	private void doSave() {
-		book.setFirstName(display.getFirstName().getValue());
-		book.setLastName(display.getLastName().getValue());
-		book.setEmailAddress(display.getEmailAddress().getValue());
+		book.setTile(display.getTile().getValue());
+		book.setAuthor(display.getAuthor().getValue());
+		book.setISBN(display.getISBN().getValue());
 
 		if (book.getId() == null) {
 			// Adding new book

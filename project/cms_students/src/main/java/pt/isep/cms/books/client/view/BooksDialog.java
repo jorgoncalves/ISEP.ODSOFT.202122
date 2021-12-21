@@ -73,21 +73,21 @@ public class BooksDialog implements EditBookPresenter.Display {
 	private final ShowcaseConstants globalConstants;
 
 	// Widgets
-	private final TextBox firstName;
-	private final TextBox lastName;
-	private final TextBox emailAddress;
+	private final TextBox title;
+	private final TextBox author;
+	private final TextBox isbn;
 	private final FlexTable detailsTable;
 	private final Button saveButton;
 	private final Button cancelButton;
 
 	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Firstname"));
-		detailsTable.setWidget(0, 1, firstName);
-		detailsTable.setWidget(1, 0, new Label("Lastname"));
-		detailsTable.setWidget(1, 1, lastName);
-		detailsTable.setWidget(2, 0, new Label("Email Address"));
-		detailsTable.setWidget(2, 1, emailAddress);
-		firstName.setFocus(true);
+		detailsTable.setWidget(0, 0, new Label("Tile"));
+		detailsTable.setWidget(0, 1, title);
+		detailsTable.setWidget(1, 0, new Label("Author"));
+		detailsTable.setWidget(1, 1, author);
+		detailsTable.setWidget(2, 0, new Label("ISBN"));
+		detailsTable.setWidget(2, 1, isbn);
+		title.setFocus(true);
 	}
 
 	DecoratorPanel contentDetailsDecorator;
@@ -120,9 +120,9 @@ public class BooksDialog implements EditBookPresenter.Display {
 		detailsTable.setWidth("100%");
 		detailsTable.addStyleName("books-ListContainer");
 		detailsTable.getColumnFormatter().addStyleName(1, "add-book-input");
-		firstName = new TextBox();
-		lastName = new TextBox();
-		emailAddress = new TextBox();
+		title = new TextBox();
+		author = new TextBox();
+		isbn = new TextBox();
 		initDetailsTable();
 		contentDetailsPanel.add(detailsTable);
 
@@ -170,23 +170,23 @@ public class BooksDialog implements EditBookPresenter.Display {
 	}
 
 	@Override
-	public HasValue<String> getFirstName() {
+	public HasValue<String> getTile() {
 		// TODO Auto-generated method stub
-		return firstName;
+		return title;
 		// return null;
 	}
 
 	@Override
-	public HasValue<String> getLastName() {
+	public HasValue<String> getAuthor() {
 		// TODO Auto-generated method stub
-		return lastName;
+		return author;
 		// return null;
 	}
 
 	@Override
-	public HasValue<String> getEmailAddress() {
+	public HasValue<String> getISBN() {
 		// TODO Auto-generated method stub
-		return emailAddress;
+		return isbn;
 		// return null;
 	}
 
