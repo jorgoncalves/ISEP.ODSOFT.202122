@@ -87,7 +87,7 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
         detailsTable.setWidget(0, 1, note);
         detailsTable.setWidget(1, 0, new Label("Creation data"));
         detailsTable.setWidget(1, 1, creationDate);
-//		creationDate.setEnabled(false);
+		creationDate.setEnabled(false);
         note.setFocus(true);
     }
 
@@ -135,8 +135,10 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
 
         dialogBox = new DialogBox();
         dialogBox.ensureDebugId("cwDialogBox");
-        if (type == Type.ADD)
+        if (type == Type.ADD) {
             dialogBox.setText(constants.cwAddBookmarkDialogCaption());
+            creationDate.setValue(new Date());
+        }
         else
             dialogBox.setText(constants.cwUpdateBookmarkDialogCaption());
 
