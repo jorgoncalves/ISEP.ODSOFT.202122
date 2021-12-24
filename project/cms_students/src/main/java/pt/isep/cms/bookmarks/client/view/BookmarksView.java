@@ -27,7 +27,7 @@ public class BookmarksView extends Composite implements BookmarksPresenter.Displ
 		DecoratorPanel contentTableDecorator = new DecoratorPanel();
 		initWidget(contentTableDecorator);
 		contentTableDecorator.setWidth("100%");
-		contentTableDecorator.setWidth("18em");
+		contentTableDecorator.setWidth("50em");
 
 		contentTable = new FlexTable();
 		contentTable.setWidth("100%");

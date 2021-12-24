@@ -43,7 +43,8 @@ public class EditBookmarkPresenter implements Presenter {
         bind();
     }
 
-    public EditBookmarkPresenter(BookmarksServiceAsync rpcService, HandlerManager eventBus, Display display, String id) {
+    public EditBookmarkPresenter(BookmarksServiceAsync rpcService, HandlerManager eventBus, Display display,
+            String id) {
         this.rpcService = rpcService;
         this.eventBus = eventBus;
         this.display = display;

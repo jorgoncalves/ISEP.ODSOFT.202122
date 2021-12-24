@@ -46,24 +46,26 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
      * The constants used in this Content Widget.
      */
     public static interface CwConstants extends Constants {
+
         String cwAddBookmarkDialogCaption();
 
         String cwUpdateBookmarkDialogCaption();
-//		String cwDialogBoxClose();
-//
-//		String cwDialogBoxDescription();
-//
-//		String cwDialogBoxDetails();
-//
-//		String cwDialogBoxItem();
-//
-//		String cwDialogBoxListBoxInfo();
-//
-//		String cwDialogBoxMakeTransparent();
-//
-//		String cwDialogBoxName();
-//
-//		String cwDialogBoxShowButton();
+
+        // String cwDialogBoxClose();
+        //
+        // String cwDialogBoxDescription();
+        //
+        // String cwDialogBoxDetails();
+        //
+        // String cwDialogBoxItem();
+        //
+        // String cwDialogBoxListBoxInfo();
+        //
+        // String cwDialogBoxMakeTransparent();
+        //
+        // String cwDialogBoxName();
+        //
+        // String cwDialogBoxShowButton();
     }
 
     /**
@@ -83,7 +85,7 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
         detailsTable.setWidget(0, 1, note);
         detailsTable.setWidget(1, 0, new Label("Creation data"));
         detailsTable.setWidget(1, 1, creationDate);
-        creationDate.setEnabled(false);
+        // creationDate.setEnabled(false);
         note.setFocus(true);
     }
 
@@ -95,17 +97,20 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
      *
      * @param constants the constants
      */
-
     public BookmarksDialog(ShowcaseConstants constants, Type type) {
         // super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
+
         this.constants = constants;
         this.globalConstants = constants;
+
         // Init the widgets of the dialog
         contentDetailsDecorator = new DecoratorPanel();
         contentDetailsDecorator.setWidth("30em"); // em = size of current font
         // initWidget(contentDetailsDecorator);
+
         VerticalPanel contentDetailsPanel = new VerticalPanel();
         contentDetailsPanel.setWidth("100%");
+
         // Create the bookmarks list
         //
         detailsTable = new FlexTable();
@@ -117,6 +122,7 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
         creationDate = new DateBox();
         initDetailsTable();
         contentDetailsPanel.add(detailsTable);
+
         HorizontalPanel menuPanel = new HorizontalPanel();
         saveButton = new Button("Save");
         cancelButton = new Button("Cancel");
@@ -124,22 +130,24 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
         menuPanel.add(cancelButton);
         contentDetailsPanel.add(menuPanel);
         contentDetailsDecorator.add(contentDetailsPanel);
+
         dialogBox = new DialogBox();
         dialogBox.ensureDebugId("cwDialogBox");
-        if (type == Type.ADD) {
+        if (type == Type.ADD)
             dialogBox.setText(constants.cwAddBookmarkDialogCaption());
-            creationDate.setValue(new Date());
-        } else
+        else
             dialogBox.setText(constants.cwUpdateBookmarkDialogCaption());
+
         dialogBox.add(contentDetailsDecorator);
+
         dialogBox.setGlassEnabled(true);
         dialogBox.setAnimationEnabled(true);
     }
 
-
     public void displayDialog() {
         // Create the dialog box
         // final DialogBox dialogBox = createDialogBox();
+
         dialogBox.center();
         dialogBox.show();
     }
@@ -183,4 +191,5 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
         // return null;
         dialogBox.hide();
     }
+
 }
