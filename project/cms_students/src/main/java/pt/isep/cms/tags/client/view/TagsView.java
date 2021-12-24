@@ -52,7 +52,7 @@ public class TagsView extends Composite implements TagsPresenter.Display {
 
         // vPanel.add(hPanel);
 
-        contentTable.getCellFormatter().addStyleName(0, 0, "tags-ListMenu");
+        contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListMenu");
         contentTable.setWidget(0, 0, hPanel);
 
         // Create the tags list
@@ -61,7 +61,7 @@ public class TagsView extends Composite implements TagsPresenter.Display {
         tagsTable.setCellSpacing(0);
         tagsTable.setCellPadding(0);
         tagsTable.setWidth("100%");
-        tagsTable.addStyleName("tags-ListContents");
+        tagsTable.addStyleName("generic-ListContents");
         tagsTable.getColumnFormatter().setWidth(0, "15px");
 
         // vPanel.add(tagsTable);
