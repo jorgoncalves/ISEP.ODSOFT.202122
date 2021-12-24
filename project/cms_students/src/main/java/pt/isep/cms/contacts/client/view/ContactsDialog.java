@@ -34,21 +34,21 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * Dialog Box for Adding and Updating Contacts.
  */
 public class ContactsDialog implements EditContactPresenter.Display {
-	
+
 	public enum Type {
 		ADD,
 		UPDATE
 	}
-	
+
 	/**
 	 * The constants used in this Content Widget.
 	 */
 	public static interface CwConstants extends Constants {
-		
+
 		String cwAddContactDialogCaption();
-		
+
 		String cwUpdateContactDialogCaption();
-				
+
 //		String cwDialogBoxClose();
 //
 //		String cwDialogBoxDescription();
@@ -96,8 +96,7 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	/**
 	 * Constructor.
 	 *
-	 * @param constants
-	 *            the constants
+	 * @param constants the constants
 	 */
 	public ContactsDialog(ShowcaseConstants constants, Type type) {
 		// super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
@@ -118,8 +117,8 @@ public class ContactsDialog implements EditContactPresenter.Display {
 		detailsTable = new FlexTable();
 		detailsTable.setCellSpacing(0);
 		detailsTable.setWidth("100%");
-		detailsTable.addStyleName("contacts-ListContainer");
-		detailsTable.getColumnFormatter().addStyleName(1, "add-contact-input");
+		detailsTable.addStyleName("generic-ListContainer");
+		detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
 		firstName = new TextBox();
 		lastName = new TextBox();
 		emailAddress = new TextBox();
@@ -136,11 +135,11 @@ public class ContactsDialog implements EditContactPresenter.Display {
 
 		dialogBox = new DialogBox();
 		dialogBox.ensureDebugId("cwDialogBox");
-		if (type==Type.ADD)
+		if (type == Type.ADD)
 			dialogBox.setText(constants.cwAddContactDialogCaption());
-		else 
+		else
 			dialogBox.setText(constants.cwUpdateContactDialogCaption());
-			
+
 		dialogBox.add(contentDetailsDecorator);
 
 		dialogBox.setGlassEnabled(true);

@@ -31,7 +31,7 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 
 		contentTable = new FlexTable();
 		contentTable.setWidth("100%");
-		contentTable.getCellFormatter().addStyleName(0, 0, "contacts-ListContainer");
+		contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListContainer");
 		contentTable.getCellFormatter().setWidth(0, 0, "100%");
 		contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
 
@@ -52,7 +52,7 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 
 		// vPanel.add(hPanel);
 
-		contentTable.getCellFormatter().addStyleName(0, 0, "contacts-ListMenu");
+		contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListMenu");
 		contentTable.setWidget(0, 0, hPanel);
 
 		// Create the contacts list
@@ -61,7 +61,7 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 		contactsTable.setCellSpacing(0);
 		contactsTable.setCellPadding(0);
 		contactsTable.setWidth("100%");
-		contactsTable.addStyleName("contacts-ListContents");
+		contactsTable.addStyleName("generic-ListContents");
 		contactsTable.getColumnFormatter().setWidth(0, "15px");
 
 		// vPanel.add(contactsTable);
