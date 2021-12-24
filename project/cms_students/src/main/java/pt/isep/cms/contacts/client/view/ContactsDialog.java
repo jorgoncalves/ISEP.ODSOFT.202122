@@ -49,21 +49,21 @@ public class ContactsDialog implements EditContactPresenter.Display {
 
 		String cwUpdateContactDialogCaption();
 
-//		String cwDialogBoxClose();
-//
-//		String cwDialogBoxDescription();
-//
-//		String cwDialogBoxDetails();
-//
-//		String cwDialogBoxItem();
-//
-//		String cwDialogBoxListBoxInfo();
-//
-//		String cwDialogBoxMakeTransparent();
-//
-//		String cwDialogBoxName();
-//
-//		String cwDialogBoxShowButton();
+		// String cwDialogBoxClose();
+		//
+		// String cwDialogBoxDescription();
+		//
+		// String cwDialogBoxDetails();
+		//
+		// String cwDialogBoxItem();
+		//
+		// String cwDialogBoxListBoxInfo();
+		//
+		// String cwDialogBoxMakeTransparent();
+		//
+		// String cwDialogBoxName();
+		//
+		// String cwDialogBoxShowButton();
 	}
 
 	/**
@@ -73,21 +73,15 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	private final ShowcaseConstants globalConstants;
 
 	// Widgets
-	private final TextBox firstName;
-	private final TextBox lastName;
-	private final TextBox emailAddress;
+	private final TextBox name;
 	private final FlexTable detailsTable;
 	private final Button saveButton;
 	private final Button cancelButton;
 
 	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Firstname"));
-		detailsTable.setWidget(0, 1, firstName);
-		detailsTable.setWidget(1, 0, new Label("Lastname"));
-		detailsTable.setWidget(1, 1, lastName);
-		detailsTable.setWidget(2, 0, new Label("Email Address"));
-		detailsTable.setWidget(2, 1, emailAddress);
-		firstName.setFocus(true);
+		detailsTable.setWidget(0, 0, new Label("Name"));
+		detailsTable.setWidget(0, 1, name);
+		name.setFocus(true);
 	}
 
 	DecoratorPanel contentDetailsDecorator;
@@ -117,11 +111,9 @@ public class ContactsDialog implements EditContactPresenter.Display {
 		detailsTable = new FlexTable();
 		detailsTable.setCellSpacing(0);
 		detailsTable.setWidth("100%");
-		detailsTable.addStyleName("generic-ListContainer");
-		detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
-		firstName = new TextBox();
-		lastName = new TextBox();
-		emailAddress = new TextBox();
+		detailsTable.addStyleName("contacts-ListContainer");
+		detailsTable.getColumnFormatter().addStyleName(1, "add-contact-input");
+		name = new TextBox();
 		initDetailsTable();
 		contentDetailsPanel.add(detailsTable);
 
@@ -169,23 +161,9 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	}
 
 	@Override
-	public HasValue<String> getFirstName() {
+	public HasValue<String> getName() {
 		// TODO Auto-generated method stub
-		return firstName;
-		// return null;
-	}
-
-	@Override
-	public HasValue<String> getLastName() {
-		// TODO Auto-generated method stub
-		return lastName;
-		// return null;
-	}
-
-	@Override
-	public HasValue<String> getEmailAddress() {
-		// TODO Auto-generated method stub
-		return emailAddress;
+		return name;
 		// return null;
 	}
 
