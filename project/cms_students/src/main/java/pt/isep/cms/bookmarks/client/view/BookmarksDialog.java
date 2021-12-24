@@ -17,6 +17,7 @@ package pt.isep.cms.bookmarks.client.view;
 
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.i18n.client.Constants;
+import com.google.gwt.user.datepicker.client.DateBox;
 import pt.isep.cms.client.ShowcaseConstants;
 import pt.isep.cms.bookmarks.client.presenter.EditBookmarkPresenter;
 
@@ -30,25 +31,27 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+import java.util.Date;
+
 /**
  * Dialog Box for Adding and Updating Bookmarks.
  */
 public class BookmarksDialog implements EditBookmarkPresenter.Display {
-	
-	public enum Type {
-		ADD,
-		UPDATE
-	}
-	
-	/**
-	 * The constants used in this Content Widget.
-	 */
-	public static interface CwConstants extends Constants {
-		
-		String cwAddBookmarkDialogCaption();
-		
-		String cwUpdateBookmarkDialogCaption();
-				
+
+    public enum Type {
+        ADD,
+        UPDATE
+    }
+
+    /**
+     * The constants used in this Content Widget.
+     */
+    public static interface CwConstants extends Constants {
+
+        String cwAddBookmarkDialogCaption();
+
+        String cwUpdateBookmarkDialogCaption();
+
 //		String cwDialogBoxClose();
 //
 //		String cwDialogBoxDescription();
@@ -64,144 +67,132 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
 //		String cwDialogBoxName();
 //
 //		String cwDialogBoxShowButton();
-	}
+    }
 
-	/**
-	 * An instance of the constants.
-	 */
-	private final CwConstants constants;
-	private final ShowcaseConstants globalConstants;
+    /**
+     * An instance of the constants.
+     */
+    private final CwConstants constants;
+    private final ShowcaseConstants globalConstants;
 
-	// Widgets
-	private final TextBox note;
-	private final TextBox lastName;
-	private final TextBox emailAddress;
-	private final FlexTable detailsTable;
-	private final Button saveButton;
-	private final Button cancelButton;
+    // Widgets
+    private final TextBox note;
+    private final DateBox creationDate;
+    private final FlexTable detailsTable;
+    private final Button saveButton;
+    private final Button cancelButton;
 
-	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Firstname"));
-		detailsTable.setWidget(0, 1, note);
-		detailsTable.setWidget(1, 0, new Label("Lastname"));
-		detailsTable.setWidget(1, 1, lastName);
-		detailsTable.setWidget(2, 0, new Label("Email Address"));
-		detailsTable.setWidget(2, 1, emailAddress);
-		note.setFocus(true);
-	}
+    private void initDetailsTable() {
+        detailsTable.setWidget(0, 0, new Label("Note"));
+        detailsTable.setWidget(0, 1, note);
+        detailsTable.setWidget(1, 0, new Label("Creation data"));
+        detailsTable.setWidget(1, 1, creationDate);
+//		creationDate.setEnabled(false);
+        note.setFocus(true);
+    }
 
-	DecoratorPanel contentDetailsDecorator;
-	final DialogBox dialogBox;
+    DecoratorPanel contentDetailsDecorator;
+    final DialogBox dialogBox;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param constants
-	 *            the constants
-	 */
-	public BookmarksDialog(ShowcaseConstants constants, Type type) {
-		// super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
+    /**
+     * Constructor.
+     *
+     * @param constants the constants
+     */
+    public BookmarksDialog(ShowcaseConstants constants, Type type) {
+        // super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
 
-		this.constants = constants;
-		this.globalConstants = constants;
+        this.constants = constants;
+        this.globalConstants = constants;
 
-		// Init the widgets of the dialog
-		contentDetailsDecorator = new DecoratorPanel();
-		contentDetailsDecorator.setWidth("30em"); // em = size of current font
-		// initWidget(contentDetailsDecorator);
+        // Init the widgets of the dialog
+        contentDetailsDecorator = new DecoratorPanel();
+        contentDetailsDecorator.setWidth("30em"); // em = size of current font
+        // initWidget(contentDetailsDecorator);
 
-		VerticalPanel contentDetailsPanel = new VerticalPanel();
-		contentDetailsPanel.setWidth("100%");
+        VerticalPanel contentDetailsPanel = new VerticalPanel();
+        contentDetailsPanel.setWidth("100%");
 
-		// Create the bookmarks list
-		//
-		detailsTable = new FlexTable();
-		detailsTable.setCellSpacing(0);
-		detailsTable.setWidth("100%");
-		detailsTable.addStyleName("bookmarks-ListContainer");
-		detailsTable.getColumnFormatter().addStyleName(1, "add-bookmark-input");
-		note = new TextBox();
-		lastName = new TextBox();
-		emailAddress = new TextBox();
-		initDetailsTable();
-		contentDetailsPanel.add(detailsTable);
+        // Create the bookmarks list
+        //
+        detailsTable = new FlexTable();
+        detailsTable.setCellSpacing(0);
+        detailsTable.setWidth("100%");
+        detailsTable.addStyleName("bookmarks-ListContainer");
+        detailsTable.getColumnFormatter().addStyleName(1, "add-bookmark-input");
+        note = new TextBox();
+		creationDate = new DateBox();
+        initDetailsTable();
+        contentDetailsPanel.add(detailsTable);
 
-		HorizontalPanel menuPanel = new HorizontalPanel();
-		saveButton = new Button("Save");
-		cancelButton = new Button("Cancel");
-		menuPanel.add(saveButton);
-		menuPanel.add(cancelButton);
-		contentDetailsPanel.add(menuPanel);
-		contentDetailsDecorator.add(contentDetailsPanel);
+        HorizontalPanel menuPanel = new HorizontalPanel();
+        saveButton = new Button("Save");
+        cancelButton = new Button("Cancel");
+        menuPanel.add(saveButton);
+        menuPanel.add(cancelButton);
+        contentDetailsPanel.add(menuPanel);
+        contentDetailsDecorator.add(contentDetailsPanel);
 
-		dialogBox = new DialogBox();
-		dialogBox.ensureDebugId("cwDialogBox");
-		if (type==Type.ADD)
-			dialogBox.setText(constants.cwAddBookmarkDialogCaption());
-		else 
-			dialogBox.setText(constants.cwUpdateBookmarkDialogCaption());
-			
-		dialogBox.add(contentDetailsDecorator);
+        dialogBox = new DialogBox();
+        dialogBox.ensureDebugId("cwDialogBox");
+        if (type == Type.ADD)
+            dialogBox.setText(constants.cwAddBookmarkDialogCaption());
+        else
+            dialogBox.setText(constants.cwUpdateBookmarkDialogCaption());
 
-		dialogBox.setGlassEnabled(true);
-		dialogBox.setAnimationEnabled(true);
-	}
+        dialogBox.add(contentDetailsDecorator);
 
-	public void displayDialog() {
-		// Create the dialog box
-		// final DialogBox dialogBox = createDialogBox();
+        dialogBox.setGlassEnabled(true);
+        dialogBox.setAnimationEnabled(true);
+    }
 
-		dialogBox.center();
-		dialogBox.show();
-	}
+    public void displayDialog() {
+        // Create the dialog box
+        // final DialogBox dialogBox = createDialogBox();
 
-	@Override
-	public HasClickHandlers getSaveButton() {
-		// TODO Auto-generated method stub
-		return saveButton;
-		// return null;
-	}
+        dialogBox.center();
+        dialogBox.show();
+    }
 
-	@Override
-	public HasClickHandlers getCancelButton() {
-		// TODO Auto-generated method stub
-		return cancelButton;
-		// return null;
-	}
+    @Override
+    public HasClickHandlers getSaveButton() {
+        // TODO Auto-generated method stub
+        return saveButton;
+        // return null;
+    }
 
-	@Override
-	public HasValue<String> getNote() {
-		// TODO Auto-generated method stub
-		return note;
-		// return null;
-	}
+    @Override
+    public HasClickHandlers getCancelButton() {
+        // TODO Auto-generated method stub
+        return cancelButton;
+        // return null;
+    }
 
-	@Override
-	public HasValue<String> getCreationDate() {
-		// TODO Auto-generated method stub
-		return lastName;
-		// return null;
-	}
+    @Override
+    public HasValue<String> getNote() {
+        // TODO Auto-generated method stub
+        return note;
+        // return null;
+    }
 
-	@Override
-	public HasValue<String> getEmailAddress() {
-		// TODO Auto-generated method stub
-		return emailAddress;
-		// return null;
-	}
+   @Override
+    public HasValue<Date> getCreationDate() {
+        return creationDate;
+    }
 
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
-		// return null;
-		displayDialog();
-	}
 
-	@Override
-	public void hide() {
-		// TODO Auto-generated method stub
-		// return null;
-		dialogBox.hide();
-	}
+    @Override
+    public void show() {
+        // TODO Auto-generated method stub
+        // return null;
+        displayDialog();
+    }
+
+    @Override
+    public void hide() {
+        // TODO Auto-generated method stub
+        // return null;
+        dialogBox.hide();
+    }
 
 }

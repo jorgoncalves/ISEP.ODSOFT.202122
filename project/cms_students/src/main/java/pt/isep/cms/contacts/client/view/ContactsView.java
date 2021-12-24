@@ -27,7 +27,7 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 		DecoratorPanel contentTableDecorator = new DecoratorPanel();
 		initWidget(contentTableDecorator);
 		contentTableDecorator.setWidth("100%");
-		contentTableDecorator.setWidth("18em");
+		contentTableDecorator.setWidth("50em");
 
 		contentTable = new FlexTable();
 		contentTable.setWidth("100%");

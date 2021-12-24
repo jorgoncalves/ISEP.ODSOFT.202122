@@ -23,9 +23,7 @@ public class EditBookmarkPresenter implements Presenter {
 
 		HasValue<String> getNote();
 
-		HasValue<String> getCreationDate();
-
-		HasValue<String> getEmailAddress();
+		HasValue<Date> getCreationDate();
 
 		void show();
 
@@ -55,7 +53,7 @@ public class EditBookmarkPresenter implements Presenter {
 			public void onSuccess(Bookmark result) {
 				bookmark = result;
 				EditBookmarkPresenter.this.display.getNote().setValue(bookmark.getNote());
-				EditBookmarkPresenter.this.display.getCreationDate().setValue(bookmark.getCreationDate().toString());
+				EditBookmarkPresenter.this.display.getCreationDate().setValue(bookmark.getCreationDate());
 			}
 
 			public void onFailure(Throwable caught) {
@@ -87,7 +85,7 @@ public class EditBookmarkPresenter implements Presenter {
 
 	private void doSave() {
 		bookmark.setNote(display.getNote().getValue());
-		bookmark.setCreationDate(new Date(display.getCreationDate().getValue()));
+		bookmark.setCreationDate(display.getCreationDate().getValue());
 
 		if (bookmark.getId() == null) {
 			// Adding new bookmark
