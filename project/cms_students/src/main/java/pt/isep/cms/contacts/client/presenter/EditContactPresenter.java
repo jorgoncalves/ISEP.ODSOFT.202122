@@ -19,11 +19,7 @@ public class EditContactPresenter implements Presenter {
 
 		HasClickHandlers getCancelButton();
 
-		HasValue<String> getFirstName();
-
-		HasValue<String> getLastName();
-
-		HasValue<String> getEmailAddress();
+		HasValue<String> getName();
 
 		void show();
 
@@ -52,9 +48,7 @@ public class EditContactPresenter implements Presenter {
 		rpcService.getContact(id, new AsyncCallback<Contact>() {
 			public void onSuccess(Contact result) {
 				contact = result;
-				EditContactPresenter.this.display.getFirstName().setValue(contact.getFirstName());
-				EditContactPresenter.this.display.getLastName().setValue(contact.getLastName());
-				EditContactPresenter.this.display.getEmailAddress().setValue(contact.getEmailAddress());
+				EditContactPresenter.this.display.getName().setValue(contact.getName());
 			}
 
 			public void onFailure(Throwable caught) {
@@ -85,9 +79,7 @@ public class EditContactPresenter implements Presenter {
 	}
 
 	private void doSave() {
-		contact.setFirstName(display.getFirstName().getValue());
-		contact.setLastName(display.getLastName().getValue());
-		contact.setEmailAddress(display.getEmailAddress().getValue());
+		contact.setName(display.getName().getValue());
 
 		if (contact.getId() == null) {
 			// Adding new contact
