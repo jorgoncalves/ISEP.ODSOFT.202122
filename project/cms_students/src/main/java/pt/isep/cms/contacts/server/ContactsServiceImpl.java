@@ -46,7 +46,7 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
     //
     for (int i = 0; i < contactsFirstNameData.length && i < contactsLastNameData.length && i < contactsEmailData.length; ++i) {
       Contact contact = new Contact(String.valueOf(i), contactsFirstNameData[i], contactsLastNameData[i], contactsEmailData[i]);
-      contacts.put(contact.getId(), contact); 
+      contacts.put(contact.getId(), contact);
     }
   }
   

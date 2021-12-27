@@ -17,4 +17,14 @@
     <url-pattern>/showcase/contactsService</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>booksServiceServlet</servlet-name>
+    <servlet-class>pt.isep.cms.books.server.BooksServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>booksServiceServlet</servlet-name>
+    <url-pattern>/showcase/booksService</url-pattern>
+  </servlet-mapping>
+
 </web-app>

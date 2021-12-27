@@ -56,4 +56,8 @@
   <source path="contacts/client" />
   <source path="contacts/shared" />
 
+  <!-- Specify the paths for translatable code source for Books  -->
+  <source path="books/client" />
+  <source path="books/shared" />
+
 </module>
