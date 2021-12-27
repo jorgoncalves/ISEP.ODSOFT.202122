@@ -166,7 +166,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 	 * Get the {@link Category} associated with a widget.
 	 * 
 	 * @param widget
-	 *            the {@link ContentWidget}
+	 *               the {@link ContentWidget}
 	 * @return the associated {@link Category}
 	 */
 	public Category getCategoryForContentWidget(ContentWidget widget) {
@@ -177,7 +177,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 	 * Get the content widget associated with the specified history token.
 	 * 
 	 * @param token
-	 *            the history token
+	 *              the history token
 	 * @return the associated {@link ContentWidget}
 	 */
 	public ContentWidget getContentWidgetForToken(String token) {

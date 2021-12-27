@@ -33,7 +33,7 @@ import pt.isep.cms.contacts.client.ContactsController;
  */
 public interface ShowcaseConstants extends MenuConstants,
         CwBookmarks.CwConstants, BookmarksDialog.CwConstants, BookmarksController.CwConstants,
-        CwBooks.CwConstants, BooksDialog.CwConstants,BooksController.CwConstants,
+        CwBooks.CwConstants, BooksDialog.CwConstants, BooksController.CwConstants,
         CwContacts.CwConstants, ContactsDialog.CwConstants, ContactsController.CwConstants {
 
     /**
