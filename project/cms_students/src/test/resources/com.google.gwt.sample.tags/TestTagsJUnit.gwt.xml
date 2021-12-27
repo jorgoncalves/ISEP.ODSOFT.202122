@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module rename-to='testcontacts'>
+<module rename-to='testtags'>
   <!-- Inherit our applications main module.                      -->
-  <inherits name='com.google.gwt.sample.bookmarks.Bookmarks'/>
+  <inherits name='com.google.gwt.sample.tags.Tags'/>
 
   <!-- Specify the path to any remote services.                   -->
-  <servlet path="/bookmarks/bookmarksService" class="com.google.gwt.sample.bookmarks.server.BookmarksServiceImpl" />
+  <servlet path="/tags/tagsService" class="com.google.gwt.sample.tags.server.TagsServiceImpl" />
 
 </module>
