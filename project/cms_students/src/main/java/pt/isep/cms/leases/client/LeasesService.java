@@ -7,7 +7,7 @@ import pt.isep.cms.leases.shared.LeaseDetails;
 
 import java.util.ArrayList;
 
-@RemoteServiceRelativePath("contactsService")
+@RemoteServiceRelativePath("leasesService")
 public interface LeasesService extends RemoteService {
 
     Lease addLease(Lease contact);

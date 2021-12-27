@@ -8,10 +8,10 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+
 import pt.isep.cms.leases.client.LeasesServiceAsync;
 import pt.isep.cms.leases.client.event.AddLeaseEvent;
 import pt.isep.cms.leases.client.event.EditLeaseEvent;
-import pt.isep.cms.leases.client.presenter.LeasesPresenter;
 import pt.isep.cms.leases.shared.LeaseDetails;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class LeasesPresenter implements Presenter {
     private final HandlerManager eventBus;
     private final LeasesPresenter.Display display;
 
-    public LeasesPresenter(LeasesServiceAsync rpcService, HandlerManager eventBus, LeasesPresenter.Display view) {
+    public LeasesPresenter(LeasesServiceAsync rpcService, HandlerManager eventBus, Display view) {
         this.rpcService = rpcService;
         this.eventBus = eventBus;
         this.display = view;

@@ -24,7 +24,7 @@ public class LeasesController implements Presenter { // (ATB) No history at this
     /**
      * An instance of the constants.
      */
-    private final LeasesController.CwConstants constants;
+    private final CwConstants constants;
     private final ShowcaseConstants globalConstants;
 
     public LeasesController(LeasesServiceAsync rpcService, HandlerManager eventBus, ShowcaseConstants constants) {
