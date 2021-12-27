@@ -14,19 +14,19 @@ import pt.isep.cms.contacts.shared.ContactDetails;
 public class ContactsServiceImpl extends RemoteServiceServlet implements
         ContactsService {
 
-    private static final String[] contactsFirstNameData = new String[]{
+    private static final String[] contactsFirstNameData = new String[] {
             "Hollie", "Emerson", "Healy", "Brigitte", "Elba", "Claudio",
             "Dena", "Christina", "Gail", "Orville", "Rae", "Mildred",
             "Candice", "Louise", "Emilio", "Geneva", "Heriberto", "Bulrush",
-            "Abigail", "Chad", "Terry", "Bell"};
+            "Abigail", "Chad", "Terry", "Bell" };
 
-    private final String[] contactsLastNameData = new String[]{
+    private final String[] contactsLastNameData = new String[] {
             "Voss", "Milton", "Colette", "Cobb", "Lockhart", "Engle",
             "Pacheco", "Blake", "Horton", "Daniel", "Childers", "Starnes",
             "Carson", "Kelchner", "Hutchinson", "Underwood", "Rush", "Bouchard",
-            "Louis", "Andrews", "English", "Snedden"};
+            "Louis", "Andrews", "English", "Snedden" };
 
-    private final String[] contactsEmailData = new String[]{
+    private final String[] contactsEmailData = new String[] {
             "mark@example.com", "hollie@example.com", "boticario@example.com",
             "emerson@example.com", "healy@example.com", "brigitte@example.com",
             "elba@example.com", "claudio@example.com", "dena@example.com",
@@ -34,14 +34,13 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
             "qetlyxxogg@example.com", "antenas_sul@example.com",
             "cblake@example.com", "gailh@example.com", "orville@example.com",
             "post_master@example.com", "rchilders@example.com", "buster@example.com",
-            "user31065@example.com", "ftsgeolbx@example.com"};
+            "user31065@example.com", "ftsgeolbx@example.com" };
 
     private final HashMap<String, Contact> contacts = new HashMap<String, Contact>();
 
     public ContactsServiceImpl() {
         initContacts();
     }
-
 
     private void initContacts() {
         // TODO: Create a real UID for each contact
