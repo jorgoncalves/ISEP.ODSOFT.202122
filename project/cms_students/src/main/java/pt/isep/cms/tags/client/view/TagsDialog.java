@@ -13,12 +13,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package pt.isep.cms.contacts.client.view;
+package pt.isep.cms.tags.client.view;
 
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.i18n.client.Constants;
 import pt.isep.cms.client.ShowcaseConstants;
-import pt.isep.cms.contacts.client.presenter.EditContactPresenter;
+import pt.isep.cms.tags.client.presenter.EditTagPresenter;
 
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DecoratorPanel;
@@ -31,9 +31,9 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
- * Dialog Box for Adding and Updating Contacts.
+ * Dialog Box for Adding and Updating Tags.
  */
-public class ContactsDialog implements EditContactPresenter.Display {
+public class TagsDialog implements EditTagPresenter.Display {
 
 	public enum Type {
 		ADD,
@@ -45,25 +45,25 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	 */
 	public static interface CwConstants extends Constants {
 
-		String cwAddContactDialogCaption();
+		String cwAddTagDialogCaption();
 
-		String cwUpdateContactDialogCaption();
+		String cwUpdateTagDialogCaption();
 
-//		String cwDialogBoxClose();
-//
-//		String cwDialogBoxDescription();
-//
-//		String cwDialogBoxDetails();
-//
-//		String cwDialogBoxItem();
-//
-//		String cwDialogBoxListBoxInfo();
-//
-//		String cwDialogBoxMakeTransparent();
-//
-//		String cwDialogBoxName();
-//
-//		String cwDialogBoxShowButton();
+		// String cwDialogBoxClose();
+		//
+		// String cwDialogBoxDescription();
+		//
+		// String cwDialogBoxDetails();
+		//
+		// String cwDialogBoxItem();
+		//
+		// String cwDialogBoxListBoxInfo();
+		//
+		// String cwDialogBoxMakeTransparent();
+		//
+		// String cwDialogBoxName();
+		//
+		// String cwDialogBoxShowButton();
 	}
 
 	/**
@@ -73,21 +73,15 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	private final ShowcaseConstants globalConstants;
 
 	// Widgets
-	private final TextBox firstName;
-	private final TextBox lastName;
-	private final TextBox emailAddress;
+	private final TextBox description;
 	private final FlexTable detailsTable;
 	private final Button saveButton;
 	private final Button cancelButton;
 
 	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Firstname"));
-		detailsTable.setWidget(0, 1, firstName);
-		detailsTable.setWidget(1, 0, new Label("Lastname"));
-		detailsTable.setWidget(1, 1, lastName);
-		detailsTable.setWidget(2, 0, new Label("Email Address"));
-		detailsTable.setWidget(2, 1, emailAddress);
-		firstName.setFocus(true);
+		detailsTable.setWidget(0, 0, new Label("Description"));
+		detailsTable.setWidget(0, 1, description);
+		description.setFocus(true);
 	}
 
 	DecoratorPanel contentDetailsDecorator;
@@ -96,9 +90,10 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	/**
 	 * Constructor.
 	 *
-	 * @param constants the constants
+	 * @param constants
+	 *                  the constants
 	 */
-	public ContactsDialog(ShowcaseConstants constants, Type type) {
+	public TagsDialog(ShowcaseConstants constants, Type type) {
 		// super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
 
 		this.constants = constants;
@@ -112,16 +107,14 @@ public class ContactsDialog implements EditContactPresenter.Display {
 		VerticalPanel contentDetailsPanel = new VerticalPanel();
 		contentDetailsPanel.setWidth("100%");
 
-		// Create the contacts list
+		// Create the tags list
 		//
 		detailsTable = new FlexTable();
 		detailsTable.setCellSpacing(0);
 		detailsTable.setWidth("100%");
-		detailsTable.addStyleName("generic-ListContainer");
-		detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
-		firstName = new TextBox();
-		lastName = new TextBox();
-		emailAddress = new TextBox();
+		detailsTable.addStyleName("tags-ListContainer");
+		detailsTable.getColumnFormatter().addStyleName(1, "add-tag-input");
+		description = new TextBox();
 		initDetailsTable();
 		contentDetailsPanel.add(detailsTable);
 
@@ -136,9 +129,9 @@ public class ContactsDialog implements EditContactPresenter.Display {
 		dialogBox = new DialogBox();
 		dialogBox.ensureDebugId("cwDialogBox");
 		if (type == Type.ADD)
-			dialogBox.setText(constants.cwAddContactDialogCaption());
+			dialogBox.setText(constants.cwAddTagDialogCaption());
 		else
-			dialogBox.setText(constants.cwUpdateContactDialogCaption());
+			dialogBox.setText(constants.cwUpdateTagDialogCaption());
 
 		dialogBox.add(contentDetailsDecorator);
 
@@ -169,25 +162,12 @@ public class ContactsDialog implements EditContactPresenter.Display {
 	}
 
 	@Override
-	public HasValue<String> getFirstName() {
+	public HasValue<String> getDescription() {
 		// TODO Auto-generated method stub
-		return firstName;
+		return description;
 		// return null;
 	}
 
-	@Override
-	public HasValue<String> getLastName() {
-		// TODO Auto-generated method stub
-		return lastName;
-		// return null;
-	}
-
-	@Override
-	public HasValue<String> getEmailAddress() {
-		// TODO Auto-generated method stub
-		return emailAddress;
-		// return null;
-	}
 
 	@Override
 	public void show() {

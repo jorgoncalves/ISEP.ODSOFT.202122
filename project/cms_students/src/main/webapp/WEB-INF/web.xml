@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
 
+<web-app>
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Showcase.html</welcome-file>
@@ -36,6 +36,17 @@
   <servlet-mapping>
     <servlet-name>bookmarksServiceServlet</servlet-name>
     <url-pattern>/showcase/bookmarksService</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlets for the tags -->
+  <servlet>
+    <servlet-name>tagsServiceServlet</servlet-name>
+    <servlet-class>pt.isep.cms.tags.server.TagsServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>tagsServiceServlet</servlet-name>
+    <url-pattern>/showcase/tagsService</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='testtags'>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='pt.isep.cms.Showcase'></inherits>
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/tags/tagsService" class="pt.isep.cms.tags.server.TagsServiceImpl" />
+
+</module>
