@@ -5,13 +5,13 @@
   <welcome-file-list>
     <welcome-file>Showcase.html</welcome-file>
   </welcome-file-list>
-  
+
   <!-- Servlets for the contacts -->
   <servlet>
     <servlet-name>contactsServiceServlet</servlet-name>
     <servlet-class>pt.isep.cms.contacts.server.ContactsServiceImpl</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>contactsServiceServlet</servlet-name>
     <url-pattern>/showcase/contactsService</url-pattern>
@@ -25,6 +25,17 @@
   <servlet-mapping>
     <servlet-name>booksServiceServlet</servlet-name>
     <url-pattern>/showcase/booksService</url-pattern>
+  </servlet-mapping>
+
+  <!-- Servlets for the bookmark -->
+  <servlet>
+    <servlet-name>bookmarksServiceServlet</servlet-name>
+    <servlet-class>pt.isep.cms.bookmarks.server.BookmarksServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>bookmarksServiceServlet</servlet-name>
+    <url-pattern>/showcase/bookmarksService</url-pattern>
   </servlet-mapping>
 
 </web-app>

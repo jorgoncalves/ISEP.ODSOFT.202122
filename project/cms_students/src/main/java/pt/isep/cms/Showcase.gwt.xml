@@ -60,4 +60,8 @@
   <source path="books/client" />
   <source path="books/shared" />
 
+  <!-- Specify the paths for translatable code source for Bookmarks  -->
+  <source path="bookmarks/client" />
+  <source path="bookmarks/shared" />
+
 </module>

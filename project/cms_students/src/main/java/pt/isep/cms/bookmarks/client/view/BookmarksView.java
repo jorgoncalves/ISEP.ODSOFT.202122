@@ -1,4 +1,4 @@
-package pt.isep.cms.contacts.client.view;
+package pt.isep.cms.bookmarks.client.view;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -11,19 +11,19 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.Widget;
-import pt.isep.cms.contacts.client.presenter.ContactsPresenter;
+import pt.isep.cms.bookmarks.client.presenter.BookmarksPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactsView extends Composite implements ContactsPresenter.Display {
+public class BookmarksView extends Composite implements BookmarksPresenter.Display {
 	private final Button addButton;
 	private final Button deleteButton;
-	private FlexTable contactsTable;
+	private FlexTable bookmarksTable;
 	private final FlexTable contentTable;
 	// private final VerticalPanel vPanel ;
 
-	public ContactsView() {
+	public BookmarksView() {
 		DecoratorPanel contentTableDecorator = new DecoratorPanel();
 		initWidget(contentTableDecorator);
 		contentTableDecorator.setWidth("100%");
@@ -31,7 +31,7 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 
 		contentTable = new FlexTable();
 		contentTable.setWidth("100%");
-		contentTable.getCellFormatter().addStyleName(0, 0, "contacts-ListContainer");
+		contentTable.getCellFormatter().addStyleName(0, 0, "bookmarks-ListContainer");
 		contentTable.getCellFormatter().setWidth(0, 0, "100%");
 		contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
 
@@ -52,21 +52,21 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 
 		// vPanel.add(hPanel);
 
-		contentTable.getCellFormatter().addStyleName(0, 0, "contacts-ListMenu");
+		contentTable.getCellFormatter().addStyleName(0, 0, "bookmarks-ListMenu");
 		contentTable.setWidget(0, 0, hPanel);
 
-		// Create the contacts list
+		// Create the bookmarks list
 		//
-		contactsTable = new FlexTable();
-		contactsTable.setCellSpacing(0);
-		contactsTable.setCellPadding(0);
-		contactsTable.setWidth("100%");
-		contactsTable.addStyleName("contacts-ListContents");
-		contactsTable.getColumnFormatter().setWidth(0, "15px");
+		bookmarksTable = new FlexTable();
+		bookmarksTable.setCellSpacing(0);
+		bookmarksTable.setCellPadding(0);
+		bookmarksTable.setWidth("100%");
+		bookmarksTable.addStyleName("bookmarks-ListContents");
+		bookmarksTable.getColumnFormatter().setWidth(0, "15px");
 
-		// vPanel.add(contactsTable);
+		// vPanel.add(bookmarksTable);
 
-		contentTable.setWidget(1, 0, contactsTable);
+		contentTable.setWidget(1, 0, bookmarksTable);
 
 		contentTableDecorator.add(contentTable);
 	}
@@ -80,21 +80,21 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 	}
 
 	public HasClickHandlers getList() {
-		return contactsTable;
+		return bookmarksTable;
 	}
 
 	public void setData(List<String> data) {
-		contactsTable.removeAllRows();
+		bookmarksTable.removeAllRows();
 
 		for (int i = 0; i < data.size(); ++i) {
-			contactsTable.setWidget(i, 0, new CheckBox());
-			contactsTable.setText(i, 1, data.get(i));
+			bookmarksTable.setWidget(i, 0, new CheckBox());
+			bookmarksTable.setText(i, 1, data.get(i));
 		}
 	}
 
 	public int getClickedRow(ClickEvent event) {
 		int selectedRow = -1;
-		HTMLTable.Cell cell = contactsTable.getCellForEvent(event);
+		HTMLTable.Cell cell = bookmarksTable.getCellForEvent(event);
 
 		if (cell != null) {
 			// Suppress clicks if the user is actually selecting the
@@ -111,8 +111,8 @@ public class ContactsView extends Composite implements ContactsPresenter.Display
 	public List<Integer> getSelectedRows() {
 		List<Integer> selectedRows = new ArrayList<Integer>();
 
-		for (int i = 0; i < contactsTable.getRowCount(); ++i) {
-			CheckBox checkBox = (CheckBox) contactsTable.getWidget(i, 0);
+		for (int i = 0; i < bookmarksTable.getRowCount(); ++i) {
+			CheckBox checkBox = (CheckBox) bookmarksTable.getWidget(i, 0);
 			if (checkBox.getValue()) {
 				selectedRows.add(i);
 			}

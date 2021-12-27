@@ -22,6 +22,7 @@ import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.SelectionModel;
 import com.google.gwt.view.client.TreeViewModel;
 
+import pt.isep.cms.bookmarks.client.CwBookmarks;
 import pt.isep.cms.contacts.client.CwContacts;
 import pt.isep.cms.books.client.CwBooks;
 
@@ -165,7 +166,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 	 * Get the {@link Category} associated with a widget.
 	 * 
 	 * @param widget
-	 *            the {@link ContentWidget}
+	 *               the {@link ContentWidget}
 	 * @return the associated {@link Category}
 	 */
 	public Category getCategoryForContentWidget(ContentWidget widget) {
@@ -176,7 +177,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 	 * Get the content widget associated with the specified history token.
 	 * 
 	 * @param token
-	 *            the history token
+	 *              the history token
 	 * @return the associated {@link ContentWidget}
 	 */
 	public ContentWidget getContentWidgetForToken(String token) {
@@ -228,6 +229,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 			// Will it load?!!!
 			category.addCwPanel(new CwContacts(constants));
 			category.addCwPanel(new CwBooks(constants));
+			category.addCwPanel(new CwBookmarks(constants));
 		}
 
 		// Services.
