@@ -1,7 +1,5 @@
 package pt.isep.cms.leases.shared;
 
-import pt.isep.cms.contacts.shared.ContactDetails;
-
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
@@ -10,7 +8,7 @@ public class LeaseDetails implements Serializable {
     private String displayName;
 
     public LeaseDetails() {
-        new ContactDetails("0", "");
+        new LeaseDetails("0", "");
     }
 
     public LeaseDetails(String id, String displayName) {

@@ -1,5 +1,7 @@
 package pt.isep.cms.leases.client.presenter;
 
+import java.util.Date;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -20,11 +22,11 @@ public class EditLeasePresenter implements Presenter {
 
         HasClickHandlers getCancelButton();
 
-        HasValue<String> getFirstName();
+        HasValue<Date> getOnDate();
 
-        HasValue<String> getLastName();
+        HasValue<Date> getToDate();
 
-        HasValue<String> getEmailAddress();
+        HasValue<String> getBook();
 
         void show();
 
@@ -53,9 +55,9 @@ public class EditLeasePresenter implements Presenter {
         rpcService.getLease(id, new AsyncCallback<Lease>() {
             public void onSuccess(Lease result) {
                 lease = result;
-                EditLeasePresenter.this.display.getFirstName().setValue(lease.getFirstName());
-                EditLeasePresenter.this.display.getLastName().setValue(lease.getLastName());
-                EditLeasePresenter.this.display.getEmailAddress().setValue(lease.getEmailAddress());
+                EditLeasePresenter.this.display.getOnDate().setValue(lease.getOnDate());
+                EditLeasePresenter.this.display.getToDate().setValue(lease.getToDate());
+                EditLeasePresenter.this.display.getBook().setValue(lease.getBook());
             }
 
             public void onFailure(Throwable caught) {
@@ -86,9 +88,9 @@ public class EditLeasePresenter implements Presenter {
     }
 
     private void doSave() {
-        lease.setFirstName(display.getFirstName().getValue());
-        lease.setLastName(display.getLastName().getValue());
-        lease.setEmailAddress(display.getEmailAddress().getValue());
+        lease.setOnDate(display.getOnDate().getValue());
+        lease.setToDate(display.getToDate().getValue());
+        lease.setBook(display.getBook().getValue());
 
         if (lease.getId() == null) {
             // Adding new lease

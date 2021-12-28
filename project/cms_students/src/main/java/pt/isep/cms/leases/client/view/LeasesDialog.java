@@ -1,8 +1,12 @@
 package pt.isep.cms.leases.client.view;
 
+import java.util.Date;
+
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.i18n.client.Constants;
 import com.google.gwt.user.client.ui.*;
+import com.google.gwt.user.datepicker.client.DateBox;
+
 import pt.isep.cms.client.ShowcaseConstants;
 import pt.isep.cms.leases.client.presenter.EditLeasePresenter;
 import pt.isep.cms.leases.client.view.LeasesDialog;
@@ -46,21 +50,21 @@ public class LeasesDialog implements EditLeasePresenter.Display{
     private final ShowcaseConstants globalConstants;
 
     // Widgets
-    private final TextBox firstName;
-    private final TextBox lastName;
-    private final TextBox emailAddress;
+    private final DateBox onDate;
+    private final DateBox toDate;
+    private final TextBox book;
     private final FlexTable detailsTable;
     private final Button saveButton;
     private final Button cancelButton;
 
     private void initDetailsTable() {
-        detailsTable.setWidget(0, 0, new Label("Firstname"));
-        detailsTable.setWidget(0, 1, firstName);
-        detailsTable.setWidget(1, 0, new Label("Lastname"));
-        detailsTable.setWidget(1, 1, lastName);
-        detailsTable.setWidget(2, 0, new Label("Email Address"));
-        detailsTable.setWidget(2, 1, emailAddress);
-        firstName.setFocus(true);
+        detailsTable.setWidget(0, 0, new Label("On Date"));
+        detailsTable.setWidget(0, 1, onDate);
+        detailsTable.setWidget(1, 0, new Label("To Date"));
+        detailsTable.setWidget(1, 1, toDate);
+        detailsTable.setWidget(2, 0, new Label("Book"));
+        detailsTable.setWidget(2, 1, book);
+        book.setFocus(true);
     }
 
     DecoratorPanel contentDetailsDecorator;
@@ -93,9 +97,9 @@ public class LeasesDialog implements EditLeasePresenter.Display{
         detailsTable.setWidth("100%");
         detailsTable.addStyleName("leases-ListContainer");
         detailsTable.getColumnFormatter().addStyleName(1, "add-lease-input");
-        firstName = new TextBox();
-        lastName = new TextBox();
-        emailAddress = new TextBox();
+        onDate = new DateBox();
+        toDate = new DateBox();
+        book = new TextBox();
         initDetailsTable();
         contentDetailsPanel.add(detailsTable);
 
@@ -143,27 +147,6 @@ public class LeasesDialog implements EditLeasePresenter.Display{
     }
 
     @Override
-    public HasValue<String> getFirstName() {
-        // TODO Auto-generated method stub
-        return firstName;
-        // return null;
-    }
-
-    @Override
-    public HasValue<String> getLastName() {
-        // TODO Auto-generated method stub
-        return lastName;
-        // return null;
-    }
-
-    @Override
-    public HasValue<String> getEmailAddress() {
-        // TODO Auto-generated method stub
-        return emailAddress;
-        // return null;
-    }
-
-    @Override
     public void show() {
         // TODO Auto-generated method stub
         // return null;
@@ -175,5 +158,23 @@ public class LeasesDialog implements EditLeasePresenter.Display{
         // TODO Auto-generated method stub
         // return null;
         dialogBox.hide();
+    }
+
+    @Override
+    public HasValue<Date> getOnDate() {
+        // TODO Auto-generated method stub
+        return onDate;
+    }
+
+    @Override
+    public HasValue<Date> getToDate() {
+        // TODO Auto-generated method stub
+        return toDate;
+    }
+
+    @Override
+    public HasValue<String> getBook() {
+        // TODO Auto-generated method stub
+        return book;
     }
 }

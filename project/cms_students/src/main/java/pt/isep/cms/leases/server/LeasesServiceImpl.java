@@ -1,13 +1,13 @@
 package pt.isep.cms.leases.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import pt.isep.cms.contacts.shared.Contact;
-import pt.isep.cms.contacts.shared.ContactDetails;
+
 import pt.isep.cms.leases.client.LeasesService;
 import pt.isep.cms.leases.shared.Lease;
 import pt.isep.cms.leases.shared.LeaseDetails;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -15,27 +15,44 @@ import java.util.Iterator;
 public class LeasesServiceImpl extends RemoteServiceServlet implements
         LeasesService {
 
-    private static final String[] leasesOnDateData = new String[] {
-            "Hollie", "Emerson", "Healy", "Brigitte", "Elba", "Claudio",
-            "Dena", "Christina", "Gail", "Orville", "Rae", "Mildred",
-            "Candice", "Louise", "Emilio", "Geneva", "Heriberto", "Bulrush",
-            "Abigail", "Chad", "Terry", "Bell"};
+    private static final Date[] leasesOnDateData = new Date[] {
+        new Date(2021, 12, 1),
+        new Date(2021, 12, 2),
+        new Date(2021, 12, 3),
+        new Date(2021, 12, 4),
+        new Date(2021, 12, 5),
+        new Date(2021, 12, 6),
+        new Date(2021, 12, 7),
+        new Date(2021, 12, 8),
+        new Date(2021, 12, 9),
+        new Date(2021, 12, 10)  
+    };
 
-    private final String[] leasesToDateData = new String[] {
-            "Voss", "Milton", "Colette", "Cobb", "Lockhart", "Engle",
-            "Pacheco", "Blake", "Horton", "Daniel", "Childers", "Starnes",
-            "Carson", "Kelchner", "Hutchinson", "Underwood", "Rush", "Bouchard",
-            "Louis", "Andrews", "English", "Snedden"};
+    private final Date[] leasesToDateData = new Date[] {
+        new Date(2021, 12, 8),
+        new Date(2021, 12, 9),
+        new Date(2021, 12, 10),
+        new Date(2021, 12, 11),
+        new Date(2021, 12, 12),
+        new Date(2021, 12, 13),
+        new Date(2021, 12, 14),
+        new Date(2021, 12, 15),
+        new Date(2021, 12, 16),
+        new Date(2021, 12, 17) 
+    };
 
-    private final String[] leasesEmailData = new String[] {
-            "mark@example.com", "hollie@example.com", "boticario@example.com",
-            "emerson@example.com", "healy@example.com", "brigitte@example.com",
-            "elba@example.com", "claudio@example.com", "dena@example.com",
-            "brasilsp@example.com", "parker@example.com", "derbvktqsr@example.com",
-            "qetlyxxogg@example.com", "antenas_sul@example.com",
-            "cblake@example.com", "gailh@example.com", "orville@example.com",
-            "post_master@example.com", "rchilders@example.com", "buster@example.com",
-            "user31065@example.com", "ftsgeolbx@example.com"};
+    private final String[] leasesBookData = new String[] {
+        "0-3020-4050-1",
+        "0-3297-9686-0",
+        "0-7162-8596-7",
+        "0-9038-4488-5",
+        "0-4757-9808-2",
+        "0-9370-1872-4",
+        "0-3749-7243-5",
+        "0-3629-0985-7m",
+        "0-5620-1952-9",
+        "0-3948-1778-8"
+    };
 
     private final HashMap<String, Lease> leases = new HashMap<String, Lease>();
 
@@ -45,7 +62,7 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
 
     private void initLeases() {
         for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length; ++i) {
-            Lease lease = new Lease(String.valueOf(i), leasesOnDateData[i], leasesToDateData[i], leasesEmailData[i]);
+            Lease lease = new Lease(String.valueOf(i), leasesOnDateData[i], leasesToDateData[i], leasesBookData[i]);
             leases.put(lease.getId(), lease);
         }
     }
