@@ -13,6 +13,8 @@ public interface TagsServiceAsync {
 
     public void deleteTag(String id, AsyncCallback<Boolean> callback);
 
+    public void validDescription(String description, AsyncCallback<Boolean> callback);
+
     public void deleteTags(ArrayList<String> ids, AsyncCallback<ArrayList<TagDetails>> callback);
 
     public void getTagsDetails(AsyncCallback<ArrayList<TagDetails>> callback);
