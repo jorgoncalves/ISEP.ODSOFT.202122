@@ -11,15 +11,17 @@ import java.util.ArrayList;
 @RemoteServiceRelativePath("tagsService")
 public interface TagsService extends RemoteService {
 
-  Tag addTag(Tag tag);
+    Tag addTag(Tag tag);
 
-  Boolean deleteTag(String id);
+    Boolean deleteTag(String id);
 
-  ArrayList<TagDetails> deleteTags(ArrayList<String> ids);
+    Boolean validDescription(String description);
 
-  ArrayList<TagDetails> getTagsDetails();
+    ArrayList<TagDetails> deleteTags(ArrayList<String> ids);
 
-  Tag getTag(String id);
+    ArrayList<TagDetails> getTagsDetails();
 
-  Tag updateTag(Tag tag);
+    Tag getTag(String id);
+
+    Tag updateTag(Tag tag);
 }

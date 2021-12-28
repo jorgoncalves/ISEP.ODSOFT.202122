@@ -79,31 +79,48 @@ public class EditTagPresenter implements Presenter {
     }
 
     private void doSave() {
-        tag.setDescription(display.getDescription().getValue());
+        String description = display.getDescription().getValue();
+        rpcService.validDescription(description, new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Error validating tag");
+                    }
 
-        if (tag.getId() == null) {
-            // Adding new tag
-            rpcService.addTag(tag, new AsyncCallback<Tag>() {
-                public void onSuccess(Tag result) {
-                    eventBus.fireEvent(new TagUpdatedEvent(result));
-                }
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        if (!result) Window.alert("Tag description already exists");
+                        else {
+                            tag.setDescription(description);
+                            if (tag.getId() == null) {
+                                // Adding new tag
+                                rpcService.addTag(tag, new AsyncCallback<Tag>() {
+                                            public void onSuccess(Tag result) {
+                                                eventBus.fireEvent(new TagUpdatedEvent(result));
+                                            }
 
-                public void onFailure(Throwable caught) {
-                    Window.alert("Error adding tag");
-                }
-            });
-        } else {
-            // updating existing tag
-            rpcService.updateTag(tag, new AsyncCallback<Tag>() {
-                public void onSuccess(Tag result) {
-                    eventBus.fireEvent(new TagUpdatedEvent(result));
-                }
+                                            public void onFailure(Throwable caught) {
+                                                Window.alert("Error adding tag");
+                                            }
+                                        }
+                                );
+                            } else {
+                                // updating existing tag
+                                rpcService.updateTag(tag, new AsyncCallback<Tag>() {
+                                            public void onSuccess(Tag result) {
+                                                eventBus.fireEvent(new TagUpdatedEvent(result));
+                                            }
 
-                public void onFailure(Throwable caught) {
-                    Window.alert("Error updating tag");
+                                            public void onFailure(Throwable caught) {
+                                                Window.alert("Error updating tag");
+                                            }
+                                        }
+                                );
+                            }
+                        }
+
+                    }
                 }
-            });
-        }
+        );
     }
 
 }
