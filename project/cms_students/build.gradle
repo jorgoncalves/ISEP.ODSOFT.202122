@@ -31,7 +31,15 @@ dependencies {
     testCompile 'org.easymock:easymock:2.5.2'
     testCompile 'com.google.gwt:gwt-dev:2.8.1'
     compile 'net.sourceforge.plantuml:plantuml:8001'
+    // For JPA / Eclipselink
+    compile 'org.eclipse.persistence:eclipselink:2.6.1'
+    compile 'org.eclipse.persistence:org.eclipse.persistence.jpa.modelgen.processor:2.6.1'
+    compile 'com.h2database:h2:1.4.191'
 }
+
+// This two lines are required so that the java compiler finds the persistence.xml file during compilation
+sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDir
+compileJava.dependsOn(processResources)
 
 javadoc {
     options.addStringOption("sourcepath", "")
@@ -46,6 +54,7 @@ pitest {
     timestampedReports = false
 
 }
+
 
 // If we woant to use the default ant build inside gradle
 // ant.importBuild "build.xml"
