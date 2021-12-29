@@ -19,7 +19,7 @@ public class LeasesView extends Composite implements LeasesPresenter.Display{
         DecoratorPanel contentTableDecorator = new DecoratorPanel();
         initWidget(contentTableDecorator);
         contentTableDecorator.setWidth("100%");
-        contentTableDecorator.setWidth("18em");
+        contentTableDecorator.setWidth("30em");
 
         contentTable = new FlexTable();
         contentTable.setWidth("100%");
