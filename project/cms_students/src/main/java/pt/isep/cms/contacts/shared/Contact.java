@@ -1,5 +1,7 @@
 package pt.isep.cms.contacts.shared;
 
+import org.eclipse.persistence.jaxb.compiler.Generator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -7,8 +9,8 @@ import java.io.Serializable;
 @Entity
 @Table
 public class Contact implements Serializable {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(generator = "UUID")
     private String id;
     private String name;
 
@@ -16,11 +18,14 @@ public class Contact implements Serializable {
         super();
     }
 
-    public Contact(String id, String name) {
+    public Contact(String name) {
         super();
-        this.id = id;
         this.name = name;
     }
+
+//    private String getUUID() {
+//        return
+//    }
 
     @Override
     public String toString() {

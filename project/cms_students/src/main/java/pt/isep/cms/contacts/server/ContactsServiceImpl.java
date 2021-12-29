@@ -24,8 +24,6 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
             "Bulrush Bouchard",
             "Abigail Louis", "Chad Andrews", "Terry English", "Bell Snedden"};
 
-    private final HashMap<String, Contact> contacts = new HashMap<String, Contact>();
-
     private EntityManagerFactory emfactory = null;
     private EntityManager entitymanager = null;
 
@@ -46,21 +44,19 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
         Long result = (Long) query.getSingleResult();
 
         if (result == 0) {
+            System.out.println("No contacts found. Populating db.");
             this.entitymanager.getTransaction().begin();
 
             for (int i = 0; i < contactsNameData.length; ++i) {
-                UUID uuid = UUID.randomUUID();
-                String uuidAsString = uuid.toString();
 
-                Contact contact = new Contact(uuidAsString, contactsNameData[i]);
+                Contact contact = new Contact(contactsNameData[i]);
                 System.out.println(contact.toString());
                 this.entitymanager.persist(contact);
                 //contacts.put(contact.getId(), contact);
             }
 
-            System.out.println("Before transaction");
             this.entitymanager.getTransaction().commit();
-            System.out.println("After transaction");
+
         }
 
     }
