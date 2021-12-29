@@ -23,10 +23,6 @@ public class Contact implements Serializable {
         this.name = name;
     }
 
-//    private String getUUID() {
-//        return
-//    }
-
     @Override
     public String toString() {
         return "Contact [uid=" + id + ", name=" + name + "]";

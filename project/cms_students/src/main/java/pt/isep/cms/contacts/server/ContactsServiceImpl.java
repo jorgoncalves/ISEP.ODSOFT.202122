@@ -36,10 +36,7 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
     }
 
     private void initPersistentContacts() {
-        // TODO: Create a real UID for each contact
-        //
 
-        // We only do this if the database is empty...
         Query query = entitymanager.createQuery("Select COUNT(c) from Contact c");
         Long result = (Long) query.getSingleResult();
 
@@ -48,11 +45,8 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
             this.entitymanager.getTransaction().begin();
 
             for (int i = 0; i < contactsNameData.length; ++i) {
-
                 Contact contact = new Contact(contactsNameData[i]);
-                System.out.println(contact.toString());
                 this.entitymanager.persist(contact);
-                //contacts.put(contact.getId(), contact);
             }
 
             this.entitymanager.getTransaction().commit();
@@ -62,9 +56,6 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
     }
 
     public Contact addContact(Contact contact) {
-        //contact.setId(String.valueOf(contacts.size()));
-
-        // Add the new contact to the database
         this.entitymanager.getTransaction().begin();
         this.entitymanager.persist(contact);
         this.entitymanager.getTransaction().commit();
@@ -73,8 +64,6 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
     }
 
     public Contact updateContact(Contact contact) {
-
-        // Update the contact in the database
         this.entitymanager.getTransaction().begin();
         this.entitymanager.merge(contact);
         this.entitymanager.getTransaction().commit();
@@ -83,7 +72,6 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
     }
 
     public Boolean deleteContact(String id) {
-        // Remove the contact in the database
         this.entitymanager.getTransaction().begin();
         Contact contact = entitymanager.find(Contact.class, id);
         entitymanager.remove(contact);
