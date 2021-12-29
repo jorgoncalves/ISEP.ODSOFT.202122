@@ -1,8 +1,14 @@
 # CMS - College Management System
 
-# 0. Database Support Example Code
+# 0. Notes on Database Support
 
-You may find and example of adding database support to this project in the brach **database**.
+This branch includes support for database using JPA (Java Persistence API) (<https://docs.oracle.com/javaee/6/tutorial/doc/bnbpz.html>).
+
+The implementation of JPA that is used is Eclipselink (<http://www.eclipse.org/eclipselink/>). If for some reason Eclipse is unable to locate Eclipselink you mau have to configure it by right clicking in the project and selecting "Properties/JPA". The, in the "JPA implementation" use the "disk icon" to download JPA.
+
+You can find a very simple tutorial on JPA in (<https://www.tutorialspoint.com/jpa/index.htm>).
+
+The specific database that is configured is H2 (<http://www.h2database.com/html/main.html>).
 
 # 1. Overview
 
