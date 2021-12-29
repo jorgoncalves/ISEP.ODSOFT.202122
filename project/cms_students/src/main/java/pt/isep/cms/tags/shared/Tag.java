@@ -2,18 +2,26 @@ package pt.isep.cms.tags.shared;
 
 import pt.isep.cms.contacts.shared.ContactDetails;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
+@Entity
+@Table
 public class Tag implements Serializable {
-    public String id;
-    public String description;
+    @Id
+    @GeneratedValue(generator = "UUID")
+    private String id;
+    private String description;
 
     public Tag() {
     }
 
-    public Tag(String id, String description) {
-        this.id = id;
+    public Tag(String description) {
+
         this.description = description;
     }
 

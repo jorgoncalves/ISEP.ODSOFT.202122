@@ -5,10 +5,17 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
+import pt.isep.cms.contacts.shared.Contact;
 import pt.isep.cms.tags.client.TagsService;
 import pt.isep.cms.tags.shared.Tag;
 import pt.isep.cms.tags.shared.TagDetails;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 @SuppressWarnings("serial")
 public class TagsServiceImpl extends RemoteServiceServlet implements
@@ -19,36 +26,57 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
             "Detective and Mystery", "Fantasy", "Historical Fiction", "Horror",
             "Literary Fiction"};
 
-    private final HashMap<String, Tag> tags = new HashMap<String, Tag>();
+    private EntityManagerFactory emfactory = null;
+    private EntityManager entitymanager = null;
 
     public TagsServiceImpl() {
-        initTags();
+        this.emfactory = Persistence.createEntityManagerFactory("CMS");
+
+        this.entitymanager = emfactory.createEntityManager();
+
+        initPersistentTags();
     }
 
-    private void initTags() {
-        // TODO: Create a real UID for each tag
-        //
-        for (int i = 0; i < tagsData.length; ++i) {
-            Tag tag = new Tag(String.valueOf(i), tagsData[i]);
-            tags.put(tag.getId(), tag);
+    private void initPersistentTags() {
+        Query query = entitymanager.createQuery("Select COUNT(t) from Tag t");
+        Long result = (Long) query.getSingleResult();
+
+        if (result == 0) {
+            System.out.println("No tags found. Populating db.");
+            this.entitymanager.getTransaction().begin();
+
+            for (int i = 0; i < tagsData.length; ++i) {
+                Tag tag = new Tag(tagsData[i]);
+                this.entitymanager.persist(tag);
+            }
+
+            this.entitymanager.getTransaction().commit();
+
         }
     }
 
     public Tag addTag(Tag tag) {
-        tag.setId(String.valueOf(tags.size()));
-        tags.put(tag.getId(), tag);
+        this.entitymanager.getTransaction().begin();
+        this.entitymanager.persist(tag);
+        this.entitymanager.getTransaction().commit();
+
         return tag;
     }
 
     public Tag updateTag(Tag tag) {
-        String lid = tag.getId();
-        tags.remove(tag.getId());
-        tags.put(tag.getId(), tag);
+        this.entitymanager.getTransaction().begin();
+        this.entitymanager.merge(tag);
+        this.entitymanager.getTransaction().commit();
+
         return tag;
     }
 
     public Boolean deleteTag(String id) {
-        tags.remove(id);
+        this.entitymanager.getTransaction().begin();
+        Tag tag = entitymanager.find(Tag.class, id);
+        entitymanager.remove(tag);
+        this.entitymanager.getTransaction().commit();
+
         return true;
     }
 
@@ -56,22 +84,19 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
     public Boolean validDescription(String description) {
         Boolean isValid = true;
 
-        Iterator<String> it = tags.keySet().iterator();
+        Query query = entitymanager.createQuery("Select t from Tag t");
 
-//        for (int i = 0; i < tags.size(); i++) {
-//
-//        }
+        @SuppressWarnings("unchecked")
+        List<Tag> list = query.getResultList();
 
-        while (it.hasNext()) {
-            Tag tag = tags.get(it.next());
-            System.out.println(tag.getDescription() + " - "+ description);
+        for (Tag tag : list) {
             if (tag.getDescription().equals(description)) {
                 isValid = false;
-                System.out.println("I'M HERE MDF");
+
                 break;
             }
         }
-        System.out.println("isValid - " + isValid.toString());
+
         return isValid;
     }
 
@@ -87,9 +112,12 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
     public ArrayList<TagDetails> getTagsDetails() {
         ArrayList<TagDetails> tagDetails = new ArrayList<TagDetails>();
 
-        Iterator<String> it = tags.keySet().iterator();
-        while (it.hasNext()) {
-            Tag tag = tags.get(it.next());
+        Query query = entitymanager.createQuery("Select t from Tag t");
+
+        @SuppressWarnings("unchecked")
+        List<Tag> list = query.getResultList();
+
+        for (Tag tag : list) {
             tagDetails.add(tag.getLightWeightTag());
         }
 
@@ -97,6 +125,7 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
     }
 
     public Tag getTag(String id) {
-        return tags.get(id);
+        Tag tag = entitymanager.find(Tag.class, id);
+        return tag;
     }
 }
