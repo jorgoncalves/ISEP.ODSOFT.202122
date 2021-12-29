@@ -133,3 +133,19 @@ test {
         //classDumpFile = file("${buildDir}/jacoco/classpathdumps")
     }
 }
+
+task zipCMSProject(type: Zip) {
+    from '../../'
+    // code
+    exclude '/project/cms_students/.gradle/'
+    exclude '/project/cms_students/.idea/'
+    exclude '/project/cms_students/bin/'
+    exclude '/project/cms_students/build/'
+    exclude '/project/cms_students/gwt-unitCache/'
+    exclude '/project/cms_students/www-test/'
+    include '/project/cms_students/**'
+    // documentation
+    include '/odsoft/class_assignment_final/**/**'
+    archiveName 'cms_project.zip'
+    destinationDir(file('/../../'))
+}
