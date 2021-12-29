@@ -1,21 +1,34 @@
 package pt.isep.cms.bookmarks.shared;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
 @SuppressWarnings("serial")
+@Entity
+@Table
 public class Bookmark implements Serializable {
-    public String id;
-    public String note;
-    public Date creationDate;
+    @Id
+    @GeneratedValue(generator = "UUID")
+    private String id;
+    private String note;
+    private Date creationDate;
 
     public Bookmark() {
+        super();
     }
 
-    public Bookmark(String id, String note, Date creationDate) {
-        this.id = id;
+    public Bookmark(String note, Date creationDate) {
         this.note = note;
         this.creationDate = creationDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Bookmark [uid=" + id + ", note=" + note + ", creationDate" + creationDate + "]";
     }
 
     public BookmarkDetails getLightWeightBookmark() {

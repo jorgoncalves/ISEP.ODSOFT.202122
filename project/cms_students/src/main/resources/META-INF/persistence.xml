@@ -6,6 +6,9 @@
     <persistence-unit name="CMS" transaction-type="RESOURCE_LOCAL">
 
         <class>pt.isep.cms.contacts.shared.Contact</class>
+        <class>pt.isep.cms.bookmarks.shared.Bookmark</class>
+        <class>pt.isep.cms.books.shared.Book</class>
+        <class>pt.isep.cms.tags.shared.Tag</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/database/cms;MV_STORE=FALSE"/>

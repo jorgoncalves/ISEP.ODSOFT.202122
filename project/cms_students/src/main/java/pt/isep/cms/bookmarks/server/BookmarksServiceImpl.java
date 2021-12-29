@@ -2,14 +2,16 @@ package pt.isep.cms.bookmarks.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 import pt.isep.cms.bookmarks.client.BookmarksService;
 import pt.isep.cms.bookmarks.shared.Bookmark;
 import pt.isep.cms.bookmarks.shared.BookmarkDetails;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 @SuppressWarnings("serial")
 public class BookmarksServiceImpl extends RemoteServiceServlet implements
@@ -23,36 +25,61 @@ public class BookmarksServiceImpl extends RemoteServiceServlet implements
             new Date(), new Date(), new Date(), new Date(),
     };
 
-    private final HashMap<String, Bookmark> bookmarks = new HashMap<String, Bookmark>();
+    private EntityManagerFactory emfactory = null;
+    private EntityManager entitymanager = null;
 
     public BookmarksServiceImpl() {
-        initBookmarks();
+
+        this.emfactory = Persistence.createEntityManagerFactory("CMS");
+
+        this.entitymanager = emfactory.createEntityManager();
+
+        initPersistantBookmarks();
     }
 
-    private void initBookmarks() {
-        // TODO: Create a real UID for each bookmark
-        //
-        for (int i = 0; i < bookmarksNoteData.length && i < bookmarksCreationData.length; ++i) {
-            Bookmark bookmark = new Bookmark(String.valueOf(i), bookmarksNoteData[i], bookmarksCreationData[i]);
-            bookmarks.put(bookmark.getId(), bookmark);
+    private void initPersistantBookmarks() {
+
+        Query query = entitymanager.createQuery("Select COUNT(b) from Bookmark b");
+        Long result = (Long) query.getSingleResult();
+
+        if (result == 0) {
+            System.out.println("No bookmarks found. Populating db.");
+            this.entitymanager.getTransaction().begin();
+
+            for (int i = 0; i < bookmarksNoteData.length; ++i) {
+
+                Bookmark bookmark = new Bookmark(bookmarksNoteData[i], bookmarksCreationData[i]);
+
+                this.entitymanager.persist(bookmark);
+            }
+
+            this.entitymanager.getTransaction().commit();
+
         }
     }
 
     public Bookmark addBookmark(Bookmark bookmark) {
-        bookmark.setId(String.valueOf(bookmarks.size()));
-        bookmarks.put(bookmark.getId(), bookmark);
+        this.entitymanager.getTransaction().begin();
+        this.entitymanager.persist(bookmark);
+        this.entitymanager.getTransaction().commit();
+
         return bookmark;
     }
 
     public Bookmark updateBookmark(Bookmark bookmark) {
-        String lid = bookmark.getId();
-        bookmarks.remove(bookmark.getId());
-        bookmarks.put(bookmark.getId(), bookmark);
+        this.entitymanager.getTransaction().begin();
+        this.entitymanager.merge(bookmark);
+        this.entitymanager.getTransaction().commit();
+
         return bookmark;
     }
 
     public Boolean deleteBookmark(String id) {
-        bookmarks.remove(id);
+        this.entitymanager.getTransaction().begin();
+        Bookmark bookmark = entitymanager.find(Bookmark.class, id);
+        entitymanager.remove(bookmark);
+        this.entitymanager.getTransaction().commit();
+
         return true;
     }
 
@@ -68,16 +95,19 @@ public class BookmarksServiceImpl extends RemoteServiceServlet implements
     public ArrayList<BookmarkDetails> getBookmarkDetails() {
         ArrayList<BookmarkDetails> bookmarkDetails = new ArrayList<BookmarkDetails>();
 
-        Iterator<String> it = bookmarks.keySet().iterator();
-        while (it.hasNext()) {
-            Bookmark bookmark = bookmarks.get(it.next());
+        Query query = entitymanager.createQuery("Select c from Bookmark c");
+
+        @SuppressWarnings("unchecked")
+        List<Bookmark> list = query.getResultList();
+
+        for (Bookmark bookmark : list) {
             bookmarkDetails.add(bookmark.getLightWeightBookmark());
         }
-
         return bookmarkDetails;
     }
 
     public Bookmark getBookmark(String id) {
-        return bookmarks.get(id);
+        Bookmark bookmark = entitymanager.find(Bookmark.class, id);
+        return bookmark;
     }
 }
