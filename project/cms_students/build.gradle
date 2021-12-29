@@ -3,7 +3,7 @@ import de.fntsoftware.gradle.MarkdownToPdfTask
 // (ATB)
 
 plugins {
-    id "fr.putnami.gwt" version "0.4.0"
+    id "de.esoco.gwt" version "1.1.1"
     id 'info.solidsoft.pitest' version '1.3.0'
     id "de.fntsoftware.gradle.markdown-to-pdf" version "1.1.0"
 }
@@ -27,18 +27,18 @@ repositories {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.easymock:easymock:2.5.2'
-    testCompile 'com.google.gwt:gwt-dev:2.8.1'
-    compile 'net.sourceforge.plantuml:plantuml:8001'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.easymock:easymock:2.5.2'
+    testImplementation 'com.google.gwt:gwt-dev:2.8.1'
+    implementation 'net.sourceforge.plantuml:plantuml:8001'
     // For JPA / Eclipselink
-    compile 'org.eclipse.persistence:eclipselink:2.6.1'
-    compile 'org.eclipse.persistence:org.eclipse.persistence.jpa.modelgen.processor:2.6.1'
-    compile 'com.h2database:h2:1.4.191'
+    implementation 'org.eclipse.persistence:eclipselink:2.6.1'
+    implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa.modelgen.processor:2.6.1'
+    implementation 'com.h2database:h2:1.4.191'
 }
 
 // This two lines are required so that the java compiler finds the persistence.xml file during compilation
-sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDir
+//sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDirs
 compileJava.dependsOn(processResources)
 
 javadoc {
@@ -56,16 +56,9 @@ pitest {
 }
 
 
-// If we woant to use the default ant build inside gradle
-// ant.importBuild "build.xml"
-
-putnami {
+gwt {
 
     module 'pt.isep.cms.Showcase'
-    //module 'com.google.gwt.sample.contacts.Contacts'
-
-    /** add gwt nature on eclipse project. require apply plugin: 'eclipse' to work. default : false*/
-    googlePluginEclipse = true
 
     gwtVersion = '2.8.1'
 
@@ -93,10 +86,10 @@ jacocoTestReport {
 
 // This task generates the coverage report for the integration tests.
 // Notice that it only includes data about the server code sice Jaccoco is not able to get data about cliente code that is transpiled to javascript
-task jacocoIntegrationReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
+task jacocoIntegrationReport(type: JacocoReport) {
     sourceSets sourceSets.main
 
-    executionData = files("${buildDir}/jacoco/integrationTest.exec")
+    executionData(files("${buildDir}/jacoco/integrationTest.exec"))
 
     reports {
         html.enabled = true
@@ -112,10 +105,7 @@ task integrationTest(type: Test) {
         includeTestsMatching "*GWTTest*"
     }
     jacoco {
-        append = true
         enabled = true
-        //classDumpFile = file("${buildDir}/jacoco/classpathdumps")
-
         excludes = ["com/steadystate/**"]
     }
     // These Properties are required to run gwt integration tests
@@ -129,19 +119,16 @@ tasks.withType(Test) {
 // Unit Tests
 test {
     filter {
-        //all JRE unit tests, by naming convention
         includeTestsMatching "*JRETest*"
     }
     jacoco {
-        append = true
         enabled = true
-        //classDumpFile = file("${buildDir}/jacoco/classpathdumps")
     }
 }
 
 task pdfFromMarkdown(type: MarkdownToPdfTask) {
     inputFile = file('../../odsoft/class_assignment_final/README.md')
-    outputFile = file('build/README.pdf')
+    outputFile = file('../../odsoft/class_assignment_final//README.pdf')
 }
 
 task zipCMSProject(type: Zip) {

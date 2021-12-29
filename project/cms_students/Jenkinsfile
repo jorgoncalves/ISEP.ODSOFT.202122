@@ -193,6 +193,7 @@ pipeline {
             archiveArtifacts artifacts: 'project/cms_students/build/reports/test/index.html', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/integrationTest/index.html', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/pitest/index.html', followSymlinks: false
+            archiveArtifacts artifacts: 'cms_project.zip'
         }
     }
 }
