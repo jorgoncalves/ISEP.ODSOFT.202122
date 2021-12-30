@@ -38,7 +38,7 @@ dependencies {
 }
 
 // This two lines are required so that the java compiler finds the persistence.xml file during compilation
-//sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDirs
+sourceSets.main.output.resourcesDir = sourceSets.main.output.classesDirs.asPath
 compileJava.dependsOn(processResources)
 
 javadoc {
