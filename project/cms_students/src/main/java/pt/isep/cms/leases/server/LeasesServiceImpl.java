@@ -54,6 +54,19 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
         "0-3948-1778-8"
     };
 
+    private final String[] leasesContactsEmailData = new String[]{
+            "mark@example.com",
+            "hollie@example.com",
+            "boticario@example.com",
+            "emerson@example.com",
+            "healy@example.com",
+            "brigitte@example.com",
+            "elba@example.com",
+            "claudio@example.com",
+            "dena@example.com",
+            "brasilsp@example.com"
+    };
+
     private final HashMap<String, Lease> leases = new HashMap<String, Lease>();
 
     public LeasesServiceImpl() {
@@ -61,8 +74,8 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
     }
 
     private void initLeases() {
-        for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length; ++i) {
-            Lease lease = new Lease(String.valueOf(i), leasesOnDateData[i], leasesToDateData[i], leasesBookData[i]);
+        for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length && i < leasesBookData.length && i < leasesContactsEmailData.length; ++i) {
+            Lease lease = new Lease(String.valueOf(i), leasesOnDateData[i], leasesToDateData[i], leasesBookData[i], leasesContactsEmailData[i]);
             leases.put(lease.getId(), lease);
         }
     }

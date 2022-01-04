@@ -28,6 +28,8 @@ public class EditLeasePresenter implements Presenter {
 
         HasValue<String> getBook();
 
+        HasValue<String> getLeasesContact();
+
         void show();
 
         void hide();
@@ -58,6 +60,7 @@ public class EditLeasePresenter implements Presenter {
                 EditLeasePresenter.this.display.getOnDate().setValue(lease.getOnDate());
                 EditLeasePresenter.this.display.getToDate().setValue(lease.getToDate());
                 EditLeasePresenter.this.display.getBook().setValue(lease.getBook());
+                EditLeasePresenter.this.display.getLeasesContact().setValue(lease.getleaseContact());
             }
 
             public void onFailure(Throwable caught) {
@@ -91,6 +94,7 @@ public class EditLeasePresenter implements Presenter {
         lease.setOnDate(display.getOnDate().getValue());
         lease.setToDate(display.getToDate().getValue());
         lease.setBook(display.getBook().getValue());
+        lease.setleaseContact(display.getLeasesContact().getValue());
 
         if (lease.getId() == null) {
             // Adding new lease

@@ -53,6 +53,7 @@ public class LeasesDialog implements EditLeasePresenter.Display{
     private final DateBox onDate;
     private final DateBox toDate;
     private final TextBox book;
+    private final TextBox leasesContacts;
     private final FlexTable detailsTable;
     private final Button saveButton;
     private final Button cancelButton;
@@ -64,6 +65,8 @@ public class LeasesDialog implements EditLeasePresenter.Display{
         detailsTable.setWidget(1, 1, toDate);
         detailsTable.setWidget(2, 0, new Label("Book"));
         detailsTable.setWidget(2, 1, book);
+        detailsTable.setWidget(3, 0, new Label("Contact"));
+        detailsTable.setWidget(3, 1, leasesContacts);
         book.setFocus(true);
     }
 
@@ -100,6 +103,7 @@ public class LeasesDialog implements EditLeasePresenter.Display{
         onDate = new DateBox();
         toDate = new DateBox();
         book = new TextBox();
+        leasesContacts = new TextBox();
         initDetailsTable();
         contentDetailsPanel.add(detailsTable);
 
@@ -176,5 +180,10 @@ public class LeasesDialog implements EditLeasePresenter.Display{
     public HasValue<String> getBook() {
         // TODO Auto-generated method stub
         return book;
+    }
+
+    @Override
+    public HasValue<String> getLeasesContact() {
+        return leasesContacts;
     }
 }
