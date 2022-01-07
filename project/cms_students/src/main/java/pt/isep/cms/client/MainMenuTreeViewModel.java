@@ -1,12 +1,12 @@
 /*
  * Copyright 2010 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -26,6 +26,7 @@ import pt.isep.cms.bookmarks.client.CwBookmarks;
 import pt.isep.cms.contacts.client.CwContacts;
 import pt.isep.cms.books.client.CwBooks;
 import pt.isep.cms.tags.client.CwTags;
+import pt.isep.cms.leases.client.CwLeases;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -120,7 +121,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 
 		/**
 		 * Get the node info for the panels under this category.
-		 * 
+		 *
 		 * @return the node info
 		 */
 		public NodeInfo<ContentWidget> getNodeInfo() {
@@ -165,7 +166,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 
 	/**
 	 * Get the {@link Category} associated with a widget.
-	 * 
+	 *
 	 * @param widget
 	 *               the {@link ContentWidget}
 	 * @return the associated {@link Category}
@@ -176,7 +177,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 
 	/**
 	 * Get the content widget associated with the specified history token.
-	 * 
+	 *
 	 * @param token
 	 *              the history token
 	 * @return the associated {@link ContentWidget}
@@ -203,7 +204,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 
 	/**
 	 * Get the set of all {@link ContentWidget}s used in the model.
-	 * 
+	 *
 	 * @return the {@link ContentWidget}s
 	 */
 	Set<ContentWidget> getAllContentWidgets() {
@@ -232,6 +233,7 @@ public class MainMenuTreeViewModel implements TreeViewModel {
 			category.addCwPanel(new CwBooks(constants));
 			category.addCwPanel(new CwBookmarks(constants));
 			category.addCwPanel(new CwTags(constants));
+			category.addCwPanel(new CwLeases(constants));
 		}
 
 		// Services.
