@@ -127,4 +127,30 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
         leases.put(lease.getId(), lease);
         return lease;
     }
+
+    @Override
+    public Boolean validLease(Lease leaseToValidate) {
+        Boolean valid = true;
+
+        Iterator<String> it = leases.keySet().iterator();
+
+        while (it.hasNext()) {
+            Lease l = leases.get(it.next());
+            if (leaseToValidate.getBook().equals(l.getBook())) {
+
+                if (!leaseToValidate.getleaseContact().equals(l.getleaseContact())) {
+
+                    if ((leaseToValidate.getOnDate().after(l.getOnDate()) &&
+                            leaseToValidate.getOnDate().before(l.getToDate())) ||
+                            (leaseToValidate.getToDate().after(l.getOnDate())) &&
+                                    leaseToValidate.getToDate().before(l.getToDate())) {
+
+                        valid = false;
+                    }
+                }
+            }
+        }
+
+        return valid;
+    }
 }
