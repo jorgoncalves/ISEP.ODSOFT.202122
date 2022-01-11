@@ -26,6 +26,17 @@
     <servlet-name>booksServiceServlet</servlet-name>
     <url-pattern>/showcase/booksService</url-pattern>
   </servlet-mapping>
+  
+  <!-- Servlets for the leases -->
+  <servlet>
+    <servlet-name>leasesServiceServlet</servlet-name>
+    <servlet-class>pt.isep.cms.leases.server.LeasesServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>leasesServiceServlet</servlet-name>
+    <url-pattern>/showcase/leasesService</url-pattern>
+  </servlet-mapping>
 
   <!-- Servlets for the bookmark -->
   <servlet>
