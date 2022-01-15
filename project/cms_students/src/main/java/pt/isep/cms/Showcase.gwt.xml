@@ -60,6 +60,9 @@
   <!-- Specify the paths for translatable code source for Books  -->
   <source path="books/client" />
   <source path="books/shared" />
+  <!-- Specify the paths for translatable code source for Leases  -->
+  <source path="leases/client" />
+  <source path="leases/shared" />
 
   <!-- Specify the paths for translatable code source for Bookmarks  -->
   <source path="bookmarks/client" />
