@@ -11,6 +11,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
 
 @SuppressWarnings("serial")
 public class LeasesServiceImpl extends RemoteServiceServlet implements
@@ -151,7 +155,36 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
         this.entitymanager.getTransaction().begin();
         this.entitymanager.merge(lease);
         this.entitymanager.getTransaction().commit();
-
         return lease;
+    }
+
+    @Override
+    public Boolean validLease(Lease leaseToValidate) {
+        Boolean isValid = true;
+        if (leaseToValidate.getOnDate().after(leaseToValidate.getToDate())) {
+            isValid = false;
+            return isValid;
+        }
+
+        Query query = entitymanager.createQuery("Select l from Lease l");
+
+        @SuppressWarnings("unchecked")
+        List<Lease> list = query.getResultList();
+
+
+        for (Lease l : list) {
+            if (leaseToValidate.getBook().equals(l.getBook())) {
+                if (leaseToValidate.getOnDate().equals(l.getOnDate()) ||
+                        (leaseToValidate.getOnDate().after(l.getOnDate()) &&
+                                leaseToValidate.getOnDate().before(l.getToDate())) ||
+                        (leaseToValidate.getToDate().after(l.getOnDate())) &&
+                                leaseToValidate.getToDate().before(l.getToDate())) {
+
+                    isValid = false;
+                }
+            }
+        }
+
+        return isValid;
     }
 }
