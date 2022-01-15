@@ -8,7 +8,7 @@ import pt.isep.cms.leases.client.presenter.LeasesPresenter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeasesView extends Composite implements LeasesPresenter.Display{
+public class LeasesView extends Composite implements LeasesPresenter.Display {
     private final Button addButton;
     private final Button deleteButton;
     private FlexTable leasesTable;
@@ -23,7 +23,7 @@ public class LeasesView extends Composite implements LeasesPresenter.Display{
 
         contentTable = new FlexTable();
         contentTable.setWidth("100%");
-        contentTable.getCellFormatter().addStyleName(0, 0, "leases-ListContainer");
+        contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListContainer");
         contentTable.getCellFormatter().setWidth(0, 0, "100%");
         contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
 
@@ -44,7 +44,7 @@ public class LeasesView extends Composite implements LeasesPresenter.Display{
 
         // vPanel.add(hPanel);
 
-        contentTable.getCellFormatter().addStyleName(0, 0, "leases-ListMenu");
+        contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListMenu");
         contentTable.setWidget(0, 0, hPanel);
 
         // Create the leases list
@@ -53,7 +53,7 @@ public class LeasesView extends Composite implements LeasesPresenter.Display{
         leasesTable.setCellSpacing(0);
         leasesTable.setCellPadding(0);
         leasesTable.setWidth("100%");
-        leasesTable.addStyleName("leases-ListContents");
+        leasesTable.addStyleName("generic-ListContents");
         leasesTable.getColumnFormatter().setWidth(0, "15px");
 
         // vPanel.add(leasesTable);

@@ -1,21 +1,29 @@
 package pt.isep.cms.leases.shared;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
 @SuppressWarnings("serial")
+@Entity
+@Table
 public class Lease implements Serializable {
 
-    public String id;
-    public Date onDate;
-    public Date toDate;
-    public String book;
-    public String leaseContact;
+    @Id
+    @GeneratedValue(generator = "UUID")
+    private String id;
+    private Date onDate;
+    private Date toDate;
+    private String book;
+    private String leaseContact;
 
-    public Lease() {}
+    public Lease() {
+    }
 
-    public Lease(String id, Date onDate, Date toDate, String book, String contact) {
-        this.id = id;
+    public Lease(Date onDate, Date toDate, String book, String contact) {
         this.onDate = onDate;
         this.toDate = toDate;
         this.book = book;

@@ -31,7 +31,7 @@ public class TagsView extends Composite implements TagsPresenter.Display {
 
         contentTable = new FlexTable();
         contentTable.setWidth("100%");
-        contentTable.getCellFormatter().addStyleName(0, 0, "tags-ListContainer");
+        contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListContainer");
         contentTable.getCellFormatter().setWidth(0, 0, "100%");
         contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
 
