@@ -16,4 +16,5 @@ public interface LeasesService extends RemoteService {
     ArrayList<LeaseDetails> getLeaseDetails();
     Lease getLease(String id);
     Lease updateLease(Lease contact);
+    Boolean validLease(Lease leaseToValidate);
 }

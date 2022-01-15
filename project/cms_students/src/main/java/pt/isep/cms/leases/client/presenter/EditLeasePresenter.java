@@ -96,28 +96,42 @@ public class EditLeasePresenter implements Presenter {
         lease.setBook(display.getBook().getValue());
         lease.setleaseContact(display.getLeasesContact().getValue());
 
-        if (lease.getId() == null) {
-            // Adding new lease
-            rpcService.addLease(lease, new AsyncCallback<Lease>() {
-                public void onSuccess(Lease result) {
-                    eventBus.fireEvent(new LeaseUpdatedEvent(result));
-                }
+        rpcService.validLease(lease, new AsyncCallback<Boolean>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("Error validating lease");
+            }
 
-                public void onFailure(Throwable caught) {
-                    Window.alert("Error adding lease");
-                }
-            });
-        } else {
-            // updating existing lease
-            rpcService.updateLease(lease, new AsyncCallback<Lease>() {
-                public void onSuccess(Lease result) {
-                    eventBus.fireEvent(new LeaseUpdatedEvent(result));
-                }
+            @Override
+            public void onSuccess(Boolean result) {
+                if (!result) {
+                    Window.alert("A book cannot be leased to different contacts at the same time");
+                } else {
+                    if (lease.getId() == null) {
+                        // Adding new lease
+                        rpcService.addLease(lease, new AsyncCallback<Lease>() {
+                            public void onSuccess(Lease result) {
+                                eventBus.fireEvent(new LeaseUpdatedEvent(result));
+                            }
 
-                public void onFailure(Throwable caught) {
-                    Window.alert("Error updating lease");
+                            public void onFailure(Throwable caught) {
+                                Window.alert("Error adding lease");
+                            }
+                        });
+                    } else {
+                        // updating existing lease
+                        rpcService.updateLease(lease, new AsyncCallback<Lease>() {
+                            public void onSuccess(Lease result) {
+                                eventBus.fireEvent(new LeaseUpdatedEvent(result));
+                            }
+
+                            public void onFailure(Throwable caught) {
+                                Window.alert("Error updating lease");
+                            }
+                        });
+                    }
                 }
-            });
-        }
+            }
+        });
     }
 }
