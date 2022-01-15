@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='testbookmarks'>
-  <!-- Inherit our applications main module.                      -->
-  <inherits name='pt.isep.cms.Showcase'></inherits>
+    <!-- Inherit our applications main module.                      -->
+    <inherits name='pt.isep.cms.Showcase'></inherits>
+    <inherits name="com.google.gwt.event.EventBase"/>
 
-  <!-- Specify the path to any remote services.                   -->
-  <servlet path="/bookmarks/bookmarksService" class="pt.isep.cms.bookmarks.server.BookmarksServiceImpl" />
+    <!-- Specify the path to any remote services.                   -->
+    <servlet path="/bookmarks/bookmarksService" class="pt.isep.cms.bookmarks.server.BookmarksServiceImpl"/>
 
 </module>
