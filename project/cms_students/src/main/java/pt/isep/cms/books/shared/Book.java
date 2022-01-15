@@ -1,10 +1,10 @@
 package pt.isep.cms.books.shared;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import pt.isep.cms.tags.shared.Tag;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @SuppressWarnings("serial")
 @Entity
@@ -16,19 +16,26 @@ public class Book implements Serializable {
     private String title;
     private String isbn;
     private String author;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Tag> tags;
 
     public Book() {
     }
 
-    public Book(String title, String author, String isbn) {
+    public Book(String title, String author, String isbn, List<Tag> tags) {
         this.title = title;
         this.isbn = isbn;
         this.author = author;
+        this.tags = tags;
     }
 
     @Override
     public String toString() {
-        return "Book [uid=" + id + ", title=" + title + ", isbn=" + isbn + ", author=" + author + "]";
+        StringBuilder strTags = new StringBuilder();
+        for (int i = 0; i < tags.size(); i++) {
+            strTags.append(tags.get(i).toString());
+        }
+        return "Book [uid=" + id + ", title=" + title + ", isbn=" + isbn + ", author=" + author + ", tags=" + strTags + "]";
     }
 
 
@@ -69,6 +76,20 @@ public class Book implements Serializable {
     }
 
     public String getFullName() {
-        return title + " Author: " + author + "- ISBN: " + isbn;
+        StringBuilder strTags = new StringBuilder();
+        for (int i = 0; i < tags.size(); i++) {
+            strTags.append(tags.get(i).getDescription());
+            if (i != tags.size() - 1)
+                strTags.append(", ");
+        }
+        return title + " Author: " + author + "- ISBN: " + isbn + " Tags: " + strTags;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
     }
 }
