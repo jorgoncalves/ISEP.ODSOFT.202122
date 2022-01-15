@@ -29,7 +29,7 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.easymock:easymock:2.5.2'
-    testImplementation 'com.google.gwt:gwt-dev:2.8.1'
+    testImplementation 'com.google.gwt:gwt-dev:2.9.0'
     implementation 'net.sourceforge.plantuml:plantuml:8001'
     // For JPA / Eclipselink
     implementation 'org.eclipse.persistence:eclipselink:2.6.1'
@@ -60,7 +60,7 @@ gwt {
 
     module 'pt.isep.cms.Showcase'
 
-    gwtVersion = '2.8.1'
+    gwtVersion = '2.9.0'
 
     compile {
         sourceLevel = '1.8'
