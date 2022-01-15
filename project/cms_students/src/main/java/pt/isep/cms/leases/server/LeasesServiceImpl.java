@@ -6,52 +6,53 @@ import pt.isep.cms.leases.client.LeasesService;
 import pt.isep.cms.leases.shared.Lease;
 import pt.isep.cms.leases.shared.LeaseDetails;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import java.util.*;
 
 @SuppressWarnings("serial")
 public class LeasesServiceImpl extends RemoteServiceServlet implements
         LeasesService {
 
-    private static final Date[] leasesOnDateData = new Date[] {
-        new Date(2021, 12, 1),
-        new Date(2021, 12, 2),
-        new Date(2021, 12, 3),
-        new Date(2021, 12, 4),
-        new Date(2021, 12, 5),
-        new Date(2021, 12, 6),
-        new Date(2021, 12, 7),
-        new Date(2021, 12, 8),
-        new Date(2021, 12, 9),
-        new Date(2021, 12, 10)  
+    private static final Date[] leasesOnDateData = new Date[]{
+            new Date(2021, 12, 1),
+            new Date(2021, 12, 2),
+            new Date(2021, 12, 3),
+            new Date(2021, 12, 4),
+            new Date(2021, 12, 5),
+            new Date(2021, 12, 6),
+            new Date(2021, 12, 7),
+            new Date(2021, 12, 8),
+            new Date(2021, 12, 9),
+            new Date(2021, 12, 10)
     };
 
-    private final Date[] leasesToDateData = new Date[] {
-        new Date(2021, 12, 8),
-        new Date(2021, 12, 9),
-        new Date(2021, 12, 10),
-        new Date(2021, 12, 11),
-        new Date(2021, 12, 12),
-        new Date(2021, 12, 13),
-        new Date(2021, 12, 14),
-        new Date(2021, 12, 15),
-        new Date(2021, 12, 16),
-        new Date(2021, 12, 17) 
+    private final Date[] leasesToDateData = new Date[]{
+            new Date(2021, 12, 8),
+            new Date(2021, 12, 9),
+            new Date(2021, 12, 10),
+            new Date(2021, 12, 11),
+            new Date(2021, 12, 12),
+            new Date(2021, 12, 13),
+            new Date(2021, 12, 14),
+            new Date(2021, 12, 15),
+            new Date(2021, 12, 16),
+            new Date(2021, 12, 17)
     };
 
-    private final String[] leasesBookData = new String[] {
-        "0-3020-4050-1",
-        "0-3297-9686-0",
-        "0-7162-8596-7",
-        "0-9038-4488-5",
-        "0-4757-9808-2",
-        "0-9370-1872-4",
-        "0-3749-7243-5",
-        "0-3629-0985-7m",
-        "0-5620-1952-9",
-        "0-3948-1778-8"
+    private final String[] leasesBookData = new String[]{
+            "0-3020-4050-1",
+            "0-3297-9686-0",
+            "0-7162-8596-7",
+            "0-9038-4488-5",
+            "0-4757-9808-2",
+            "0-9370-1872-4",
+            "0-3749-7243-5",
+            "0-3629-0985-7m",
+            "0-5620-1952-9",
+            "0-3948-1778-8"
     };
 
     private final String[] leasesContactsEmailData = new String[]{
@@ -67,29 +68,51 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
             "brasilsp@example.com"
     };
 
-    private final HashMap<String, Lease> leases = new HashMap<String, Lease>();
+    private EntityManagerFactory emfactory = null;
+    private EntityManager entitymanager = null;
 
     public LeasesServiceImpl() {
-        initLeases();
+        this.emfactory = Persistence.createEntityManagerFactory("CMS");
+
+        this.entitymanager = emfactory.createEntityManager();
+
+        initPersistentLeases();
     }
 
-    private void initLeases() {
-        for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length && i < leasesBookData.length && i < leasesContactsEmailData.length; ++i) {
-            Lease lease = new Lease(String.valueOf(i), leasesOnDateData[i], leasesToDateData[i], leasesBookData[i], leasesContactsEmailData[i]);
-            leases.put(lease.getId(), lease);
+    private void initPersistentLeases() {
+        Query query = entitymanager.createQuery("Select COUNT(l) from Lease l");
+        Long result = (Long) query.getSingleResult();
+
+        if (result == 0) {
+            System.out.println("No leases found. Populating db.");
+            this.entitymanager.getTransaction().begin();
+
+            for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length && i < leasesBookData.length && i < leasesContactsEmailData.length; ++i) {
+                Lease lease = new Lease(leasesOnDateData[i], leasesToDateData[i], leasesBookData[i], leasesContactsEmailData[i]);
+                this.entitymanager.persist(lease);
+            }
+
+            this.entitymanager.getTransaction().commit();
+
         }
     }
 
     @Override
     public Lease addLease(Lease lease) {
-        lease.setId(String.valueOf(leases.size()));
-        leases.put(lease.getId(), lease);
+        this.entitymanager.getTransaction().begin();
+        this.entitymanager.persist(lease);
+        this.entitymanager.getTransaction().commit();
+
         return lease;
     }
 
     @Override
     public Boolean deleteLease(String id) {
-        leases.remove(id);
+        this.entitymanager.getTransaction().begin();
+        Lease lease = entitymanager.find(Lease.class, id);
+        entitymanager.remove(lease);
+        this.entitymanager.getTransaction().commit();
+
         return true;
     }
 
@@ -106,9 +129,12 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
     public ArrayList<LeaseDetails> getLeaseDetails() {
         ArrayList<LeaseDetails> leaseDetails = new ArrayList<LeaseDetails>();
 
-        Iterator<String> it = leases.keySet().iterator();
-        while(it.hasNext()) {
-            Lease lease = leases.get(it.next());
+        Query query = entitymanager.createQuery("Select l from Lease l");
+
+        @SuppressWarnings("unchecked")
+        List<Lease> list = query.getResultList();
+
+        for (Lease lease : list) {
             leaseDetails.add(lease.getLightWeightContact());
         }
 
@@ -117,14 +143,15 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
 
     @Override
     public Lease getLease(String id) {
-        return leases.get(id);
+        return entitymanager.find(Lease.class, id);
     }
 
     @Override
     public Lease updateLease(Lease lease) {
-        String lid = lease.getId();
-        leases.remove(lease.getId());
-        leases.put(lease.getId(), lease);
+        this.entitymanager.getTransaction().begin();
+        this.entitymanager.merge(lease);
+        this.entitymanager.getTransaction().commit();
+
         return lease;
     }
 }
