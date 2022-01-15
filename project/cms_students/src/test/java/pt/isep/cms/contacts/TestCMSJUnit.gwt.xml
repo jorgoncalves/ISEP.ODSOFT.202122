@@ -2,8 +2,6 @@
 <module rename-to='testcontacts'>
     <!-- Inherit our applications main module.                      -->
     <inherits name='pt.isep.cms.Showcase'></inherits>
-    <inherits name="com.google.gwt.event.dom.DomEvent"/>
-    <inherits name="com.google.gwt.user.UI"/>
 
     <!-- Specify the path to any remote services.                   -->
     <servlet path="/contacts/contactsService" class="pt.isep.cms.contacts.server.ContactsServiceImpl"/>
