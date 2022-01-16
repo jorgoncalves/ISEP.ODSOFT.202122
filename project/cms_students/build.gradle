@@ -195,6 +195,5 @@ task zipCMSProject(type: Zip) {
     include '/project/cms_students/**'
     // documentation
     include '/odsoft/class_assignment_final/**/**'
-    archiveName './cms_project.zip'
-    destinationDir(file('/../../'))
+    archiveName 'cms_project.zip'
 }
