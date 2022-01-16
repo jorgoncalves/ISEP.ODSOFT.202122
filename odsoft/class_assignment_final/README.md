@@ -219,7 +219,7 @@ id "com.github.spotbugs" version "5.0.4"
 
 Configuration is also needed. We select if failures must be ignored or not and the type of report we want to generate, either XML or HTML. The report's directory is the task's default, and is set to the folder where all the others tasks store their reports, _/build/reports_. Like in Checkstyle, there is the need to decide which type of reports we desire to generate. As we can see up next, the team went for an XML report, instead of an HTML report.
 
-![findbugs_configuration.png](./images/findbugs_configuration.png)
+![spotbugs_configuration.png](./images/spotbugs_configuration.png)
 
 The tasks in this tool are implicit and don't need any configuration, as opposed to Checkstyle.
 
@@ -250,6 +250,14 @@ stage("Spotbugs") {
 We point to the report's directory and set the threshold values.
 
 The report can be found on the job's dashboard, and is going to have the same aspect as the other tool's, with an Overview, an History per build and a detailed report.
+
+On the Type view, the *EI_EXPOSE_REP2* error stands out from the others, as it has 84 occurrences, compared to the 53 from the second most common error. This error means that there are 84 times where object instances are accessed by untrusted code, and unchecked changes to the mutable object would compromise security or other important properties. One way to avoid this vulnerability is to storing a copy of the object.
+
+![spotbugs_details_types.png](./images/spotbugs_details_types.png)
+
+Another interesting analysis that can be done is to the Categories view. It is blatantly obvious that there's a vunerability in the project's source code, due to the 162 occurances of the *MALICIOUS_CODE* code, which means that there's a large portion of code which is vulnerable to attacks from untrusted code.
+
+![spotbugs_details_categories.png](./images/spotbugs_details_categories.png)
 
 This report was also archived, using the previously used plugin .
 
