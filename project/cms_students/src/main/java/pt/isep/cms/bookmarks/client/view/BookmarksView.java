@@ -17,111 +17,111 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookmarksView extends Composite implements BookmarksPresenter.Display {
-	private final Button addButton;
-	private final Button deleteButton;
-	private FlexTable bookmarksTable;
-	private final FlexTable contentTable;
-	// private final VerticalPanel vPanel ;
+    private final Button addButton;
+    private final Button deleteButton;
+    private FlexTable bookmarksTable;
+    private final FlexTable contentTable;
+    // private final VerticalPanel vPanel ;
 
-	public BookmarksView() {
-		DecoratorPanel contentTableDecorator = new DecoratorPanel();
-		initWidget(contentTableDecorator);
-		contentTableDecorator.setWidth("100%");
-		contentTableDecorator.setWidth("50em");
+    public BookmarksView() {
+        DecoratorPanel contentTableDecorator = new DecoratorPanel();
+        initWidget(contentTableDecorator);
+        contentTableDecorator.setWidth("100%");
+        contentTableDecorator.setWidth("50em");
 
-		contentTable = new FlexTable();
-		contentTable.setWidth("100%");
-		contentTable.getCellFormatter().addStyleName(0, 0, "bookmarks-ListContainer");
-		contentTable.getCellFormatter().setWidth(0, 0, "100%");
-		contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
+        contentTable = new FlexTable();
+        contentTable.setWidth("100%");
+        contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListContainer");
+        contentTable.getCellFormatter().setWidth(0, 0, "100%");
+        contentTable.getFlexCellFormatter().setVerticalAlignment(0, 0, DockPanel.ALIGN_TOP);
 
-		// vPanel = new VerticalPanel();
-		// initWidget(vPanel);
+        // vPanel = new VerticalPanel();
+        // initWidget(vPanel);
 
-		// Create the menu
-		//
-		HorizontalPanel hPanel = new HorizontalPanel();
-		hPanel.setBorderWidth(0);
-		hPanel.setSpacing(0);
-		hPanel.setHorizontalAlignment(HorizontalPanel.ALIGN_LEFT);
-		addButton = new Button("Add");
-		hPanel.add(addButton);
+        // Create the menu
+        //
+        HorizontalPanel hPanel = new HorizontalPanel();
+        hPanel.setBorderWidth(0);
+        hPanel.setSpacing(0);
+        hPanel.setHorizontalAlignment(HorizontalPanel.ALIGN_LEFT);
+        addButton = new Button("Add");
+        hPanel.add(addButton);
 
-		deleteButton = new Button("Delete");
-		hPanel.add(deleteButton);
+        deleteButton = new Button("Delete");
+        hPanel.add(deleteButton);
 
-		// vPanel.add(hPanel);
+        // vPanel.add(hPanel);
 
-		contentTable.getCellFormatter().addStyleName(0, 0, "bookmarks-ListMenu");
-		contentTable.setWidget(0, 0, hPanel);
+        contentTable.getCellFormatter().addStyleName(0, 0, "generic-ListMenu");
+        contentTable.setWidget(0, 0, hPanel);
 
-		// Create the bookmarks list
-		//
-		bookmarksTable = new FlexTable();
-		bookmarksTable.setCellSpacing(0);
-		bookmarksTable.setCellPadding(0);
-		bookmarksTable.setWidth("100%");
-		bookmarksTable.addStyleName("bookmarks-ListContents");
-		bookmarksTable.getColumnFormatter().setWidth(0, "15px");
+        // Create the bookmarks list
+        //
+        bookmarksTable = new FlexTable();
+        bookmarksTable.setCellSpacing(0);
+        bookmarksTable.setCellPadding(0);
+        bookmarksTable.setWidth("100%");
+        bookmarksTable.addStyleName("generic-ListContents");
+        bookmarksTable.getColumnFormatter().setWidth(0, "15px");
 
-		// vPanel.add(bookmarksTable);
+        // vPanel.add(bookmarksTable);
 
-		contentTable.setWidget(1, 0, bookmarksTable);
+        contentTable.setWidget(1, 0, bookmarksTable);
 
-		contentTableDecorator.add(contentTable);
-	}
+        contentTableDecorator.add(contentTable);
+    }
 
-	public HasClickHandlers getAddButton() {
-		return addButton;
-	}
+    public HasClickHandlers getAddButton() {
+        return addButton;
+    }
 
-	public HasClickHandlers getDeleteButton() {
-		return deleteButton;
-	}
+    public HasClickHandlers getDeleteButton() {
+        return deleteButton;
+    }
 
-	public HasClickHandlers getList() {
-		return bookmarksTable;
-	}
+    public HasClickHandlers getList() {
+        return bookmarksTable;
+    }
 
-	public void setData(List<String> data) {
-		bookmarksTable.removeAllRows();
+    public void setData(List<String> data) {
+        bookmarksTable.removeAllRows();
 
-		for (int i = 0; i < data.size(); ++i) {
-			bookmarksTable.setWidget(i, 0, new CheckBox());
-			bookmarksTable.setText(i, 1, data.get(i));
-		}
-	}
+        for (int i = 0; i < data.size(); ++i) {
+            bookmarksTable.setWidget(i, 0, new CheckBox());
+            bookmarksTable.setText(i, 1, data.get(i));
+        }
+    }
 
-	public int getClickedRow(ClickEvent event) {
-		int selectedRow = -1;
-		HTMLTable.Cell cell = bookmarksTable.getCellForEvent(event);
+    public int getClickedRow(ClickEvent event) {
+        int selectedRow = -1;
+        HTMLTable.Cell cell = bookmarksTable.getCellForEvent(event);
 
-		if (cell != null) {
-			// Suppress clicks if the user is actually selecting the
-			// check box
-			//
-			if (cell.getCellIndex() > 0) {
-				selectedRow = cell.getRowIndex();
-			}
-		}
+        if (cell != null) {
+            // Suppress clicks if the user is actually selecting the
+            // check box
+            //
+            if (cell.getCellIndex() > 0) {
+                selectedRow = cell.getRowIndex();
+            }
+        }
 
-		return selectedRow;
-	}
+        return selectedRow;
+    }
 
-	public List<Integer> getSelectedRows() {
-		List<Integer> selectedRows = new ArrayList<Integer>();
+    public List<Integer> getSelectedRows() {
+        List<Integer> selectedRows = new ArrayList<Integer>();
 
-		for (int i = 0; i < bookmarksTable.getRowCount(); ++i) {
-			CheckBox checkBox = (CheckBox) bookmarksTable.getWidget(i, 0);
-			if (checkBox.getValue()) {
-				selectedRows.add(i);
-			}
-		}
+        for (int i = 0; i < bookmarksTable.getRowCount(); ++i) {
+            CheckBox checkBox = (CheckBox) bookmarksTable.getWidget(i, 0);
+            if (checkBox.getValue()) {
+                selectedRows.add(i);
+            }
+        }
 
-		return selectedRows;
-	}
+        return selectedRows;
+    }
 
-	public Widget asWidget() {
-		return this;
-	}
+    public Widget asWidget() {
+        return this;
+    }
 }

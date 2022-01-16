@@ -13,4 +13,5 @@ public interface LeasesServiceAsync {
     public void getLeaseDetails(AsyncCallback<ArrayList<LeaseDetails>> callback);
     public void getLease(String id, AsyncCallback<Lease> callback);
     public void updateLease(Lease Lease, AsyncCallback<Lease> callback);
+    public void validLease(Lease leaseToValidate, AsyncCallback<Boolean> callback);
 }

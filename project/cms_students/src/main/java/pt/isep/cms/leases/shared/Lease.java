@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 @SuppressWarnings("serial")
+@Entity
+@Table
 public class Lease implements Serializable {
 
     @Id
@@ -21,7 +23,8 @@ public class Lease implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     private Contact leaseContact;
 
-    public Lease() {}
+    public Lease() {
+    }
 
     public Lease(Date onDate, Date toDate, Book book, Contact contact) {
         this.onDate = onDate;
