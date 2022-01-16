@@ -73,6 +73,57 @@ By checking the global function **isUnix** we can determine what action to take.
 Considering the size of our team and the professional experience of the elements of the group, we decided to use Trunk-based development (TBD).
 This resulted on small merges being done from branches that implementation/added some new feature or fixed a bug. This approach also made sure that, we always had a working version of the master, since every branch was created from the master branch.
 
+## 2.1 - Base Pipeline
+The application should have a persistence layer that must use a relational database.
+PDF
+
+## 2.2 - Documentation and Database
+### Database
+The database used for this step was a H2 database. This database is a relational database, allowing us to stablish relation between entities as well to have persistente data. Using the entity books as a example, we are able to use the decorator's **@Entity** and **@Table** to defined that a book entity should be created on the database with the field **id** being a primary key of type **UUID**.
+Regarding the relations, the decorator's **ManyToMany** and **OneToMany** allow us stablish relations with the **Tag** and **Bookmark** entities. The **FetchType.EAGER** was used because gwt was using lazy loading and not getting the relations for this fields after the first call.
+``` Java
+@SuppressWarnings("serial")
+@Entity
+@Table
+public class Book implements Serializable {
+    @Id
+    @GeneratedValue(generator = "UUID")
+    private String id;
+    private String title;
+    private String isbn;
+    private String author;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Tag> tags;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Bookmark> bookmarks;
+...
+}
+```
+
+### Project ZIP
+As part of this concern, was also asked to create a zip containing all the project relevante data. To achieve this we used the following gradle task:
+```Groovy
+task zipCMSProject(type: Zip) {
+    from '../../'
+    // code
+    exclude '/project/cms_students/.gradle/'
+    exclude '/project/cms_students/.idea/'
+    exclude '/project/cms_students/bin/'
+    exclude '/project/cms_students/build/'
+    exclude '/project/cms_students/gwt-unitCache/'
+    exclude '/project/cms_students/www-test/'
+    include '/project/cms_students/**'
+    // documentation
+    include '/odsoft/class_assignment_final/**/**'
+    archiveName 'cms_project.zip'
+}
+```
+This will create a zip file on `project/cms_students/build/distributions/cms_project.zip` that is archive on jenkins.
+
+### Advanced task
+As advanced task for this concern, it has requested that the Gradle version and JDK where upgrade. This task was partially done, since we only where able to upgrade Gradle to the version 7.3.3. This also involved upgrading the gwt to the 2.9.0 version, and using a fork os 'fr.putnami.gwt', called 'de.esoco.gwt', to be able to use gwt.
+Other changes where the update of **testCompile** to **testImplementation** and **compile** to **implementation**.
+
 ## 2.3 - Integration Tests and Code Quality
 
 ### Integration Tests
@@ -123,7 +174,7 @@ The other configuration is to decide which type of reports we desire to generate
 
 ![reports_checkstyle.png](./images/reports_checkstyle.png)
 
-The next step was to create two tasks, one wich is going to analyze the source code, and the other the test code. For each task, the only parameter to be set is the directory of the code we want to analyze, as we can see in the following screenshot.
+The next step was to create two tasks, one which is going to analyze the source code, and the other the test code. For each task, the only parameter to be set is the directory of the code we want to analyze, as we can see in the following screenshot.
 
 ![checkstyle_tasks.png](./images/checkstyle_tasks.png)
 
@@ -158,7 +209,7 @@ To archive this report, as requested, the same method used to archive the integr
 
 ### Spotbugs
 
-Since the second sugested tool for doing a "check" on the code quality of the project, Findbugs, is not available on the used Gradle version, we opted for Spotbugs, which is a fork from the first.
+Since the second suggested tool for doing a "check" on the code quality of the project, Findbugs, is not available on the used Gradle version, we opted for Spotbugs, which is a fork from the first.
 
 This tool also requires to create a new task on _build.gradle_. Firstly we import the plugin, in order for the file to recognize the tasks that are going to be created.
 
@@ -209,4 +260,4 @@ This report was also archived, using the previously used plugin .
 - Maturity Level: Release Management and Compliance - Level 1
 - Maturity Level: Testing - Level 0
 - Maturity Level: Data Management - Level -1
-- Maturity Level: Configuration Management - Level 1
+- Maturity Level: Configuration Management - Level 0
