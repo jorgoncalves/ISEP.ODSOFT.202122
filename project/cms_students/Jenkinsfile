@@ -20,6 +20,7 @@ pipeline {
         stage("Build") {
             steps {
                     dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                        command("chmod 777 ./gradlew")
                         command("./gradlew clean build")
                     }
             }
@@ -58,7 +59,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage("Code Quality") {
             parallel {
                 stage("Run Checkstyle") {
@@ -140,17 +141,7 @@ pipeline {
                         }
                     }
                 }
-
-                stage("JaCoCo Report") {
-                    steps {
-                        jacoco buildOverBuild: true, changeBuildStatus: true, deltaLineCoverage: '2', maximumLineCoverage: '9,5', minimumLineCoverage: '9', skipCopyOfSrcFiles: true
-                    }
-                }
-            }
-        }
-
-        stage('Reports for Checkstyle and Spotbugs') {
-            parallel {
+                
                 stage("Checkstyle") {
                     steps {
                         dir(directory("${env.WORKSPACE}/project/cms_students")) {
@@ -158,7 +149,7 @@ pipeline {
                         }
                     }
                 }
-
+                
                 stage("Spotbugs") {
                     steps {
                         dir(directory("${env.WORKSPACE}/project/cms_students")) {
@@ -166,6 +157,12 @@ pipeline {
                         }
                     }
                 }
+                
+                 stage("JaCoCo Report") {
+                     steps {
+                         jacoco buildOverBuild: true, changeBuildStatus: true, deltaLineCoverage: '2', maximumLineCoverage: '9,5', minimumLineCoverage: '9', skipCopyOfSrcFiles: true
+                     }
+                 }
             }
         }
 
@@ -174,14 +171,13 @@ pipeline {
                 deploy adapters: [tomcat9(credentialsId: '83e750f1-e55f-4dfb-a342-a90cabbe21b9', path: '', url: 'http://tomcat:8181/')], contextPath: 'CMS_Students', onFailure: false, war: 'project/cms_students/build/libs/cms_students-1.0.war'
             }
         }
-
         stage("Smoke Test") {
             steps {
                 script {
                     if(isUnix())
                     {
                     sh ("""
-                        curl -v --silent http://tomcat:8181/Part2_Task4/Showcase.html/#/!CwContacts --stderr - | if grep -q \"Amelie Crutcher\"
+                        curl -v --silent http://tomcat:8181/CMS_Students/Showcase.html#!CwContacts --stderr - | if grep -q \"Amelie Crutcher\"
                         then
                             echo \"Amelia was found!\"
                         else
@@ -194,6 +190,27 @@ pipeline {
                 }
             }
         }
+        
+        stage("Create zip and PDF") {
+            parallel{
+                stage("Create zip"){
+                    steps {
+                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                            command("ls -la")
+                            command("./gradlew zipCMSProject")
+                        }
+                    }
+                }
+                stage("Create PDF"){
+                    steps {
+                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                            command("./gradlew pdfFromMarkdown")
+                        }
+                    }
+                }
+            }
+            
+        }
 
         stage("Email") {
             steps {
@@ -205,37 +222,38 @@ pipeline {
             }
         }
 
-        // stage("Ui Tests") {
-        //     steps {
-        //         input "Please validate if the UI is as expected and then enter the correct input."
-        //     }
-        // }
+        stage("Ui Tests") {
+            steps {
+                input "Please validate if the UI is as expected and then enter the correct input."
+            }
+        }
     }
     post {
-        // success {
-            // command("git config user.name 'Jorge Gonçalves'")
-            // command("git config user.email 1210107@isep.ipp.pt")
-            // command("git tag -m 'Task4 Build #${BUILD_NUMBER} Passed'-a Task4-Build-#${BUILD_NUMBER}-Passed")
-            // command("git push --tags")
-            // deleteDir()
-            // cleanWs()
-        // }
-        // failure {
-            // command("git config user.name 'Jorge Gonçalves'")
-            // command("git config user.email 1210107@isep.ipp.pt")
-            // command("git tag -m 'Task4 Build #${BUILD_NUMBER} Failed' -a Task4-Build-#${BUILD_NUMBER}-Failed")
-            // command("git push --tags")
-            // deleteDir()
-            // cleanWs()
-        // }
+        success {
+            command("git config user.name 'Jorge Gonçalves'")
+            command("git config user.email 1210107@isep.ipp.pt")
+            command("git tag -m 'FinalCA Build #${BUILD_NUMBER} Passed'-a FinalCA-Build-#${BUILD_NUMBER}-Passed")
+            command("git push --tags")
+            deleteDir()
+            cleanWs()
+        }
+        failure {
+            command("git config user.name 'Jorge Gonçalves'")
+            command("git config user.email 1210107@isep.ipp.pt")
+            command("git tag -m 'FinalCA Build #${BUILD_NUMBER} Failed' -a FinalCA-Build-#${BUILD_NUMBER}-Failed")
+            command("git push --tags")
+            deleteDir()
+            cleanWs()
+        }
         always{
             archiveArtifacts artifacts: 'project/cms_students/build/libs/cms_students-1.0.war', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/test/index.html', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/integrationTest/index.html', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/pitest/index.html', followSymlinks: false
-            archiveArtifacts artifacts: 'cms_project.zip'
             archiveArtifacts artifacts: 'project/cms_students/build/reports/checkstyle/main.xml', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/spotbugs/main.xml', followSymlinks: false
+            archiveArtifacts artifacts: 'project/cms_students/build/distributions/cms_project.zip'
+            archiveArtifacts artifacts: 'odsoft/class_assignment_final/README.pdf', followSymlinks: false
         }
     }
 }
