@@ -45,7 +45,26 @@ Another relevant component of the delivery two was the improvement of the pipeli
 For more details regarding the requirements for the above points, see the document odsoft_project_assignment_v1.2.pdf available on moodle.
 
 ### Unix/Windows systems compatible
+To achieve compatible between Unix and Windows operating systems, we have developed the following functions:
 
+```Groovy
+def command(command) {
+    if (isUnix() && command != null) {
+        sh command
+    } else {
+        bat command
+    }
+}
+
+def directory(directory) {
+  newDir=directory
+  if (!isUnix()) {
+    newDir = newDir.replace('/','\\')
+  }
+  return newDir
+}
+```
+By checking the global function **isUnix** we can determine what action to take.
 ## Pipeline design
 
 ## Git module used
