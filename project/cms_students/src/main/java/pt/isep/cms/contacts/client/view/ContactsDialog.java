@@ -35,150 +35,150 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class ContactsDialog implements EditContactPresenter.Display {
 
-	public enum Type {
-		ADD,
-		UPDATE
-	}
+    public enum Type {
+        ADD,
+        UPDATE
+    }
 
-	/**
-	 * The constants used in this Content Widget.
-	 */
-	public static interface CwConstants extends Constants {
+    /**
+     * The constants used in this Content Widget.
+     */
+    public static interface CwConstants extends Constants {
 
-		String cwAddContactDialogCaption();
+        String cwAddContactDialogCaption();
 
-		String cwUpdateContactDialogCaption();
+        String cwUpdateContactDialogCaption();
 
-		// String cwDialogBoxClose();
-		//
-		// String cwDialogBoxDescription();
-		//
-		// String cwDialogBoxDetails();
-		//
-		// String cwDialogBoxItem();
-		//
-		// String cwDialogBoxListBoxInfo();
-		//
-		// String cwDialogBoxMakeTransparent();
-		//
-		// String cwDialogBoxName();
-		//
-		// String cwDialogBoxShowButton();
-	}
+        // String cwDialogBoxClose();
+        //
+        // String cwDialogBoxDescription();
+        //
+        // String cwDialogBoxDetails();
+        //
+        // String cwDialogBoxItem();
+        //
+        // String cwDialogBoxListBoxInfo();
+        //
+        // String cwDialogBoxMakeTransparent();
+        //
+        // String cwDialogBoxName();
+        //
+        // String cwDialogBoxShowButton();
+    }
 
-	/**
-	 * An instance of the constants.
-	 */
-	private final CwConstants constants;
-	private final ShowcaseConstants globalConstants;
+    /**
+     * An instance of the constants.
+     */
+    private final CwConstants constants;
+    private final ShowcaseConstants globalConstants;
 
-	// Widgets
-	private final TextBox name;
-	private final FlexTable detailsTable;
-	private final Button saveButton;
-	private final Button cancelButton;
+    // Widgets
+    private final TextBox name;
+    private final FlexTable detailsTable;
+    private final Button saveButton;
+    private final Button cancelButton;
 
-	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Name"));
-		detailsTable.setWidget(0, 1, name);
-		name.setFocus(true);
-	}
+    private void initDetailsTable() {
+        detailsTable.setWidget(0, 0, new Label("Name"));
+        detailsTable.setWidget(0, 1, name);
+        name.setFocus(true);
+    }
 
-	DecoratorPanel contentDetailsDecorator;
-	final DialogBox dialogBox;
+    DecoratorPanel contentDetailsDecorator;
+    final DialogBox dialogBox;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param constants the constants
-	 */
-	public ContactsDialog(ShowcaseConstants constants, Type type) {
-		// super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
+    /**
+     * Constructor.
+     *
+     * @param constants the constants
+     */
+    public ContactsDialog(ShowcaseConstants constants, Type type) {
+        // super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
 
-		this.constants = constants;
-		this.globalConstants = constants;
+        this.constants = constants;
+        this.globalConstants = constants;
 
-		// Init the widgets of the dialog
-		contentDetailsDecorator = new DecoratorPanel();
-		contentDetailsDecorator.setWidth("30em"); // em = size of current font
-		// initWidget(contentDetailsDecorator);
+        // Init the widgets of the dialog
+        contentDetailsDecorator = new DecoratorPanel();
+        contentDetailsDecorator.setWidth("30em"); // em = size of current font
+        // initWidget(contentDetailsDecorator);
 
-		VerticalPanel contentDetailsPanel = new VerticalPanel();
-		contentDetailsPanel.setWidth("100%");
+        VerticalPanel contentDetailsPanel = new VerticalPanel();
+        contentDetailsPanel.setWidth("100%");
 
-		// Create the contacts list
-		//
-		detailsTable = new FlexTable();
-		detailsTable.setCellSpacing(0);
-		detailsTable.setWidth("100%");
-		detailsTable.addStyleName("contacts-ListContainer");
-		detailsTable.getColumnFormatter().addStyleName(1, "add-contact-input");
-		name = new TextBox();
-		initDetailsTable();
-		contentDetailsPanel.add(detailsTable);
+        // Create the contacts list
+        //
+        detailsTable = new FlexTable();
+        detailsTable.setCellSpacing(0);
+        detailsTable.setWidth("100%");
+        detailsTable.addStyleName("contacts-ListContainer");
+        detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
+        name = new TextBox();
+        initDetailsTable();
+        contentDetailsPanel.add(detailsTable);
 
-		HorizontalPanel menuPanel = new HorizontalPanel();
-		saveButton = new Button("Save");
-		cancelButton = new Button("Cancel");
-		menuPanel.add(saveButton);
-		menuPanel.add(cancelButton);
-		contentDetailsPanel.add(menuPanel);
-		contentDetailsDecorator.add(contentDetailsPanel);
+        HorizontalPanel menuPanel = new HorizontalPanel();
+        saveButton = new Button("Save");
+        cancelButton = new Button("Cancel");
+        menuPanel.add(saveButton);
+        menuPanel.add(cancelButton);
+        contentDetailsPanel.add(menuPanel);
+        contentDetailsDecorator.add(contentDetailsPanel);
 
-		dialogBox = new DialogBox();
-		dialogBox.ensureDebugId("cwDialogBox");
-		if (type == Type.ADD)
-			dialogBox.setText(constants.cwAddContactDialogCaption());
-		else
-			dialogBox.setText(constants.cwUpdateContactDialogCaption());
+        dialogBox = new DialogBox();
+        dialogBox.ensureDebugId("cwDialogBox");
+        if (type == Type.ADD)
+            dialogBox.setText(constants.cwAddContactDialogCaption());
+        else
+            dialogBox.setText(constants.cwUpdateContactDialogCaption());
 
-		dialogBox.add(contentDetailsDecorator);
+        dialogBox.add(contentDetailsDecorator);
 
-		dialogBox.setGlassEnabled(true);
-		dialogBox.setAnimationEnabled(true);
-	}
+        dialogBox.setGlassEnabled(true);
+        dialogBox.setAnimationEnabled(true);
+    }
 
-	public void displayDialog() {
-		// Create the dialog box
-		// final DialogBox dialogBox = createDialogBox();
+    public void displayDialog() {
+        // Create the dialog box
+        // final DialogBox dialogBox = createDialogBox();
 
-		dialogBox.center();
-		dialogBox.show();
-	}
+        dialogBox.center();
+        dialogBox.show();
+    }
 
-	@Override
-	public HasClickHandlers getSaveButton() {
-		// TODO Auto-generated method stub
-		return saveButton;
-		// return null;
-	}
+    @Override
+    public HasClickHandlers getSaveButton() {
+        // TODO Auto-generated method stub
+        return saveButton;
+        // return null;
+    }
 
-	@Override
-	public HasClickHandlers getCancelButton() {
-		// TODO Auto-generated method stub
-		return cancelButton;
-		// return null;
-	}
+    @Override
+    public HasClickHandlers getCancelButton() {
+        // TODO Auto-generated method stub
+        return cancelButton;
+        // return null;
+    }
 
-	@Override
-	public HasValue<String> getName() {
-		// TODO Auto-generated method stub
-		return name;
-		// return null;
-	}
+    @Override
+    public HasValue<String> getName() {
+        // TODO Auto-generated method stub
+        return name;
+        // return null;
+    }
 
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
-		// return null;
-		displayDialog();
-	}
+    @Override
+    public void show() {
+        // TODO Auto-generated method stub
+        // return null;
+        displayDialog();
+    }
 
-	@Override
-	public void hide() {
-		// TODO Auto-generated method stub
-		// return null;
-		dialogBox.hide();
-	}
+    @Override
+    public void hide() {
+        // TODO Auto-generated method stub
+        // return null;
+        dialogBox.hide();
+    }
 
 }

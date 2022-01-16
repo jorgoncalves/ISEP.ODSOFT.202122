@@ -3,14 +3,13 @@ package pt.isep.cms.books.server;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
+import pt.isep.cms.bookmarks.shared.Bookmark;
 import pt.isep.cms.books.client.BooksService;
 import pt.isep.cms.books.shared.Book;
 import pt.isep.cms.books.shared.BookDetails;
-import pt.isep.cms.contacts.shared.Contact;
+import pt.isep.cms.tags.shared.Tag;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -66,7 +65,7 @@ public class BooksServiceImpl extends RemoteServiceServlet implements
             this.entitymanager.getTransaction().begin();
 
             for (int i = 0; i < booksTitleData.length && i < booksAuthorData.length && i < booksISBNData.length; ++i) {
-                Book book = new Book(booksTitleData[i], booksAuthorData[i], booksISBNData[i]);
+                Book book = new Book(booksTitleData[i], booksAuthorData[i], booksISBNData[i], new ArrayList<Tag>(), new ArrayList<Bookmark>());
                 this.entitymanager.persist(book);
             }
 
@@ -125,8 +124,6 @@ public class BooksServiceImpl extends RemoteServiceServlet implements
     }
 
     public Book getBook(String id) {
-        Book book = entitymanager.find(Book.class, id);
-
-        return book;
+        return entitymanager.find(Book.class, id);
     }
 }

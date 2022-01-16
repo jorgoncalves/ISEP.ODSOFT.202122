@@ -117,7 +117,7 @@ public class BookmarksDialog implements EditBookmarkPresenter.Display {
         detailsTable.setCellSpacing(0);
         detailsTable.setWidth("100%");
         detailsTable.addStyleName("bookmarks-ListContainer");
-        detailsTable.getColumnFormatter().addStyleName(1, "add-bookmark-input");
+        detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
         note = new TextBox();
         creationDate = new DateBox();
         initDetailsTable();

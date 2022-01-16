@@ -1,5 +1,6 @@
 package pt.isep.cms.tags.server;
 
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 import java.util.ArrayList;
@@ -125,7 +126,6 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
     }
 
     public Tag getTag(String id) {
-        Tag tag = entitymanager.find(Tag.class, id);
-        return tag;
+        return entitymanager.find(Tag.class, id);
     }
 }
