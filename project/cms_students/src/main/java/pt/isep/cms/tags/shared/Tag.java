@@ -1,11 +1,6 @@
 package pt.isep.cms.tags.shared;
 
-import pt.isep.cms.contacts.shared.ContactDetails;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
@@ -18,10 +13,11 @@ public class Tag implements Serializable {
     private String description;
 
     public Tag() {
+        super();
     }
 
     public Tag(String description) {
-
+        super();
         this.description = description;
     }
 

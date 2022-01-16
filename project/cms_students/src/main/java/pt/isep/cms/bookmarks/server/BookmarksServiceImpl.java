@@ -34,10 +34,10 @@ public class BookmarksServiceImpl extends RemoteServiceServlet implements
 
         this.entitymanager = emfactory.createEntityManager();
 
-        initPersistantBookmarks();
+        initPersistentBookmarks();
     }
 
-    private void initPersistantBookmarks() {
+    private void initPersistentBookmarks() {
 
         Query query = entitymanager.createQuery("Select COUNT(b) from Bookmark b");
         Long result = (Long) query.getSingleResult();
@@ -49,7 +49,7 @@ public class BookmarksServiceImpl extends RemoteServiceServlet implements
             for (int i = 0; i < bookmarksNoteData.length; ++i) {
 
                 Bookmark bookmark = new Bookmark(bookmarksNoteData[i], bookmarksCreationData[i]);
-
+                bookmark.setId(String.valueOf(i));
                 this.entitymanager.persist(bookmark);
             }
 

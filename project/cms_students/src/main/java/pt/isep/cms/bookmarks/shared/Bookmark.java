@@ -22,6 +22,7 @@ public class Bookmark implements Serializable {
     }
 
     public Bookmark(String note, Date creationDate) {
+        super();
         this.note = note;
         this.creationDate = creationDate;
     }

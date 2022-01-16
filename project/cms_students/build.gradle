@@ -30,6 +30,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.easymock:easymock:2.5.2'
     testImplementation 'com.google.gwt:gwt-dev:2.9.0'
+    testImplementation 'com.google.gwt:gwt-user:2.9.0'
     implementation 'net.sourceforge.plantuml:plantuml:8001'
     // For JPA / Eclipselink
     implementation 'org.eclipse.persistence:eclipselink:2.6.1'

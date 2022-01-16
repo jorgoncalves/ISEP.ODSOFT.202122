@@ -24,9 +24,11 @@ public class Lease implements Serializable {
     private Contact leaseContact;
 
     public Lease() {
+        super();
     }
 
     public Lease(Date onDate, Date toDate, Book book, Contact contact) {
+        super();
         this.onDate = onDate;
         this.toDate = toDate;
         this.book = book;
