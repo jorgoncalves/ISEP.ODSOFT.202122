@@ -23,9 +23,11 @@ public class Book implements Serializable {
     private List<Bookmark> bookmarks;
 
     public Book() {
+        super();
     }
 
     public Book(String title, String author, String isbn, List<Tag> tags, List<Bookmark> bookmarks) {
+        super();
         this.title = title;
         this.isbn = isbn;
         this.author = author;

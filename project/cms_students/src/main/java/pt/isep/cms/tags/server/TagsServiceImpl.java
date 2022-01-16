@@ -1,14 +1,9 @@
 package pt.isep.cms.tags.server;
 
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
-import pt.isep.cms.contacts.shared.Contact;
 import pt.isep.cms.tags.client.TagsService;
 import pt.isep.cms.tags.shared.Tag;
 import pt.isep.cms.tags.shared.TagDetails;
@@ -48,6 +43,7 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
 
             for (int i = 0; i < tagsData.length; ++i) {
                 Tag tag = new Tag(tagsData[i]);
+                tag.setId(String.valueOf(i));
                 this.entitymanager.persist(tag);
             }
 
