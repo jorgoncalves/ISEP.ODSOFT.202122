@@ -46,6 +46,7 @@ public class ContactsServiceImpl extends RemoteServiceServlet implements
 
             for (int i = 0; i < contactsNameData.length; ++i) {
                 Contact contact = new Contact(contactsNameData[i]);
+                contact.setId(String.valueOf(i));
                 this.entitymanager.persist(contact);
             }
 
