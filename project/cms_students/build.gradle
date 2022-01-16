@@ -165,8 +165,8 @@ spotbugs {
     visitors = [ 'FindSqlInjection', 'SwitchFallthrough' ]
     omitVisitors = [ 'FindNonShortCircuit' ]
     reportsDir = file("$buildDir/reports/spotbugs")
-    //includeFilter = file("include.xml")
-    excludeFilter = file("config/findbugs/excludeFilter.xml")
+    includeFilter = file("config/findbugs/excludeFilter.xml")
+    //excludeFilter = file("config/findbugs/excludeFilter.xml")
     //baselineFile = file("baseline.xml")
     onlyAnalyze = [ 'src.main.java.pt.isep.cms' ]
     maxHeapSize = '1g'
