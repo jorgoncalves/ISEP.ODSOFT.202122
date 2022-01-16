@@ -126,6 +126,7 @@ public class TagsServiceImpl extends RemoteServiceServlet implements
     }
 
     public Tag getTag(String id) {
-        return entitymanager.find(Tag.class, id);
+        Tag tag = entitymanager.find(Tag.class, id);
+        return tag;
     }
 }

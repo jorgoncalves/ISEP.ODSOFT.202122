@@ -1,7 +1,5 @@
 package pt.isep.cms.tags.shared;
 
-import pt.isep.cms.contacts.shared.ContactDetails;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
