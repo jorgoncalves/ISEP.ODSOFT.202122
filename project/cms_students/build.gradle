@@ -4,7 +4,7 @@ import de.fntsoftware.gradle.MarkdownToPdfTask
 
 plugins {
     id "de.esoco.gwt" version "1.1.1"
-    id 'info.solidsoft.pitest' version '1.3.0'
+    id 'info.solidsoft.pitest' version '1.7.0'
     id "de.fntsoftware.gradle.markdown-to-pdf" version "1.1.0"
     id "com.github.spotbugs" version "5.0.4"
 }
