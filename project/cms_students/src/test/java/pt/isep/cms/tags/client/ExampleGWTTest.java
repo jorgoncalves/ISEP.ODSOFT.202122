@@ -5,8 +5,6 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
-import pt.isep.cms.tags.client.TagsService;
-import pt.isep.cms.tags.client.TagsServiceAsync;
 import pt.isep.cms.tags.client.presenter.TagsPresenter;
 import pt.isep.cms.tags.client.view.TagsView;
 import pt.isep.cms.tags.shared.Tag;
@@ -64,7 +62,7 @@ public class ExampleGWTTest extends GWTTestCase {
 
 			public void onSuccess(Tag result) {
 				// Verify that the response is correct.
-				assertTrue(result != null);
+				assertNotNull(result);
 
 				// Now that we have received a response, we need to tell the test runner
 				// that the test is complete. You must call finishTest() after an

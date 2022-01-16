@@ -62,6 +62,7 @@ public class ExampleGWTTest extends GWTTestCase {
 
             public void onSuccess(Bookmark result) {
                 // Verify that the response is correct.
+                System.out.println(result.toString());
                 assertTrue(result != null);
 
                 // Now that we have received a response, we need to tell the test runner

@@ -1,7 +1,5 @@
 package pt.isep.cms.contacts.shared;
 
-import org.eclipse.persistence.jaxb.compiler.Generator;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
