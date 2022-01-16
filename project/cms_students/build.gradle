@@ -6,6 +6,7 @@ plugins {
     id "de.esoco.gwt" version "1.1.1"
     id 'info.solidsoft.pitest' version '1.3.0'
     id "de.fntsoftware.gradle.markdown-to-pdf" version "1.1.0"
+    id "com.github.spotbugs" version "5.0.4"
 }
 
 apply plugin: 'war'
@@ -14,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'jacoco'
 apply plugin: 'info.solidsoft.pitest'
 apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
+//apply plugin: 'findbugs'
 apply plugin: 'de.fntsoftware.gradle.markdown-to-pdf'
 
 //Java version compatibility to use when compiling Java source.
@@ -139,7 +140,7 @@ tasks.withType(Checkstyle) {
     }
 }
 
-findbugs {
+/*findbugs {
     ignoreFailures = true
     toolVersion = "3.0.1"
     sourceSets=[sourceSets.main]
@@ -152,6 +153,31 @@ tasks.withType(FindBugs) {
     reports {
         xml.enabled true
         html.enabled false
+    }
+}*/
+
+spotbugs {
+    ignoreFailures = true
+    showStackTraces = true
+    showProgress = true
+    effort = 'default'
+    reportLevel = 'default'
+    visitors = [ 'FindSqlInjection', 'SwitchFallthrough' ]
+    omitVisitors = [ 'FindNonShortCircuit' ]
+    reportsDir = file("$buildDir/reports/spotbugs")
+    //includeFilter = file("include.xml")
+    //excludeFilter = file("exclude.xml")
+    //baselineFile = file("baseline.xml")
+    onlyAnalyze = [ 'src.main.java.pt.isep.cms' ]
+    maxHeapSize = '1g'
+    extraArgs = [ '-nested:false' ]
+    jvmArgs = [ '-Duser.language=ja' ]
+}
+
+tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
+    reports {
+        xml.enabled = true
+        html.enabled = false
     }
 }
 
