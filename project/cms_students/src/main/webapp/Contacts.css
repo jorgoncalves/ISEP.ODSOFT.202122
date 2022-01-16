@@ -24,8 +24,7 @@ td.add-generic-label {
     text-align: left;
 }
 
-add-generic-input {
-    border: 1px solid red;
+.add-generic-input {
     border-collapse: collapse;
     margin-right: 0px;
     margin-left: auto;

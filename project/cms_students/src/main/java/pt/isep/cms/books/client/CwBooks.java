@@ -20,6 +20,8 @@ import com.google.gwt.event.shared.HandlerManager;
  */
 
 import com.google.gwt.i18n.client.Constants;
+import pt.isep.cms.bookmarks.client.BookmarksService;
+import pt.isep.cms.bookmarks.client.BookmarksServiceAsync;
 import pt.isep.cms.books.client.BooksController;
 import pt.isep.cms.books.client.BooksService;
 import pt.isep.cms.books.client.BooksServiceAsync;
@@ -28,57 +30,60 @@ import com.google.gwt.user.client.ui.Widget;
 
 import pt.isep.cms.client.ContentWidget;
 import pt.isep.cms.client.ShowcaseConstants;
+import pt.isep.cms.tags.client.TagsService;
+import pt.isep.cms.tags.client.TagsServiceAsync;
 
 /**
  * Main Content Widget for Books.
  */
 public class CwBooks extends ContentWidget {
 
-	/**
-	 * The constants used in this Content Widget.
-	 */
-	// This is only for generation, so we disable it
-	public static interface CwConstants extends Constants {
+    /**
+     * The constants used in this Content Widget.
+     */
+    // This is only for generation, so we disable it
+    public static interface CwConstants extends Constants {
 
-		String cwBooksDescription();
+        String cwBooksDescription();
 
-		String cwBooksName();
-	}
+        String cwBooksName();
+    }
 
-	/**
-	 * An instance of the constants.
-	 */
-	private final CwConstants constants;
-	private final ShowcaseConstants globalConstants;
+    /**
+     * An instance of the constants.
+     */
+    private final CwConstants constants;
+    private final ShowcaseConstants globalConstants;
 
-	/**
-	 * Constructor.
-	 *
-	 * @param constants
-	 *            the constants
-	 */
-	public CwBooks(ShowcaseConstants constants) {
-		super(constants.cwBooksName(), constants.cwBooksDescription());
-		this.globalConstants = constants;
-		this.constants = constants;
-	}
+    /**
+     * Constructor.
+     *
+     * @param constants the constants
+     */
+    public CwBooks(ShowcaseConstants constants) {
+        super(constants.cwBooksName(), constants.cwBooksDescription());
+        this.globalConstants = constants;
+        this.constants = constants;
+    }
 
-	/**
-	 * Initialize this example.
-	 */
-	@Override
-	public Widget onInitialize() {
-		// The service should be created on GWT module loading
-		BooksServiceAsync rpcService = GWT.create(BooksService.class);
+    /**
+     * Initialize this example.
+     */
+    @Override
+    public Widget onInitialize() {
+        // The service should be created on GWT module loading
+        BooksServiceAsync rpcService = GWT.create(BooksService.class);
+        TagsServiceAsync tagsRpcService = GWT.create(TagsService.class);
+        BookmarksServiceAsync bookmarksRpcService = GWT.create(BookmarksService.class);
 
-		// Should setup the Presenter Panel for the Books....
-		VerticalPanel vPanel = new VerticalPanel();
+        // Should setup the Presenter Panel for the Books....
+        VerticalPanel vPanel = new VerticalPanel();
 
-		HandlerManager eventBus = new HandlerManager(null);
-		BooksController appViewer = new BooksController(rpcService, eventBus, this.globalConstants);
-		appViewer.go(vPanel);
+        HandlerManager eventBus = new HandlerManager(null);
+        BooksController appViewer = new BooksController(rpcService, tagsRpcService, bookmarksRpcService, eventBus, this.globalConstants);
+        appViewer.go(vPanel);
 
-		// Return the panel
-		return vPanel;
-	}
+        // Return the panel
+        return vPanel;
+    }
 }

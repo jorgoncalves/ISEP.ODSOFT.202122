@@ -1,18 +1,31 @@
 package pt.isep.cms.contacts.shared;
 
+import org.eclipse.persistence.jaxb.compiler.Generator;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
+@Entity
+@Table
 public class Contact implements Serializable {
-    public String id;
-    public String name;
+    @Id
+    @GeneratedValue(generator = "UUID")
+    private String id;
+    private String name;
 
     public Contact() {
+        super();
     }
 
-    public Contact(String id, String name) {
-        this.id = id;
+    public Contact(String name) {
+        super();
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Contact [uid=" + id + ", name=" + name + "]";
     }
 
     public ContactDetails getLightWeightContact() {
