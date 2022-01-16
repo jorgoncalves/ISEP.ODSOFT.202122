@@ -22,17 +22,13 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 
-import java.util.logging.Logger;
-
 import pt.isep.cms.client.ShowcaseConstants;
 import pt.isep.cms.books.client.presenter.EditBookPresenter;
 import pt.isep.cms.tags.client.TagsService;
 import pt.isep.cms.tags.client.TagsServiceAsync;
-import pt.isep.cms.tags.shared.Tag;
 import pt.isep.cms.tags.shared.TagDetails;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Dialog Box for Adding and Updating Books.
@@ -82,6 +78,7 @@ public class BooksDialog implements EditBookPresenter.Display {
     private final TextBox isbn;
     private final ListBox tags;
     private final FlexTable detailsTable;
+    private final FlexTable tagsTable;
     private final Button saveButton;
     private final Button cancelButton;
 
@@ -97,6 +94,7 @@ public class BooksDialog implements EditBookPresenter.Display {
         detailsTable.setWidget(3, 0, new Label("Tags"));
         detailsTable.setWidget(3, 1, tags);
         title.setFocus(true);
+        detailsTable.setWidget(4, 0, tagsTable);
     }
 
     DecoratorPanel contentDetailsDecorator;
@@ -134,6 +132,7 @@ public class BooksDialog implements EditBookPresenter.Display {
         isbn = new TextBox();
         tags = new ListBox();
         tags.setMultipleSelect(true);
+        tagsTable = new FlexTable();
         addExistingTags();
         initDetailsTable();
         contentDetailsPanel.add(detailsTable);
@@ -163,8 +162,8 @@ public class BooksDialog implements EditBookPresenter.Display {
         tagsRpcService.getTagsDetails(
                 new AsyncCallback<ArrayList<TagDetails>>() {
                     public void onSuccess(ArrayList<TagDetails> result) {
-                        for (int i = 0; i < result.size(); ++i) {
-                            tags.addItem(result.get(i).getDisplayName(), result.get(i).getId());
+                        for (TagDetails tagDetails : result) {
+                            tags.addItem(tagDetails.getDisplayName(), tagDetails.getId());
                         }
                     }
 
@@ -220,18 +219,8 @@ public class BooksDialog implements EditBookPresenter.Display {
     }
 
     @Override
-    public List<Tag> getTags() {
-        List<Tag> tagsArr = new ArrayList<Tag>();
-        for (int i = 0; i < tags.getItemCount() - 1; i++) {
-            if (tags.isItemSelected(i)) {
-                Tag newTag = new Tag();
-                newTag.setId(tags.getValue(i));
-                newTag.setDescription(tags.getItemText(i));
-                tagsArr.add(newTag);
-            }
-
-        }
-        return tagsArr;
+    public ListBox getTags() {
+        return tags;
     }
 
 

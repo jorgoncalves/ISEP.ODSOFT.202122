@@ -1,5 +1,6 @@
 package pt.isep.cms.books.shared;
 
+import pt.isep.cms.bookmarks.shared.Bookmark;
 import pt.isep.cms.tags.shared.Tag;
 
 import javax.persistence.*;
@@ -16,17 +17,20 @@ public class Book implements Serializable {
     private String title;
     private String isbn;
     private String author;
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Tag> tags;
+    @OneToMany
+    private List<Bookmark> bookmarks;
 
     public Book() {
     }
 
-    public Book(String title, String author, String isbn, List<Tag> tags) {
+    public Book(String title, String author, String isbn, List<Tag> tags, List<Bookmark> bookmarks) {
         this.title = title;
         this.isbn = isbn;
         this.author = author;
         this.tags = tags;
+        this.bookmarks = bookmarks;
     }
 
     @Override
