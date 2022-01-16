@@ -158,20 +158,6 @@ tasks.withType(FindBugs) {
 
 spotbugs {
     ignoreFailures = true
-    showStackTraces = true
-    showProgress = true
-    effort = 'default'
-    reportLevel = 'default'
-    visitors = [ 'FindSqlInjection', 'SwitchFallthrough' ]
-    omitVisitors = [ 'FindNonShortCircuit' ]
-    reportsDir = file("$buildDir/reports/spotbugs")
-    includeFilter = file("config/findbugs/excludeFilter.xml")
-    //excludeFilter = file("config/findbugs/excludeFilter.xml")
-    //baselineFile = file("baseline.xml")
-    onlyAnalyze = [ 'src.main.java.pt.isep.cms' ]
-    maxHeapSize = '1g'
-    extraArgs = [ '-nested:false' ]
-    jvmArgs = [ '-Duser.language=ja' ]
 }
 
 tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
