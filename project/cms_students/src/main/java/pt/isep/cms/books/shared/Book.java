@@ -19,7 +19,7 @@ public class Book implements Serializable {
     private String author;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Tag> tags;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Bookmark> bookmarks;
 
     public Book() {
@@ -86,7 +86,13 @@ public class Book implements Serializable {
             if (i != tags.size() - 1)
                 strTags.append(", ");
         }
-        return title + " Author: " + author + "- ISBN: " + isbn + " Tags: " + strTags;
+        StringBuilder strBookmarks = new StringBuilder();
+        for (int i = 0; i < bookmarks.size(); i++) {
+            strBookmarks.append(bookmarks.get(i).getNote());
+            if (i != bookmarks.size() - 1)
+                strBookmarks.append(", ");
+        }
+        return title + " Author: " + author + "- ISBN: " + isbn + " Tags: " + strTags + " Bookmarks: " + strBookmarks;
     }
 
     public List<Tag> getTags() {
@@ -95,5 +101,13 @@ public class Book implements Serializable {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public List<Bookmark> getBookmarks() {
+        return bookmarks;
+    }
+
+    public void setBookmarks(List<Bookmark> bookmarks) {
+        this.bookmarks = bookmarks;
     }
 }

@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.ListBox;
 import pt.isep.cms.bookmarks.client.BookmarksServiceAsync;
+import pt.isep.cms.bookmarks.shared.Bookmark;
 import pt.isep.cms.books.client.BooksServiceAsync;
 import pt.isep.cms.books.client.event.BookUpdatedEvent;
 import pt.isep.cms.books.client.event.EditBookCancelledEvent;
@@ -34,6 +35,8 @@ public class EditBookPresenter implements Presenter {
         HasValue<String> getISBN();
 
         ListBox getTags();
+
+        ListBox getBookmarks();
 
         void show();
 
@@ -71,7 +74,7 @@ public class EditBookPresenter implements Presenter {
                 EditBookPresenter.this.display.getTile().setValue(book.getTitle());
                 EditBookPresenter.this.display.getAuthor().setValue(book.getAuthor());
                 EditBookPresenter.this.display.getISBN().setValue(book.getISBN());
-                EditBookPresenter.this.display.getTags().setMultipleSelect(true);
+
                 for (Tag tag : book.getTags()) {
                     for (int i = 0; i < EditBookPresenter.this.display.getTags().getItemCount() - 1; i++) {
                         String id = EditBookPresenter.this.display.getTags().getValue(i);
@@ -80,7 +83,14 @@ public class EditBookPresenter implements Presenter {
                         }
                     }
                 }
-
+                for (Bookmark bookmark : book.getBookmarks()) {
+                    for (int i = 0; i < EditBookPresenter.this.display.getBookmarks().getItemCount() - 1; i++) {
+                        String id = EditBookPresenter.this.display.getBookmarks().getValue(i);
+                        if (id.equals(bookmark.getId())) {
+                            EditBookPresenter.this.display.getBookmarks().setSelectedIndex(i);
+                        }
+                    }
+                }
             }
 
             public void onFailure(Throwable caught) {
@@ -126,6 +136,17 @@ public class EditBookPresenter implements Presenter {
         }
 
         book.setTags(tagsArr);
+
+        List<Bookmark> bookmarkArr = new ArrayList<Bookmark>();
+        for (int i = 0; i < display.getBookmarks().getItemCount() - 1; i++) {
+            if (display.getBookmarks().isItemSelected(i)) {
+                Bookmark newBookmark = new Bookmark();
+                newBookmark.setId(display.getBookmarks().getValue(i));
+                bookmarkArr.add(newBookmark);
+            }
+        }
+
+        book.setBookmarks(bookmarkArr);
 
         if (book.getId() == null) {
             // Adding new book

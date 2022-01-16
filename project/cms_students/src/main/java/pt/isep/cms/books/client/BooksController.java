@@ -81,13 +81,13 @@ public class BooksController implements Presenter { // (ATB) No history at this 
 
     private void doAddNewBook() {
         // Lets use the presenter to display a dialog...
-        Presenter presenter = new EditBookPresenter(rpcService, tagRpcService, bookmarkRpcService, eventBus, new BooksDialog(globalConstants, BooksDialog.Type.ADD));
+        Presenter presenter = new EditBookPresenter(rpcService, tagRpcService, bookmarkRpcService, eventBus, new BooksDialog(globalConstants, BooksDialog.Type.ADD, tagRpcService, bookmarkRpcService));
         presenter.go(container);
 
     }
 
     private void doEditBook(String id) {
-        Presenter presenter = new EditBookPresenter(rpcService, tagRpcService, bookmarkRpcService, eventBus, new BooksDialog(globalConstants, BooksDialog.Type.UPDATE), id);
+        Presenter presenter = new EditBookPresenter(rpcService, tagRpcService, bookmarkRpcService, eventBus, new BooksDialog(globalConstants, BooksDialog.Type.UPDATE, tagRpcService, bookmarkRpcService), id);
         presenter.go(container);
     }
 

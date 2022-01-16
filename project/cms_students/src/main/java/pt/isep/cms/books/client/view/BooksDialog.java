@@ -22,6 +22,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 
+import pt.isep.cms.bookmarks.client.BookmarksServiceAsync;
+import pt.isep.cms.bookmarks.shared.BookmarkDetails;
 import pt.isep.cms.client.ShowcaseConstants;
 import pt.isep.cms.books.client.presenter.EditBookPresenter;
 import pt.isep.cms.tags.client.TagsService;
@@ -77,12 +79,13 @@ public class BooksDialog implements EditBookPresenter.Display {
     private final TextBox author;
     private final TextBox isbn;
     private final ListBox tags;
+    private final ListBox bookmarks;
     private final FlexTable detailsTable;
-    private final FlexTable tagsTable;
     private final Button saveButton;
     private final Button cancelButton;
 
     private final TagsServiceAsync tagsRpcService;
+    private final BookmarksServiceAsync bookmarksRpcService;
 
     private void initDetailsTable() {
         detailsTable.setWidget(0, 0, new Label("Tile"));
@@ -93,8 +96,9 @@ public class BooksDialog implements EditBookPresenter.Display {
         detailsTable.setWidget(2, 1, isbn);
         detailsTable.setWidget(3, 0, new Label("Tags"));
         detailsTable.setWidget(3, 1, tags);
+        detailsTable.setWidget(4, 0, new Label("Bookmarks"));
+        detailsTable.setWidget(4, 1, bookmarks);
         title.setFocus(true);
-        detailsTable.setWidget(4, 0, tagsTable);
     }
 
     DecoratorPanel contentDetailsDecorator;
@@ -105,8 +109,10 @@ public class BooksDialog implements EditBookPresenter.Display {
      *
      * @param constants the constants
      */
-    public BooksDialog(ShowcaseConstants constants, Type type) {
-        tagsRpcService = GWT.create(TagsService.class);
+    public BooksDialog(ShowcaseConstants constants, Type type, TagsServiceAsync tagsRpcService, BookmarksServiceAsync bookmarksRpcService) {
+        this.tagsRpcService = tagsRpcService;
+        this.bookmarksRpcService = bookmarksRpcService;
+
         // super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
 
         this.constants = constants;
@@ -114,7 +120,7 @@ public class BooksDialog implements EditBookPresenter.Display {
 
         // Init the widgets of the dialog
         contentDetailsDecorator = new DecoratorPanel();
-        contentDetailsDecorator.setWidth("30em"); // em = size of current font
+        contentDetailsDecorator.setWidth("60em"); // em = size of current font
         // initWidget(contentDetailsDecorator);
 
         VerticalPanel contentDetailsPanel = new VerticalPanel();
@@ -126,14 +132,16 @@ public class BooksDialog implements EditBookPresenter.Display {
         detailsTable.setCellSpacing(0);
         detailsTable.setWidth("100%");
         detailsTable.addStyleName("generic-ListContainer");
-        detailsTable.getColumnFormatter().addStyleName(1, "add-book-input");
+        detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
         title = new TextBox();
         author = new TextBox();
         isbn = new TextBox();
         tags = new ListBox();
         tags.setMultipleSelect(true);
-        tagsTable = new FlexTable();
         addExistingTags();
+        bookmarks = new ListBox();
+        bookmarks.setMultipleSelect(true);
+        addExistingBookmarks();
         initDetailsTable();
         contentDetailsPanel.add(detailsTable);
 
@@ -169,6 +177,23 @@ public class BooksDialog implements EditBookPresenter.Display {
 
                     public void onFailure(Throwable caught) {
                         Window.alert("Error fetching tag details");
+                    }
+                }
+        );
+
+    }
+
+    private void addExistingBookmarks() {
+        bookmarksRpcService.getBookmarkDetails(
+                new AsyncCallback<ArrayList<BookmarkDetails>>() {
+                    public void onSuccess(ArrayList<BookmarkDetails> result) {
+                        for (BookmarkDetails bookmarkDetails : result) {
+                            bookmarks.addItem(bookmarkDetails.getDisplayName(), bookmarkDetails.getId());
+                        }
+                    }
+
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Error fetching bookmark details");
                     }
                 }
         );
@@ -221,6 +246,11 @@ public class BooksDialog implements EditBookPresenter.Display {
     @Override
     public ListBox getTags() {
         return tags;
+    }
+
+    @Override
+    public ListBox getBookmarks() {
+        return bookmarks;
     }
 
 

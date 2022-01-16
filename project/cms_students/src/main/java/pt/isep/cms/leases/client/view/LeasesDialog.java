@@ -11,7 +11,7 @@ import pt.isep.cms.client.ShowcaseConstants;
 import pt.isep.cms.leases.client.presenter.EditLeasePresenter;
 import pt.isep.cms.leases.client.view.LeasesDialog;
 
-public class LeasesDialog implements EditLeasePresenter.Display{
+public class LeasesDialog implements EditLeasePresenter.Display {
     public enum Type {
         ADD,
         UPDATE
@@ -76,8 +76,7 @@ public class LeasesDialog implements EditLeasePresenter.Display{
     /**
      * Constructor.
      *
-     * @param constants
-     *            the constants
+     * @param constants the constants
      */
     public LeasesDialog(ShowcaseConstants constants, LeasesDialog.Type type) {
         // super(constants.cwDialogBoxName(), constants.cwDialogBoxDescription());
@@ -99,7 +98,7 @@ public class LeasesDialog implements EditLeasePresenter.Display{
         detailsTable.setCellSpacing(0);
         detailsTable.setWidth("100%");
         detailsTable.addStyleName("leases-ListContainer");
-        detailsTable.getColumnFormatter().addStyleName(1, "add-lease-input");
+        detailsTable.getColumnFormatter().addStyleName(1, "add-generic-input");
         onDate = new DateBox();
         toDate = new DateBox();
         book = new TextBox();
@@ -117,7 +116,7 @@ public class LeasesDialog implements EditLeasePresenter.Display{
 
         dialogBox = new DialogBox();
         dialogBox.ensureDebugId("cwDialogBox");
-        if (type== LeasesDialog.Type.ADD)
+        if (type == LeasesDialog.Type.ADD)
             dialogBox.setText(constants.cwAddLeaseDialogCaption());
         else
             dialogBox.setText(constants.cwUpdateLeaseDialogCaption());
