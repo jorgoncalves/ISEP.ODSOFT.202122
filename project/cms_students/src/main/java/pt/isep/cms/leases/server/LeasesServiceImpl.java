@@ -2,6 +2,8 @@ package pt.isep.cms.leases.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+import pt.isep.cms.books.shared.Book;
+import pt.isep.cms.contacts.shared.Contact;
 import pt.isep.cms.leases.client.LeasesService;
 import pt.isep.cms.leases.shared.Lease;
 import pt.isep.cms.leases.shared.LeaseDetails;
@@ -41,17 +43,17 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
         new Date(2021, 12, 17) 
     };
 
-    private final String[] leasesBookData = new String[] {
-        "0-3020-4050-1",
-        "0-3297-9686-0",
-        "0-7162-8596-7",
-        "0-9038-4488-5",
-        "0-4757-9808-2",
-        "0-9370-1872-4",
-        "0-3749-7243-5",
-        "0-3629-0985-7m",
-        "0-5620-1952-9",
-        "0-3948-1778-8"
+    /*private final String[] leasesBookData = new String[]{
+            "0-3020-4050-1",
+            "0-3297-9686-0",
+            "0-7162-8596-7",
+            "0-9038-4488-5",
+            "0-4757-9808-2",
+            "0-9370-1872-4",
+            "0-3749-7243-5",
+            "0-3629-0985-7m",
+            "0-5620-1952-9",
+            "0-3948-1778-8"
     };
 
     private final String[] leasesContactsEmailData = new String[]{
@@ -65,19 +67,34 @@ public class LeasesServiceImpl extends RemoteServiceServlet implements
             "claudio@example.com",
             "dena@example.com",
             "brasilsp@example.com"
-    };
+    };*/
 
     private final HashMap<String, Lease> leases = new HashMap<String, Lease>();
 
     public LeasesServiceImpl() {
-        initLeases();
+        this.emfactory = Persistence.createEntityManagerFactory("CMS");
+
+        this.entitymanager = emfactory.createEntityManager();
+
+        //initPersistentLeases();
     }
 
-    private void initLeases() {
-        for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length && i < leasesBookData.length && i < leasesContactsEmailData.length; ++i) {
-            Lease lease = new Lease(String.valueOf(i), leasesOnDateData[i], leasesToDateData[i], leasesBookData[i], leasesContactsEmailData[i]);
-            leases.put(lease.getId(), lease);
-        }
+    private void initPersistentLeases() {
+        Query query = entitymanager.createQuery("Select COUNT(l) from Lease l");
+        Long result = (Long) query.getSingleResult();
+
+        //if (result == 0) {
+        //    System.out.println("No leases found. Populating db.");
+        //    this.entitymanager.getTransaction().begin();
+
+        //    for (int i = 0; i < leasesOnDateData.length && i < leasesToDateData.length /*&& i < leasesBookData.length && i < leasesContactsEmailData.length*/; ++i) {
+        //        Lease lease = new Lease(leasesOnDateData[i], leasesToDateData[i], new Book(), new Contact()/*leasesBookData[i], leasesContactsEmailData[i]*/);
+        //        this.entitymanager.persist(lease);
+        //    }
+
+        //    this.entitymanager.getTransaction().commit();
+
+        //}
     }
 
     @Override

@@ -1,6 +1,7 @@
 package pt.isep.cms.leases.client.presenter;
 
 import java.util.Date;
+import java.util.List;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -10,6 +11,9 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.ListBox;
+import pt.isep.cms.books.shared.Book;
+import pt.isep.cms.contacts.shared.Contact;
 import pt.isep.cms.leases.client.LeasesServiceAsync;
 import pt.isep.cms.leases.client.event.LeaseUpdatedEvent;
 import pt.isep.cms.leases.client.event.EditLeaseCancelledEvent;
@@ -26,9 +30,13 @@ public class EditLeasePresenter implements Presenter {
 
         HasValue<Date> getToDate();
 
-        HasValue<String> getBook();
+        //HasValue<String> getBook();
 
-        HasValue<String> getLeasesContact();
+        //HasValue<String> getLeasesContact();
+
+        ListBox getBook();
+
+        ListBox getLeasesContact();
 
         void show();
 
@@ -59,8 +67,20 @@ public class EditLeasePresenter implements Presenter {
                 lease = result;
                 EditLeasePresenter.this.display.getOnDate().setValue(lease.getOnDate());
                 EditLeasePresenter.this.display.getToDate().setValue(lease.getToDate());
-                EditLeasePresenter.this.display.getBook().setValue(lease.getBook());
-                EditLeasePresenter.this.display.getLeasesContact().setValue(lease.getleaseContact());
+
+                for (int i = 0; i < EditLeasePresenter.this.display.getBook().getItemCount() - 1; i++) {
+                    String id = EditLeasePresenter.this.display.getBook().getValue(i);
+                    if (id.equals(lease.getBook().getId())) {
+                        EditLeasePresenter.this.display.getBook().setSelectedIndex(i);
+                    }
+                }
+
+                for (int i = 0; i < EditLeasePresenter.this.display.getLeasesContact().getItemCount() - 1; i++) {
+                    String id = EditLeasePresenter.this.display.getLeasesContact().getValue(i);
+                    if (id.equals(lease.getleaseContact().getId())) {
+                        EditLeasePresenter.this.display.getLeasesContact().setSelectedIndex(i);
+                    }
+                }
             }
 
             public void onFailure(Throwable caught) {
@@ -93,8 +113,14 @@ public class EditLeasePresenter implements Presenter {
     private void doSave() {
         lease.setOnDate(display.getOnDate().getValue());
         lease.setToDate(display.getToDate().getValue());
-        lease.setBook(display.getBook().getValue());
-        lease.setleaseContact(display.getLeasesContact().getValue());
+
+        Book b = new Book();
+        b.setId(display.getBook().getSelectedValue());
+        lease.setBook(b);
+
+        Contact c = new Contact();
+        c.setId(display.getLeasesContact().getSelectedValue());
+        lease.setleaseContact(c);
 
         if (lease.getId() == null) {
             // Adding new lease
