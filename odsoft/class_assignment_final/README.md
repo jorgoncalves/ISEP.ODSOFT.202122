@@ -35,7 +35,7 @@ The additional features consist on the rework of the domain model of the project
 - Tags with the same description should not be allowed.
 
 The image below illustrates the final result asked for the domain model:
-![domain_model](./images/domain_model.png)
+![domain_model](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/domain_model.png)
 
 Another relevant component of the delivery two was the improvement of the pipeline. It consisted on adding features to the pipeline that were connected to the elements of the group. In this project the concerns addressed were:
 - 2.1 - Base Pipeline
@@ -45,14 +45,188 @@ Another relevant component of the delivery two was the improvement of the pipeli
 For more details regarding the requirements for the above points, see the document odsoft_project_assignment_v1.2.pdf available on moodle.
 
 ### Unix/Windows systems compatible
+To achieve compatible between Unix and Windows operating systems, we have developed the following functions:
 
-## Pipeline design
+```Groovy
+def command(command) {
+    if (isUnix() && command != null) {
+        sh command
+    } else {
+        bat command
+    }
+}
 
-![pipeline_sketch](./images/pipeline_sketch.png)
+def directory(directory) {
+  newDir=directory
+  if (!isUnix()) {
+    newDir = newDir.replace('/','\\')
+  }
+  return newDir
+}
+```
+By checking the global function **isUnix** we can determine what action to take.
 
-## Git module used
+## 2.1 - Base Pipeline
+The application should have a persistence layer that must use a relational database.
+PDF
+### Pipeline design
+This pipeline was design having in mind that some stages could be executed in parallel, so in this implementation we have stages where we execute multiple jobs at a given time. We choose the **Tests and Javadoc**, **Code Quality**, **Publish** and **Create ZIP and PDF** stages to have parallel executions because none of this stages steps has precedent dependencies, and by running in parallel we optimize the pipeline execution.
+![pipeline_sketch](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/pipeline_sketch.png)
+### Git module used
 Considering the size of our team and the professional experience of the elements of the group, we decided to use Trunk-based development (TBD).
 This resulted on small merges being done from branches that implementation/added some new feature or fixed a bug. This approach also made sure that, we always had a working version of the master, since every branch was created from the master branch.
+### Checkout
+
+This task has the propose of updating the local workspace to be followed by the pipeline stages. It also deletes the workspace before it starts. To do so we use the following code:
+
+```Groovy
+stage("Checkout") {
+    steps {
+        checkout([
+                $class: "GitSCM",
+                branches: [[name: "*/master"]],
+                extensions: [[$class: "WipeWorkspace"]],
+                userRemoteConfigs: [
+                    [credentialsId: "333bd6ce-1181-4a3f-975c-5f15aecd87dd",
+                    name: "origin",
+                    url: "git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git"]
+                ]
+            ])
+    }
+}
+```
+We builded the above command using the "Pipeline Syntax", which is a GUI for generating snippets for the steps.
+
+In this step we, defined the version control, clean the workspace, and specify the credentialsId using the jenkins allocated uid as well as the url to be used. In this case we are using ssh.
+
+## Build
+
+To validate if the repository has a valid build, we starting by building the project itself. In the below stage, we execute a step which simply changes the current directory to the place were the project is located, and executes the gradle wrapper to initiate the build process. We use **clean** the ensure that no desired artifact is on the build folder.
+
+```Groovy
+stage("Build") {
+    steps {
+            dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                command("./gradlew clean build")
+            }
+    }
+}
+```
+### Unit and Mutation tests
+To execute our unit tests we are using a stage on a parallel execution alongside other tests that don't depend on the result of the unit tests.
+As for the mutation tests, since it a type of test that depends on the result of the unit and integration tests, is being executed after this parallel stage.
+``` Groovy
+parallel {
+    stage("Run Unit Tests") {
+        steps {
+            dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                command("./gradlew test")
+            }
+        }
+    }
+    ...
+}
+```
+``` Groovy
+stage("Mutation Tests") {
+    steps {
+        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+            command("./gradlew pitest")
+        }
+    }
+}
+```
+
+### Coverage threshold
+The coverage threshold is assured by using JaCoCo. JaCoCo as a configuration parameter which allows ut to specify a minimumLineCoverage and maximumLineCoverage that will determine if a build should be considered stable or fail. Usually the magic number of the minimum line coverage is around 75%, since there wasn't any requirement regarding the minimum line coverage and none of the elements of the group had experience with the gwt framework we decided to focus our efforts on the remaining matters. 
+``` Groovy
+stage("Parallel Publisher") {
+    parallel {
+        ...
+        stage("JaCoCo Report") {
+            steps {
+                jacoco buildOverBuild: true, changeBuildStatus: true, deltaLineCoverage: '2', maximumLineCoverage: '9,5', minimumLineCoverage: '9', skipCopyOfSrcFiles: true
+            }
+        }
+    }
+}
+```
+
+### Generate Project Report PDF
+For the implementation of the PDF generation, we used a gradle solution called, **MarkdownToPdfTask**.
+The definition of the task was done by using the following:
+
+``` Groovy
+task pdfFromMarkdown(type: MarkdownToPdfTask) {
+    inputFile = file('../../odsoft/class_assignment_final/README.md')
+    outputFile = file('../../odsoft/class_assignment_final//README.pdf')
+}
+```
+The execution of the task is invoked on the Jenkinsfile by the bellow stage:
+``` Groovy
+stage("Create PDF"){
+    steps {
+        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+            command("./gradlew pdfFromMarkdown")
+        }
+    }
+}
+```
+
+### Maturity level
+
+- Maturity Level: Build Management and Continuous Integration - Level 0
+- Maturity Level: Environments and Deployment - Level 0
+- Maturity Level: Release Management and Compliance - Level 1
+- Maturity Level: Testing - Level 0
+- Maturity Level: Data Management - Level -1
+- Maturity Level: Configuration Management - Level 0
+## 2.2 - Documentation and Database
+### Database
+The database used for this step was a H2 database. This database is a relational database, allowing us to stablish relation between entities as well to have persistente data. Using the entity books as a example, we are able to use the decorator's **@Entity** and **@Table** to defined that a book entity should be created on the database with the field **id** being a primary key of type **UUID**.
+Regarding the relations, the decorator's **ManyToMany** and **OneToMany** allow us stablish relations with the **Tag** and **Bookmark** entities. The **FetchType.EAGER** was used because gwt was using lazy loading and not getting the relations for this fields after the first call.
+``` Java
+@SuppressWarnings("serial")
+@Entity
+@Table
+public class Book implements Serializable {
+    @Id
+    @GeneratedValue(generator = "UUID")
+    private String id;
+    private String title;
+    private String isbn;
+    private String author;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Tag> tags;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Bookmark> bookmarks;
+...
+}
+```
+
+### Project ZIP
+As part of this concern, was also asked to create a zip containing all the project relevante data. To achieve this we used the following gradle task:
+```Groovy
+task zipCMSProject(type: Zip) {
+    from '../../'
+    // code
+    exclude '/project/cms_students/.gradle/'
+    exclude '/project/cms_students/.idea/'
+    exclude '/project/cms_students/bin/'
+    exclude '/project/cms_students/build/'
+    exclude '/project/cms_students/gwt-unitCache/'
+    exclude '/project/cms_students/www-test/'
+    include '/project/cms_students/**'
+    // documentation
+    include '/odsoft/class_assignment_final/**/**'
+    archiveName 'cms_project.zip'
+}
+```
+This will create a zip file on `project/cms_students/build/distributions/cms_project.zip` that is archive on jenkins.
+
+### Advanced task
+As advanced task for this concern, it has requested that the Gradle version and JDK where upgrade. This task was partially done, since we only where able to upgrade Gradle to the version 7.3.3. This also involved upgrading the gwt to the 2.9.0 version, and using a fork os 'fr.putnami.gwt', called 'de.esoco.gwt', to be able to use gwt.
+Other changes where the update of **testCompile** to **testImplementation** and **compile** to **implementation**.
 
 ## 2.3 - Integration Tests and Code Quality
 
@@ -90,7 +264,7 @@ archiveArtifacts artifacts: 'project/cms_students/build/reports/integrationTest/
 
 After running the pipeline successfully, we should see something as seen in the following screenshot.
 
-![integration_test_publish_archive.png](./images/integration_test_publish_archive.png)
+![integration_test_publish_archive.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/integration_test_publish_archive.png)
 
 ### Checkstyle
 
@@ -102,11 +276,11 @@ After that we must configure the task. We must select the version, the configura
 
 The other configuration is to decide which type of reports we desire to generate. As we can see up next, the team went for an HTML report, instead of an XML report.
 
-![reports_checkstyle.png](./images/reports_checkstyle.png)
+![reports_checkstyle.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/reports_checkstyle.png)
 
-The next step was to create two tasks, one wich is going to analyze the source code, and the other the test code. For each task, the only parameter to be set is the directory of the code we want to analyze, as we can see in the following screenshot.
+The next step was to create two tasks, one which is going to analyze the source code, and the other the test code. For each task, the only parameter to be set is the directory of the code we want to analyze, as we can see in the following screenshot.
 
-![checkstyle_tasks.png](./images/checkstyle_tasks.png)
+![checkstyle_tasks.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/checkstyle_tasks.png)
 
 The next step is to ran this tool in the Jenkins' pipeline. To do so, we created a stage named "Code Quality", which will run the tools used to check the code quality in parallel. In this stage we just execute a command calling the Gradle task, using the method previously described, that confirms the operating system on which the script is running.
 
@@ -120,8 +294,8 @@ We point to the report's directory and set the threshold values. The two values,
 
 The report can be found on the job's dashboard, and is going to have the following aspect.
 
-![checkstyle_report1.png](./images/checkstyle_report1.png)
-![checkstyle_report2.png](./images/checkstyle_report2.png)
+![checkstyle_report1.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/checkstyle_report1.png)
+![checkstyle_report2.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/checkstyle_report2.png)
 
 It's possible to see an Overview of the tool's report, a graphic with an history of the number of errors per build, and allows to see the errors per Package, File, Category, Type and Issue.
 
@@ -129,17 +303,17 @@ By analyzing the report we can see that the tool found a little over 400 errors 
 
 On the Category view it's clear that most of the errors found in the project are related to Javadoc, with 121 errors, followed by 90 errors on Imports. The third category with most errors is Whitespace, with a total of 89 errors.
 
-![checkstyle_details_categories.png](./images/checkstyle_details_categories.png)
+![checkstyle_details_categories.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/checkstyle_details_categories.png)
 
 By analyzing the Type view, errors related to Javadoc are dominant, with 121 errors again. There are also 52 errors with the Imports, and 43 errors associated with the placement of left curly braces ('{').
 
-![checkstyle_details_types.png](./images/checkstyle_details_types.png)
+![checkstyle_details_types.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/checkstyle_details_types.png)
 
 To archive this report, as requested, the same method used to archive the integration tests artifact was used.
 
 ### Spotbugs
 
-Since the second sugested tool for doing a "check" on the code quality of the project, Findbugs, is not available on the used Gradle version, we opted for Spotbugs, which is a fork from the first.
+Since the second suggested tool for doing a "check" on the code quality of the project, Findbugs, is not available on the used Gradle version, we opted for Spotbugs, which is a fork from the first.
 
 This tool also requires to create a new task on _build.gradle_. Firstly we import the plugin, in order for the file to recognize the tasks that are going to be created.
 
@@ -149,7 +323,7 @@ id "com.github.spotbugs" version "5.0.4"
 
 Configuration is also needed. We select if failures must be ignored or not and the type of report we want to generate, either XML or HTML. The report's directory is the task's default, and is set to the folder where all the others tasks store their reports, _/build/reports_. Like in Checkstyle, there is the need to decide which type of reports we desire to generate. As we can see up next, the team went for an XML report, instead of an HTML report.
 
-![spotbugs_configuration.png](./images/spotbugs_configuration.png)
+![spotbugs_configuration.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/spotbugs_configuration.png)
 
 The tasks in this tool are implicit and don't need any configuration, as opposed to Checkstyle.
 
@@ -183,12 +357,11 @@ The report can be found on the job's dashboard, and is going to have the same as
 
 On the Type view, the *EI_EXPOSE_REP2* error stands out from the others, as it has 84 occurrences, compared to the 53 from the second most common error. This error means that there are 84 times where object instances are accessed by untrusted code, and unchecked changes to the mutable object would compromise security or other important properties. One way to avoid this vulnerability is to storing a copy of the object.
 
-![spotbugs_details_types.png](./images/spotbugs_details_types.png)
+![spotbugs_details_types.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/spotbugs_details_types.png)
 
 Another interesting analysis that can be done is to the Categories view. It is blatantly obvious that there's a vunerability in the project's source code, due to the 162 occurances of the *MALICIOUS_CODE* code, which means that there's a large portion of code which is vulnerable to attacks from untrusted code.
 
-![spotbugs_details_categories.png](./images/spotbugs_details_categories.png)
+![spotbugs_details_categories.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/spotbugs_details_categories.png)
 
 This report was also archived, using the previously used plugin .
 
-## Maturity level
