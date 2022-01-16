@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='testleases'>
+    <!-- Inherit our applications main module.                      -->
+    <inherits name='pt.isep.cms.Showcase'></inherits>
+
+    <!-- Specify the path to any remote services.                   -->
+    <servlet path="/books/booksService" class="pt.isep.cms.books.server.BooksServiceImpl" />
+
+</module>

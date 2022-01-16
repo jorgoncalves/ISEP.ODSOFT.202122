@@ -6,6 +6,7 @@ plugins {
     id "de.esoco.gwt" version "1.1.1"
     id 'info.solidsoft.pitest' version '1.7.0'
     id "de.fntsoftware.gradle.markdown-to-pdf" version "1.1.0"
+    id "com.github.spotbugs" version "5.0.4"
 }
 
 apply plugin: 'war'
@@ -13,6 +14,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'jacoco'
 apply plugin: 'info.solidsoft.pitest'
+apply plugin: 'checkstyle'
+//apply plugin: 'findbugs'
 apply plugin: 'de.fntsoftware.gradle.markdown-to-pdf'
 
 //Java version compatibility to use when compiling Java source.
@@ -117,7 +120,54 @@ tasks.withType(Test) {
     reports.html.destination = file("${reporting.baseDir}/${name}")
 }
 
-// Unit Tests
+checkstyle {
+    toolVersion '7.8.1'
+    configFile file("config/checkstyle/checkstyle.xml")
+    ignoreFailures = true
+}
+
+checkstyleMain {
+    source ='src/main/java'
+}
+
+checkstyleTest {
+    source ='src/test/java'
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+/*findbugs {
+    ignoreFailures = true
+    toolVersion = "3.0.1"
+    sourceSets=[sourceSets.main]
+    excludeFilter = file("config/findbugs/excludeFilter.xml")
+    reportsDir = file("$project.buildDir/reports/findbugs")
+    effort = "max"
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}*/
+
+spotbugs {
+    ignoreFailures = true
+}
+
+tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
+    reports {
+        xml.enabled = true
+        html.enabled = false
+    }
+}
+
 test {
     filter {
         includeTestsMatching "*JRETest*"

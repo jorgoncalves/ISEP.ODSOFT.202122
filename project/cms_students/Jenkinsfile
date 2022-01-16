@@ -59,6 +59,25 @@ pipeline {
             }
         }
 
+        stage("Code Quality") {
+            parallel {
+                stage("Run Checkstyle") {
+                    steps {
+                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                            command("./gradlew checkMain")
+                        }
+                    }
+                }
+                stage("Run SpotBugs") {
+                    steps {
+                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                            command("./gradlew spotbugsMain")
+                        }
+                    }
+                }
+            }
+        }
+
         stage("Parallel Publisher") {
             parallel {
                 stage("Publish Javadoc") {
@@ -130,11 +149,32 @@ pipeline {
             }
         }
 
+        stage('Reports for Checkstyle and Spotbugs') {
+            parallel {
+                stage("Checkstyle") {
+                    steps {
+                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                            recordIssues enabledForFailure: true, tools: [checkStyle(pattern: "/build/reports/checkstyle/*.xml")],tool: java(pattern: '*.log'), healthy: 200, unhealthy: 600
+                        }
+                    }
+                }
+
+                stage("Spotbugs") {
+                    steps {
+                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                            recordIssues enabledForFailure: true, tools: [spotBugs(pattern: "/build/reports/spotbugs/*.xml")],tool: java(pattern: '*.log'), healthy: 100, unhealthy: 300
+                        }
+                    }
+                }
+            }
+        }
+
         stage("Deploy War File") {
             steps {
                 deploy adapters: [tomcat9(credentialsId: '83e750f1-e55f-4dfb-a342-a90cabbe21b9', path: '', url: 'http://tomcat:8181/')], contextPath: 'CMS_Students', onFailure: false, war: 'project/cms_students/build/libs/cms_students-1.0.war'
             }
         }
+
         stage("Smoke Test") {
             steps {
                 script {
@@ -194,6 +234,8 @@ pipeline {
             archiveArtifacts artifacts: 'project/cms_students/build/reports/integrationTest/index.html', followSymlinks: false
             archiveArtifacts artifacts: 'project/cms_students/build/reports/pitest/index.html', followSymlinks: false
             archiveArtifacts artifacts: 'cms_project.zip'
+            archiveArtifacts artifacts: 'project/cms_students/build/reports/checkstyle/main.xml', followSymlinks: false
+            archiveArtifacts artifacts: 'project/cms_students/build/reports/spotbugs/main.xml', followSymlinks: false
         }
     }
 }
