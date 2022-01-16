@@ -65,18 +65,122 @@ def directory(directory) {
 }
 ```
 By checking the global function **isUnix** we can determine what action to take.
-## Pipeline design
-
-![pipeline_sketch](./images/pipeline_sketch.png)
-
-## Git module used
-Considering the size of our team and the professional experience of the elements of the group, we decided to use Trunk-based development (TBD).
-This resulted on small merges being done from branches that implementation/added some new feature or fixed a bug. This approach also made sure that, we always had a working version of the master, since every branch was created from the master branch.
 
 ## 2.1 - Base Pipeline
 The application should have a persistence layer that must use a relational database.
 PDF
+### Pipeline design
+This pipeline was design having in mind that some stages could be executed in parallel, so in this implementation we have stages where we execute multiple jobs at a given time. We choose the **Tests and Javadoc**, **Code Quality**, **Publish** and **Create ZIP and PDF** stages to have parallel executions because none of this stages steps has precedent dependencies, and by running in parallel we optimize the pipeline execution.
+![pipeline_sketch](./images/pipeline_sketch.png)
+### Git module used
+Considering the size of our team and the professional experience of the elements of the group, we decided to use Trunk-based development (TBD).
+This resulted on small merges being done from branches that implementation/added some new feature or fixed a bug. This approach also made sure that, we always had a working version of the master, since every branch was created from the master branch.
+### Checkout
 
+This task has the propose of updating the local workspace to be followed by the pipeline stages. It also deletes the workspace before it starts. To do so we use the following code:
+
+```Groovy
+stage("Checkout") {
+    steps {
+        checkout([
+                $class: "GitSCM",
+                branches: [[name: "*/master"]],
+                extensions: [[$class: "WipeWorkspace"]],
+                userRemoteConfigs: [
+                    [credentialsId: "333bd6ce-1181-4a3f-975c-5f15aecd87dd",
+                    name: "origin",
+                    url: "git@bitbucket.org:mei-isep/odsoft-21-22-rcc-g401.git"]
+                ]
+            ])
+    }
+}
+```
+We builded the above command using the "Pipeline Syntax", which is a GUI for generating snippets for the steps.
+
+In this step we, defined the version control, clean the workspace, and specify the credentialsId using the jenkins allocated uid as well as the url to be used. In this case we are using ssh.
+
+## Build
+
+To validate if the repository has a valid build, we starting by building the project itself. In the below stage, we execute a step which simply changes the current directory to the place were the project is located, and executes the gradle wrapper to initiate the build process. We use **clean** the ensure that no desired artifact is on the build folder.
+
+```Groovy
+stage("Build") {
+    steps {
+            dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                command("./gradlew clean build")
+            }
+    }
+}
+```
+### Unit and Mutation tests
+To execute our unit tests we are using a stage on a parallel execution alongside other tests that don't depend on the result of the unit tests.
+As for the mutation tests, since it a type of test that depends on the result of the unit and integration tests, is being executed after this parallel stage.
+``` Groovy
+parallel {
+    stage("Run Unit Tests") {
+        steps {
+            dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                command("./gradlew test")
+            }
+        }
+    }
+    ...
+}
+```
+``` Groovy
+stage("Mutation Tests") {
+    steps {
+        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+            command("./gradlew pitest")
+        }
+    }
+}
+```
+
+### Coverage threshold
+The coverage threshold is assured by using JaCoCo. JaCoCo as a configuration parameter which allows ut to specify a minimumLineCoverage and maximumLineCoverage that will determine if a build should be considered stable or fail. Usually the magic number of the minimum line coverage is around 75%, since there wasn't any requirement regarding the minimum line coverage and none of the elements of the group had experience with the gwt framework we decided to focus our efforts on the remaining matters. 
+``` Groovy
+stage("Parallel Publisher") {
+    parallel {
+        ...
+        stage("JaCoCo Report") {
+            steps {
+                jacoco buildOverBuild: true, changeBuildStatus: true, deltaLineCoverage: '2', maximumLineCoverage: '9,5', minimumLineCoverage: '9', skipCopyOfSrcFiles: true
+            }
+        }
+    }
+}
+```
+
+### Generate Project Report PDF
+For the implementation of the PDF generation, we used a gradle solution called, **MarkdownToPdfTask**.
+The definition of the task was done by using the following:
+
+``` Groovy
+task pdfFromMarkdown(type: MarkdownToPdfTask) {
+    inputFile = file('../../odsoft/class_assignment_final/README.md')
+    outputFile = file('../../odsoft/class_assignment_final//README.pdf')
+}
+```
+The execution of the task is invoked on the Jenkinsfile by the bellow stage:
+``` Groovy
+stage("Create PDF"){
+    steps {
+        dir(directory("${env.WORKSPACE}/project/cms_students")) {
+            command("./gradlew pdfFromMarkdown")
+        }
+    }
+}
+```
+Unfortunately we encountered a bug regarding this tool that didn't allow to generate the report with images in it, using a relative path.
+### Maturity level
+
+- Maturity Level: Build Management and Continuous Integration - Level 0
+- Maturity Level: Environments and Deployment - Level 0
+- Maturity Level: Release Management and Compliance - Level 1
+- Maturity Level: Testing - Level 0
+- Maturity Level: Data Management - Level -1
+- Maturity Level: Configuration Management - Level 0
 ## 2.2 - Documentation and Database
 ### Database
 The database used for this step was a H2 database. This database is a relational database, allowing us to stablish relation between entities as well to have persistente data. Using the entity books as a example, we are able to use the decorator's **@Entity** and **@Table** to defined that a book entity should be created on the database with the field **id** being a primary key of type **UUID**.
@@ -261,11 +365,3 @@ Another interesting analysis that can be done is to the Categories view. It is b
 
 This report was also archived, using the previously used plugin .
 
-## Maturity level
-
-- Maturity Level: Build Management and Continuous Integration - Level 0
-- Maturity Level: Environments and Deployment - Level 0
-- Maturity Level: Release Management and Compliance - Level 1
-- Maturity Level: Testing - Level 0
-- Maturity Level: Data Management - Level -1
-- Maturity Level: Configuration Management - Level 0
