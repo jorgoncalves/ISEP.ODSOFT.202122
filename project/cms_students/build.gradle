@@ -104,6 +104,7 @@ task jacocoIntegrationReport(type: JacocoReport) {
 
 // Integration Tests
 task integrationTest(type: Test) {
+    ignoreFailures= true
     filter {
         //all GWT unit tests, by naming convention
         includeTestsMatching "*GWTTest*"
