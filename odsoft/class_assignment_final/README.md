@@ -359,7 +359,7 @@ On the Type view, the *EI_EXPOSE_REP2* error stands out from the others, as it h
 
 ![spotbugs_details_types.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/spotbugs_details_types.png)
 
-Another interesting analysis that can be done is to the Categories view. It is blatantly obvious that there's a vunerability in the project's source code, due to the 162 occurances of the *MALICIOUS_CODE* code, which means that there's a large portion of code which is vulnerable to attacks from untrusted code.
+Another interesting analysis that can be done is to the Categories view. It is blatantly obvious that there's a vulnerability in the project's source code, due to the 162 occurrences of the *MALICIOUS_CODE* code, which means that there's a large portion of code which is vulnerable to attacks from untrusted code.
 
 ![spotbugs_details_categories.png](https://raw.githubusercontent.com/jorgoncalves/ISEP.ODSOFT.202122/report/odsoft/class_assignment_final/images/spotbugs_details_categories.png)
 

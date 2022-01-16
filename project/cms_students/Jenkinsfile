@@ -6,7 +6,7 @@ pipeline {
             steps {
                 checkout([
                         $class: "GitSCM",
-                        branches: [[name: "*/master"]],
+                        branches: [[name: "*/report"]],
                         extensions: [[$class: "WipeWorkspace"]],
                         userRemoteConfigs: [
                             [credentialsId: "333bd6ce-1181-4a3f-975c-5f15aecd87dd",
@@ -191,25 +191,20 @@ pipeline {
             }
         }
         
-        stage("Create zip and PDF") {
-            parallel{
-                stage("Create zip"){
-                    steps {
-                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
-                            command("ls -la")
-                            command("./gradlew zipCMSProject")
-                        }
-                    }
-                }
-                stage("Create PDF"){
-                    steps {
-                        dir(directory("${env.WORKSPACE}/project/cms_students")) {
-                            command("./gradlew pdfFromMarkdown")
-                        }
-                    }
+        stage("Create zip"){
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    command("ls -la")
+                    command("./gradlew zipCMSProject")
                 }
             }
-            
+        }
+        stage("Create PDF"){
+            steps {
+                dir(directory("${env.WORKSPACE}/project/cms_students")) {
+                    command("./gradlew pdfFromMarkdown")
+                }
+            }
         }
 
         stage("Email") {
